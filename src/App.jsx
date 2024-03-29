@@ -1,5 +1,6 @@
 import Logo from "./svg/logo.svg";
-import ShoppingCart from "./svg/shopping-cart.svg"
+import intel from "./img/Intel.webp";
+import ShoppingCart from "./svg/shopping-cart.svg";
 import "./App.css";
 import SearchIcon from "./svg/busqueda.jsx";
 import UserIcon from "./svg/usuario.jsx";
@@ -47,7 +48,7 @@ function App() {
         <nav className="All-Categories">
           <div className="Categories-Container">
               <button direction="left" className="Displace__Content"></button>
-              <div>
+              <div className="Categories">
                 <div className="Category-Element">
                   <span> Video Card </span>
                 </div>
@@ -64,8 +65,25 @@ function App() {
               <button direction="right" className="Displace__Content"></button>
           </div>
         </nav>
-        
-        <div className="Web-Container"> WEB </div>
+
+        <div className="Web-Container"> 
+          <h1 className="Web-Title"> Componentes de PC </h1>
+          <div className="Carrousel-Seccion">
+            <div className="flechaL"></div>
+            <div className="Carrousel-Item">
+              <section className="Carrousel-ImageContainer">
+                <img src={intel} alt="Intel-Image" className="Image-Corrousel" />
+                <img src={intel} alt="Intel-Image" className="Image-Corrousel" />
+                <img src={intel} alt="Intel-Image" className="Image-Corrousel" />
+                <img src={intel} alt="Intel-Image" className="Image-Corrousel" />
+              </section>
+            </div>
+          </div>
+          <div>B</div>
+          <div>C</div>
+          <div>D</div>
+          <div>E</div>
+        </div>
         <footer className="Web-End"> END </footer>
       </div>
     </>

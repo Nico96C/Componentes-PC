@@ -1,4 +1,8 @@
 :root {
+  --color-Purple: #5b0888;
+  --color-intermediatePurple: #713abe;
+  --color-lightPurple: #9d76c1;
+  --color-lightpink: #e5cff7;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
