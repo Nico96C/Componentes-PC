@@ -31,7 +31,7 @@ function App() {
                 <input
                   className="Search"
                   type="search"
-                  placeholder="Buscar Componentes..."
+                  placeholder="Busqueda..."
                 />
                 <button className="Search-Button" onClick={toggleSearch}>
                   <SearchIcon className="icon-search" />
@@ -50,10 +50,10 @@ function App() {
               <button direction="left" className="Displace__Content"></button>
               <div className="Categories">
                 <div className="Category-Element">
-                  <span> Video Card </span>
+                  <span> VideoCard </span>
                 </div>
                 <div className="Category-Element">
-                  <span> CPU </span>
+                  <span> Procesadores </span>
                 </div>
                 <div className="Category-Element">
                   <span> Motherboard </span>
