@@ -56,10 +56,11 @@
 .Search-Background {
   background-color: #E5CFF7;
   border-radius: 15px;
-  padding: 0 15px 0 15px;
+  padding: 0 15px;
   width: 70%;
   height: 50%;
   margin: 0 auto;
+  transition: width 0.5s ease;
 }
 
 .Search-Button {
@@ -108,7 +109,7 @@
 @media (max-width: 768px) {
   .Logo-Container {
     position: absolute;
-    width: 100px;
+    width: 40px;
     top: 0px;
     left: -20px;
   }
@@ -128,19 +129,19 @@
   .Search-Background {
     border-radius: 20px;
     width: 33px;
+    margin: 0 15px 0 0px;
   }
 
   .Search-Button {
-    display: flex;
-    margin: auto;
-    padding: auto;
+    position: relative;
+    left: -8px;
   }
 
-  .Search-Container {
-
+  .Search-Background.expanded {
+    width: 56%;
   }
 
-  .Search {
-
+  .Search::-webkit-search-cancel-button {
+    -webkit-appearance: none;
   }
 }

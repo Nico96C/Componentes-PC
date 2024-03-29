@@ -1,5 +1,5 @@
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="160" height="50">
   <!-- Resto del SVG (monitor, texto, etc.) -->
   <!-- Monitor Outer Frame -->
   <rect x="40" y="4" width="120" height="41" fill="#333"/>
