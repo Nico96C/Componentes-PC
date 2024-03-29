@@ -1,0 +1,15 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <!-- Resto del SVG (monitor, texto, etc.) -->
+  <!-- Monitor Outer Frame -->
+  <rect x="40" y="4" width="120" height="41" fill="#333"/>
+  <!-- Monitor Screen -->
+  <rect x="45" y="8" width="110" height="33" fill="#000"/>
+  <!-- Stand -->
+  <rect x="95" y="45" width="10" height="5" fill="#001524"/>
+  <!-- Plataform -->
+  <rect x="75" y="48" width="50" height="3" fill="#001524"/>
+  <!-- Componentes PC Text -->
+  <text x="49" y="21" font-family="Arial, sans-serif" font-size="12" fill="#E5CFF7">Componentes</text>
+  <text x="130" y="36" font-family="Arial, sans-serif" font-size="14" fill="#E5CFF7">PC</text>
+</svg>
