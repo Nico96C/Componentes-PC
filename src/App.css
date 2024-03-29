@@ -7,10 +7,11 @@
 
 .Logo {
   transition: filter 0.5s ease;
+  cursor: pointer;
 }
 
 .Logo:hover {
-  filter: drop-shadow(0 0 5px #E5CFF7);
+  filter: drop-shadow(0 0 5px #e5cff7);
 }
 
 .Container {
@@ -54,7 +55,7 @@
 }
 
 .Search-Background {
-  background-color: #E5CFF7;
+  background-color: #e5cff7;
   border-radius: 15px;
   padding: 0 15px;
   width: 70%;
@@ -77,7 +78,7 @@
 }
 
 .icon-search:hover {
-  color: #713ABE;
+  color: #713abe;
 }
 
 .Search {
@@ -86,8 +87,23 @@
   background: none;
   outline: none;
   font-size: 17px;
-  color: #713ABE;
+  color: #713abe;
   margin: 5.5px 0;
+}
+
+.Cart-Button {
+  display: flex;
+  padding: 10px;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+  outline: solid 0px;
+}
+
+.Cart-Button:hover {
+  cursor: pointer;
+  outline-width: 2px;
+  opacity: 0.7;
 }
 
 .Navbar {
@@ -103,7 +119,16 @@
   z-index: 504;
   padding: 0 160px;
   outline: -webkit-focus-ring-color auto 5px;
-  background-color: #713ABE;
+  background-color: #713abe;
+}
+
+.All-Categories {
+  
+}
+
+.Web-Container {
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -134,7 +159,7 @@
 
   .Search-Button {
     position: relative;
-    left: -8px;
+    left: -7px;
   }
 
   .Search-Background.expanded {

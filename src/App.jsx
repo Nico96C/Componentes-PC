@@ -1,4 +1,5 @@
 import Logo from "./svg/logo.svg";
+import ShoppingCart from "./svg/shopping-cart.svg"
 import "./App.css";
 import SearchIcon from "./svg/busqueda.jsx";
 import UserIcon from "./svg/usuario.jsx";
@@ -36,8 +37,36 @@ function App() {
                 </button>
               </div>
             </div>
+
+            <div className="Cart-Button">
+              <img src={ShoppingCart} alt="Componentes PC CartIcon" className="Cart" />
+            </div>
           </div>
         </header>
+
+        <nav className="All-Categories">
+          <div className="Categories-Container">
+              <button direction="left" className="Displace__Content"></button>
+              <div>
+                <div className="Category-Element">
+                  <span> Video Card </span>
+                </div>
+                <div className="Category-Element">
+                  <span> CPU </span>
+                </div>
+                <div className="Category-Element">
+                  <span> Motherboard </span>
+                </div>
+                <div className="Category-Element">
+                  <span> Mouse </span>
+                </div>
+              </div>
+              <button direction="right" className="Displace__Content"></button>
+          </div>
+        </nav>
+        
+        <div className="Web-Container"> WEB </div>
+        <footer className="Web-End"> END </footer>
       </div>
     </>
   );
