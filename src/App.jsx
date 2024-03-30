@@ -144,11 +144,18 @@ function App() {
             <h2 className="Featured-Title"> ¡Lo mas destacado! </h2>
             <div> </div>
           </div>
-          <div>C</div>
+
+          <div className="Trends-Container">
+            <div className="Trends-Header">
+              <h2 className="Trends-Title"> Todas las Tendencias </h2>
+            </div>
+            <div className="Trends-Body"></div>
+          </div>
+
           <div>D</div>
           <div>E</div>
         </div>
-        <footer className="Web-End"> END </footer>
+        <footer className="Web-End"> Footer </footer>
       </div>
     </>
   );

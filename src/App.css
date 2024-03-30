@@ -115,6 +115,10 @@
   outline: none;
 }
 
+.Button-Mode:hover {
+  cursor: pointer;
+}
+
 .Navbar {
   width: 100%;
   height: 65px;
@@ -294,6 +298,54 @@
   text-align: center;
   font-size: 40px;
   margin-bottom: 20px;
+}
+
+.Trends-Container {
+  height: auto;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: left top;
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.Trends-Header {
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.Trends-Body {
+  width: 100%;
+  position: relative;
+  display: flex;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.Web-End {
+  width: 100%;
+  height: auto;
+  background-color: var(--color-intermediatePurple);
+  color: white;
+  border-top: 1px solid rgba(144, 139, 194, 0.2);
+}
+
+@media (min-width: 1600px) {
+.Web-End {
+  padding: 55px 160px 100px;
+}
 }
 
 @media (max-width: 768px) {
