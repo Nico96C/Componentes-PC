@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
 import Logo from "./svg/logo.svg";
 import intel from "./img/Intel.webp";
 import Placas from "./img/Placas.webp";
 import gaming from "./img/gaming.webp";
 import Razer from "./img/Razer.webp";
+import Graficas from "./img/Category1/mejores-graficas.webp";
+import Procesador from "./img/Category2/mejores-proce.jpg";
+import Perifericos from "./img/Category3/razer-perifericos.jpg";
+import SillasGamer from "./img/Category4/sillas-gamer.png";
 import ShoppingCart from "./svg/shopping-cart.svg";
 import SolIcon from "./svg/sol.jsx";
 import LunaIcon from "./svg/luna.jsx";
@@ -87,7 +92,10 @@ function App() {
         </nav>
 
         <div className="Web-Container">
-          <h1 className="Web-Title"> Componentes de PC </h1>
+          <h1 className={isDarkMode ? "Web-Title-2" : "Web-Title"}>
+            {" "}
+            Componentes de PC{" "}
+          </h1>
           <div className="Carrousel-Seccion">
             <div className="flechaL"></div>
             <div className="Carrousel-Item">
@@ -142,7 +150,68 @@ function App() {
 
           <div className="Featured-Container">
             <h2 className="Featured-Title"> ¡Lo mas destacado! </h2>
-            <div> </div>
+            <div className="Featured-Main-Container">
+              <div className="Featured-Links">
+                <Link className="videocards-link" to="/videocards">
+                  <div className="Featured-Contain">
+                    <span>
+                      <img
+                        className="Featured-Img-Video"
+                        src={Graficas}
+                        alt="Graphic Cards"
+                        width="100%"
+                      />
+                      <div className="overlay">
+                        <p className="text-menu">Texto personalizable</p>
+                      </div>
+                    </span>
+                  </div>
+                  <div className="Featured-Contain">
+                    <span>
+                      <img
+                        className="Featured-Img-Video"
+                        src={Procesador}
+                        alt="CPU's"
+                        width="100%"
+                      />
+                      <div className="overlay">
+                        <p className="text-menu">Texto personalizable</p>
+                      </div>
+                    </span>
+                  </div>
+                </Link>
+              </div>
+              <div className="Featured-Links">
+                <Link className="videocards-link" to="/videocards">
+                  <div className="Featured-Contain">
+                    <span>
+                      <img
+                        className="Featured-Img-Video"
+                        src={Perifericos}
+                        alt="Razer"
+                        width="105%"
+                      />
+                      <div className="overlay">
+                        <p className="text-menu">Texto personalizable</p>
+                      </div>
+                    </span>
+                  </div>
+                  <div className="Featured-Contain">
+                    <span>
+                      <img
+                        className="Featured-Img-Video"
+                        src={SillasGamer}
+                        alt="Gamer Chairs"
+                        width="113%"
+                      />
+                      <div className="overlay">
+                        <p className="text-menu">Texto personalizable</p>
+                      </div>
+                    </span>
+                  </div>
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div className="Trends-Container">
