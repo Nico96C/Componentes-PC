@@ -244,11 +244,11 @@ function App() {
 
           <div className="Trends-Container">
             <div className="Trends-Header">
-              <h2 className="Trends-Title"> TODAS LAS TENDENCIAS </h2>
+              <h2 className="Trends-Title"> LAS TENDENCIAS EN PLACAS DE VIDEO </h2>
             </div>
             <div className="Trends-Body">
               <div className="Trends-Items">
-                {products.map((product) => (
+                {products.slice(0, 5).map((product) => (
                   <a
                     className="Trends-Item"
                     key={product.id}
@@ -280,11 +280,11 @@ function App() {
 
           <div className="Trends-Container">
             <div className="Trends-Header">
-              <h2 className="Trends-Title"> TODAS LAS TENDENCIAS </h2>
+              <h2 className="Trends-Title"> LAS TENDENCIAS EN PROCESADORES </h2>
             </div>
             <div className="Trends-Body">
               <div className="Trends-Items">
-                {procesador.map((proce) => (
+                {procesador.slice(0, 5).map((proce) => (
                   <a
                     className="Trends-Item"
                     key={proce.id}
@@ -313,7 +313,6 @@ function App() {
               </div>
             </div>
           </div>
-          <div>E</div>
         </div>
         <footer className="Web-End"> Footer </footer>
       </div>

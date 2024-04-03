@@ -513,6 +513,7 @@
 
 .Trends-Product-Info {
   position: absolute;
+  color: var(--color-Purple);
   height: calc(100% - 210px);
   bottom: 0px;
   padding: 0px 15px;
