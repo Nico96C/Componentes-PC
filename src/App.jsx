@@ -11,24 +11,36 @@ import SillasGamer from "./img/Category4/sillas-gamer.png";
 import ShoppingCart from "./svg/shopping-cart.svg";
 import SolIcon from "./svg/sol.jsx";
 import LunaIcon from "./svg/luna.jsx";
+import PlacasJSON from "./mocks/VideoCards.json";
+import ProceJSON from "./mocks/Procesors.json";
 import "./App.css";
 import "./index.css";
 import SearchIcon from "./svg/busqueda.jsx";
 import UserIcon from "./svg/usuario.jsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [expanded, setExpanded] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [procesador, setProcesador] = useState([]);
 
   const toggleSearch = () => {
     setExpanded(!expanded);
   };
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
+
+  useEffect(() => {
+    // Filtrar los productos con 'oferta: true'
+    const AllVideo = PlacasJSON.VideoCards;
+    const AllProcesador = ProceJSON.Procesadores;
+    // Establecer los productos filtrados en el estado
+    setProcesador(AllProcesador)
+    setProducts(AllVideo);
+  }, []);
 
   return (
     <>
@@ -162,7 +174,11 @@ function App() {
                         width="100%"
                       />
                       <div className="overlay">
-                        <p className="text-menu">Texto personalizable</p>
+                        <p className="text-menu">
+                          {" "}
+                          LAS MEJORES PLACAS DE VIDEO CON HASTA ¡12 CUOTAS SIN
+                          INTERES!{" "}
+                        </p>
                       </div>
                     </span>
                   </div>
@@ -175,7 +191,11 @@ function App() {
                         width="100%"
                       />
                       <div className="overlay">
-                        <p className="text-menu">Texto personalizable</p>
+                        <p className="text-menu">
+                          {" "}
+                          LO MEJOR DE INTEL Y SUS ULTIMAS GENERACIONES CON EL
+                          MEJOR PRECIO{" "}
+                        </p>
                       </div>
                     </span>
                   </div>
@@ -192,7 +212,11 @@ function App() {
                         width="105%"
                       />
                       <div className="overlay">
-                        <p className="text-menu">Texto personalizable</p>
+                        <p className="text-menu">
+                          {" "}
+                          RAZER, PRECIO Y CALIDAD DE INCREIBLES PERIFERICOS!
+                          AHORA EN 12 CUOTAS FIJAS{" "}
+                        </p>
                       </div>
                     </span>
                   </div>
@@ -205,7 +229,11 @@ function App() {
                         width="113%"
                       />
                       <div className="overlay">
-                        <p className="text-menu">Texto personalizable</p>
+                        <p className="text-menu">
+                          {" "}
+                          VARIEDAD DE SILLAS GAMERS, CON LA MEJOR COMODIDAD PARA
+                          JUGAR!{" "}
+                        </p>
                       </div>
                     </span>
                   </div>
@@ -216,12 +244,75 @@ function App() {
 
           <div className="Trends-Container">
             <div className="Trends-Header">
-              <h2 className="Trends-Title"> Todas las Tendencias </h2>
+              <h2 className="Trends-Title"> TODAS LAS TENDENCIAS </h2>
             </div>
-            <div className="Trends-Body"></div>
+            <div className="Trends-Body">
+              <div className="Trends-Items">
+                {products.map((product) => (
+                  <a
+                    className="Trends-Item"
+                    key={product.id}
+                    href={`/videocards/${product.id}`}
+                  >
+                    <article className="Trends-MainContainer">
+                      <div className="Trends-SubContainer">
+                        <div className="Trends-ImgContainer">
+                          <img className="Trends-Product-Img" src={product.thumbnail} alt={product.name} />
+                        </div>
+                        <div className="Trends-Product-Info">
+                          <div className="Product-Stock"></div>
+                          <div className="Product-Main-Info">
+                            <h3> {product.name} </h3>
+                          </div>
+                          <span className="Product-Main-Price"> $999 </span>
+                        </div>
+                        <div className="Trends-Product-Buy">
+                          <button className="Buy-Button"> Comprar Ahora </button>
+                        </div>
+                        <div className="Trends-Product-AddCart"></div>
+                      </div>
+                    </article>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div>D</div>
+          <div className="Trends-Container">
+            <div className="Trends-Header">
+              <h2 className="Trends-Title"> TODAS LAS TENDENCIAS </h2>
+            </div>
+            <div className="Trends-Body">
+              <div className="Trends-Items">
+                {procesador.map((proce) => (
+                  <a
+                    className="Trends-Item"
+                    key={proce.id}
+                    href={`/procesors/${proce.id}`}
+                  >
+                    <article className="Trends-MainContainer">
+                      <div className="Trends-SubContainer">
+                        <div className="Trends-ImgContainer">
+                          <img className="Trends-Product-Img" src={proce.thumbnail} alt={proce.name} />
+                        </div>
+                        <div className="Trends-Product-Info">
+                          <div className="Product-Stock"></div>
+                          <div className="Product-Main-Info">
+                            <h3> {proce.name} </h3>
+                          </div>
+                          <span className="Product-Main-Price"> $999 </span>
+                        </div>
+                        <div className="Trends-Product-Buy">
+                          <button className="Buy-Button"> Comprar Ahora </button>
+                        </div>
+                        <div className="Trends-Product-AddCart"></div>
+                      </div>
+                    </article>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
           <div>E</div>
         </div>
         <footer className="Web-End"> Footer </footer>

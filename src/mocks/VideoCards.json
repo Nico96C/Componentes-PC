@@ -1,5 +1,6 @@
 { "VideoCards" :[
     {
+        "id": 1,
         "name": "MSI GeForce RTX 3060 Ventus 2X 12G",
         "price": 289.39,
         "chipset": "GeForce RTX 3060 12GB",
@@ -7,10 +8,12 @@
         "core_clock": 1320,
         "boost_clock": 1777,
         "color": "Black",
-        "thumnail": "./src/img/Category1/1.png",
+        "thumbnail": "/src/img/Category1/1.png",
+        "cuotas": true,
         "length": 235
     },
     {
+        "id": 2,
         "name": "Gigabyte WINDFORCE OC",
         "price": 529.99,
         "chipset": "GeForce RTX 4070",
@@ -18,10 +21,12 @@
         "core_clock": 1920,
         "boost_clock": 2490,
         "color": "Black",
-        "thumnail": "./src/img/Category1/2.webp",
+        "thumbnail": "/src/img/Category1/2.webp",
+        "cuotas": false,
         "length": 261
     },
     {
+        "id": 3,
         "name": "Asus DUAL OC",
         "price": 304.99,
         "chipset": "GeForce RTX 4060",
@@ -29,10 +34,12 @@
         "core_clock": 1830,
         "boost_clock": 2535,
         "color": "Black",
-        "thumnail": "./src/img/Category1/3.png",
+        "thumbnail": "/src/img/Category1/3.png",
+        "cuotas": false,
         "length": 227
     },
     {
+        "id": 4,
         "name": "Asus ROG STRIX GAMING OC",
         "price": 2049.99,
         "chipset": "GeForce RTX 4090",
@@ -40,10 +47,12 @@
         "core_clock": 2235,
         "boost_clock": 2640,
         "color": "Black",
-        "thumnail": "./src/img/Category1/4.webp",
+        "thumbnail": "/src/img/Category1/4.webp",
+        "cuotas": true,
         "length": 358
     },
     {
+        "id": 5,
         "name": "Gigabyte GAMING OC",
         "price": 499.99,
         "chipset": "Radeon RX 7800 XT",
@@ -51,10 +60,12 @@
         "core_clock": 1295,
         "boost_clock": 2565,
         "color": "Black",
-        "thumnail": "./src/img/Category1/5.png",
+        "thumbnail": "/src/img/Category1/5.png",
+        "cuotas": false,
         "length": 302
     },
     {
+        "id": 6,
         "name": "PNY VCNRTX6000ADA-PB",
         "price": 9999,
         "chipset": "RTX 6000 Ada Generation",
@@ -62,10 +73,12 @@
         "core_clock": 915,
         "boost_clock": 2505,
         "color": "Black / Gold",
-        "thumnail": "./src/img/Category1/6.png",
+        "thumbnail": "/src/img/Category1/6.png",
+        "cuotas": false,
         "length": 267
     },
     {
+        "id": 7,
         "name": "ASRock Challenger D",
         "price": 199.99,
         "chipset": "Radeon RX 6600",
@@ -73,10 +86,12 @@
         "core_clock": 1626,
         "boost_clock": null,
         "color": "Black",
-        "thumnail": "./src/img/Category1/7.png",
+        "thumbnail": "/src/img/Category1/7.png",
+        "cuotas": false,
         "length": 269
     },
     {
+        "id": 8,
         "name": "Gigabyte EAGLE",
         "price": 399.99,
         "chipset": "GeForce RTX 4060 Ti",
@@ -84,10 +99,12 @@
         "core_clock": 2310,
         "boost_clock": null,
         "color": "Black",
-        "thumnail": "./src/img/Category1/8.png",
+        "thumbnail": "/src/img/Category1/8.png",
+        "cuotas": false,
         "length": 272
     },
     {
+        "id": 9,
         "name": "Gigabyte WINDFORCE OC",
         "price": 875.99,
         "chipset": "GeForce RTX 4070 Ti SUPER",
@@ -95,10 +112,12 @@
         "core_clock": 2340,
         "boost_clock": 2625,
         "color": "Black",
-        "thumnail": "./src/img/Category1/9.png",
+        "thumbnail": "/src/img/Category1/9.png",
+        "cuotas": false,
         "length": 261
     },
     {
+        "id": 10,
         "name": "MSI VENTUS 2X BLACK OC",
         "price": 285,
         "chipset": "GeForce RTX 4060",
@@ -106,7 +125,8 @@
         "core_clock": 1830,
         "boost_clock": 2505,
         "color": "Black",
-        "thumnail": "./src/img/Category1/10.png",
+        "thumbnail": "/src/img/Category1/10.png",
+        "cuotas": false,
         "length": 199
     }
 ]}

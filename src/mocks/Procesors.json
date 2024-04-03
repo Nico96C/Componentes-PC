@@ -1,0 +1,122 @@
+{ "Procesadores" : [
+    {
+        "id": 1,
+        "name": "AMD Ryzen 7 7800X3D",
+        "price": 369,
+        "core_count": 8,
+        "core_clock": 4.2,
+        "boost_clock": 5,
+        "tdp": 120,
+        "thumbnail": "/src/img/Category2/1.jpg",
+        "graphics": "Radeon",
+        "smt": true
+    },
+    {
+        "id": 2,
+        "name": "AMD Ryzen 5 7600X",
+        "price": 224,
+        "core_count": 6,
+        "core_clock": 4.7,
+        "boost_clock": 5.3,
+        "tdp": 105,
+        "thumbnail": "/src/img/Category2/2.webp",
+        "graphics": "Radeon",
+        "smt": true
+    },
+    {
+        "id": 3,
+        "name": "Intel Core i9-14900K",
+        "price": 544.99,
+        "core_count": 24,
+        "core_clock": 3.2,
+        "boost_clock": 6,
+        "tdp": 125,
+        "thumbnail": "/src/img/Category2/3.webp",
+        "graphics": "Intel UHD Graphics 770",
+        "smt": true
+    },
+    {
+        "id": 4,
+        "name": "Intel Core i7-13700K",
+        "price": 370.99,
+        "core_count": 16,
+        "core_clock": 3.4,
+        "boost_clock": 5.4,
+        "tdp": 125,
+        "thumbnail": "/src/img/Category2/4.webp",
+        "graphics": "Intel UHD Graphics 770",
+        "smt": true
+    },
+    {
+        "id": 5,
+        "name": "Intel Core i5-12400F",
+        "price": 148.99,
+        "core_count": 6,
+        "core_clock": 2.5,
+        "boost_clock": 4.4,
+        "tdp": 65,
+        "thumbnail": "/src/img/Category2/5.webp",
+        "graphics": null,
+        "smt": true
+    },
+    {
+        "id": 6,
+        "name": "AMD Ryzen 7 5800X",
+        "price": 219.13,
+        "core_count": 8,
+        "core_clock": 3.8,
+        "boost_clock": 4.7,
+        "tdp": 105,
+        "thumbnail": "/src/img/Category2/6.webp",
+        "graphics": null,
+        "smt": true
+    },
+    {
+        "id": 7,
+        "name": "Intel Core i7-14700K",
+        "price": 399.99,
+        "core_count": 20,
+        "core_clock": 3.4,
+        "boost_clock": 5.6,
+        "tdp": 125,
+        "thumbnail": "/src/img/Category2/7-9.jpg",
+        "graphics": "Intel UHD Graphics 770",
+        "smt": true
+    },
+    {
+        "id": 8,
+        "name": "Intel Core i9-13900K",
+        "price": 524.99,
+        "core_count": 24,
+        "core_clock": 3,
+        "boost_clock": 5.8,
+        "tdp": 125,
+        "thumbnail": "/src/img/Category2/8.webp",
+        "graphics": "Intel UHD Graphics 770",
+        "smt": true
+    },
+    {
+        "id": 9,
+        "name": "Intel Core i7-13700KF",
+        "price": 369.99,
+        "core_count": 16,
+        "core_clock": 3.4,
+        "boost_clock": 5.4,
+        "tdp": 125,
+        "thumbnail": "/src/img/Category2/4.webp",
+        "graphics": null,
+        "smt": true
+    },
+    {
+        "id": 10,
+        "name": "Intel Core i5-10400F",
+        "price": 112.99,
+        "core_count": 6,
+        "core_clock": 2.9,
+        "boost_clock": 4.3,
+        "tdp": 65,
+        "thumbnail": "/src/img/Category2/10.webp",
+        "graphics": null,
+        "smt": true
+    }
+]}

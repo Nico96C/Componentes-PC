@@ -5,6 +5,7 @@
   --color-lightpink: #e5cff7;
   --background-color-dark: #242424;
   --background-color-light: #ffffff;
+  --font-roboto: "Roboto", sans-serif;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -23,4 +24,8 @@
   background-color: #ffffff;
   color: black;
   transition: background-color 0.3s ease;
+}
+
+img {
+  image-orientation: from-image;
 }

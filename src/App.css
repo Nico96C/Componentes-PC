@@ -75,7 +75,7 @@
 .Search-Container {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
 }
 
 .icon-search:hover {
@@ -89,7 +89,7 @@
   outline: none;
   font-size: 18px;
   color: #713abe;
-  margin: 7.5px 0;
+  margin: 5.5px 0;
 }
 
 .Cart-Button {
@@ -128,7 +128,7 @@
   -webkit-box-align: center;
   align-items: center;
   position: sticky;
-  top: 0px;
+  top: -1px;
   z-index: 504;
   padding: 0 160px;
   background-color: #713abe;
@@ -139,7 +139,7 @@
   color: white;
   width: 100%;
   height: 50px;
-  border-top: 1px solid rgba(124, 124, 124, 0.27);
+  border-top: 2px solid rgba(124, 124, 124, 0.27);
   background-color: var(--color-intermediatePurple);
   box-sizing: border-box;
   display: flex;
@@ -148,7 +148,7 @@
   -webkit-box-align: center;
   align-items: center;
   position: sticky;
-  top: 65px;
+  top: 63px;
   left: 0px;
   padding: 0 160px;
 }
@@ -350,7 +350,7 @@
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  display: inline-block; 
+  display: inline-block;
   overflow: hidden;
 }
 
@@ -377,7 +377,7 @@
   opacity: 1; /* Muestra el overlay al hacer hover */
 }
 
-.text {
+.text-menu {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -386,12 +386,11 @@
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  opacity: 0; /* Ocultar el texto por defecto */
-  transition: opacity 0.3s ease; /* Transición suave de opacidad */
+  transition: opacity 0.5s ease;
 }
 
-.container:hover .text {
-  opacity: 1; /* Mostrar el texto al hacer hover */
+.container:hover .text-menu {
+  opacity: 1;
 }
 
 .Trends-Container {
@@ -407,6 +406,7 @@
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+  padding: 0 160px;
 }
 
 .Trends-Header {
@@ -418,6 +418,12 @@
   align-items: center;
 }
 
+.Trends-Title {
+  font-weight: 500;
+  font-size: 40px;
+  font-family: var(--font-roboto);
+}
+
 .Trends-Body {
   width: 100%;
   position: relative;
@@ -426,6 +432,160 @@
   justify-content: flex-start;
   -webkit-box-align: center;
   align-items: center;
+}
+
+.Trends-Items {
+  position: relative;
+  display: flex;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 15px;
+  overflow: hidden;
+  width: 100%;
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 500px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.Trends-Item {
+  position: relative;
+  left: 0px;
+  margin-right: 20px;
+  width: 260px;
+  min-width: 260px;
+  height: 425px;
+  transition: left 0.3s ease 0s;
+}
+
+.Trends-MainContainer {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+  width: 260px;
+  min-width: 260px;
+  height: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease 0s;
+  position: relative;
+  border: 2px solid rgb(246, 246, 246);
+}
+
+.Trends-SubContainer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.1s ease 0s;
+  background-color: white;
+  cursor: pointer;
+}
+
+.Trends-ImgContainer {
+  width: 100%;
+  height: 210px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-right: 35px;
+  padding-bottom: 35px;
+  padding-left: 35px;
+  transition: all 0.3s ease 0s;
+  position: relative;
+  padding-top: 60px;
+}
+
+.Trends-Product-Img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.Trends-Product-Info {
+  position: absolute;
+  height: calc(100% - 210px);
+  bottom: 0px;
+  padding: 0px 15px;
+  box-sizing: border-box;
+  width: 100%;
+  transition: all 0.3s ease 0s;
+}
+
+.Product-Main-Price {
+  font-size: 35px;
+  font-weight: 500;
+  box-sizing: border-box;
+  transition: all 0.2s ease 0s;
+}
+
+.Product-Main-Info {
+  overflow: hidden;
+  height: 65px;
+  padding-right: 1px;
+  background-color: white;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.Trends-Product-Buy {
+  transition: all 0.3s ease 0s;
+  position: absolute;
+  bottom: -60px;
+  left: 0px;
+  width: 100%;
+  height: 59px;
+}
+
+.Trends-MainContainer:hover .Trends-Product-Buy {
+  bottom: -10px;
+}
+
+.Trends-MainContainer:hover .Trends-Product-Info {
+  height: calc(100% - 235px);
+  bottom: 40px;
+}
+
+.Trends-MainContainer:hover .Trends-ImgContainer {
+  padding-right: 25px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 50px;
+}
+
+.Trends-MainContainer:hover {
+  border: 2px solid var(--color-Purple);
+}
+
+.Buy-Button {
+  width: 100%;
+  height: 50px;
+  background-color: var(--color-Purple);
+  color: white;
+  border-width: 2px;
+  border-color: transparent;
+  border-style: solid;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 0.3s ease 0s;
+  font-size: 23px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  line-height: 23px;
 }
 
 .Web-End {
@@ -488,5 +648,61 @@
 
   .Carrousel-ImageContainer {
     height: 270px;
+  }
+
+  .Carrousel-Text {
+    position: absolute;
+    bottom: 10px;
+    left: 3px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
+  }
+
+  .Carrousel-Text h1 {
+    font-size: 15px;
+    margin: 2px;
+  }
+
+  .Carrousel-Text button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .Carrousel-Text button:hover {
+    background-color: #cccccc;
+  }
+
+  .Featured-Container {
+    width: 100%;
+    height: 604px;
+    margin: 0;
+  }
+
+  .overlay {
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .text-menu {
+    position: relative;
+    font-size: 17px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
