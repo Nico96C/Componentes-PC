@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "./svg/logo.svg";
-import intel from "./img/Intel.webp";
+import motherboard from "./img/motherboard.png";
 import Placas from "./img/Placas.webp";
 import gaming from "./img/gaming.webp";
 import Razer from "./img/Razer.webp";
@@ -114,12 +114,12 @@ function App() {
               <section className="Carrousel-ImageContainer">
                 <div className="Carrousel-ImageWrapper">
                   <img
-                    src={intel}
-                    alt="Intel-Image"
+                    src={motherboard}
+                    alt="motherboard-Image"
                     className="Image-Corrousel"
                   />
                   <div className="Carrousel-Text">
-                    <h1>¡Marca Lider! Intel esta con nosotros</h1>
+                    <h1>¡Marca Lider y Calidad! Asus ROG motherboard</h1>
                     <button>Explora</button>
                   </div>
                 </div>

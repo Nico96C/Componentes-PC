@@ -234,7 +234,7 @@
   color: var(--color-lightpink);
   background-color: #242424;
   text-align: center;
-  box-shadow: 0 2px 10px var(--color-lightpink) inset;
+  box-shadow: 0 2px 10px var(--color-Purple) inset;
   transition: box-shadow 0.3s ease;
 }
 
@@ -696,6 +696,37 @@
   .text-menu {
     position: relative;
     font-size: 17px;
+  }
+
+  .Trends-Container {
+    padding: 0 10px;
+  }
+
+  .Trends-Items {
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: auto hidden;
+    width: 100%;
+  }
+
+  .Trends-MainContainer:f .Trends-Product-Buy {
+    bottom: -10px;
+  }
+  
+  .Trends-MainContainer:focus .Trends-Product-Info {
+    height: calc(100% - 235px);
+    bottom: 40px;
+  }
+  
+  .Trends-MainContainer:focus .Trends-ImgContainer {
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-top: 50px;
+  }
+  
+  .Trends-MainContainer:focus {
+    border: 2px solid var(--color-Purple);
   }
 }
 
