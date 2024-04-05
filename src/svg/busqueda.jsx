@@ -6,6 +6,7 @@ const SearchIcon = ({ className }) => (
     className={className}
     width="20"
     height="20"
+    fill="#ffffff"
   >
     <path
       id="Trazado_1656"

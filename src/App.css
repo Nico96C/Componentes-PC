@@ -27,10 +27,10 @@
 }
 
 .Logo-Container {
-  display: flex;
   height: 100%;
   min-width: 150px;
   width: 150px;
+  display: flex;
   -webkit-box-pack: start;
   justify-content: flex-start;
   -webkit-box-align: center;
@@ -38,85 +38,118 @@
   transition: all 0.3s ease 0s;
 }
 
+.Buttons {
+  display: flex;
+  flex-direction: row;
+}
+
 .User-Button {
   display: flex;
-  margin-left: auto;
+  margin: 0 3px;
   padding: 10px;
   opacity: 1;
   transition: all 0.2s ease-in-out;
   border-radius: 10px;
-  outline: solid 0px;
 }
 
 .User-Button:hover {
   cursor: pointer;
-  outline-width: 2px;
-  opacity: 0.7;
+  opacity: 0.8;
+  background-color: var(--color-Purple);
 }
-
+/*
 .Search-Background {
-  background-color: #e5cff7;
+  background-color: #540795;
   border-radius: 15px;
-  padding: 0 15px;
-  width: 70%;
+  padding: 0 10px;
+  width: 20%;
   height: 50%;
-  margin: 0 auto;
+  margin: 0 0 0 950px;
   transition: width 0.5s ease;
 }
-
+*/
 .Search-Button {
-  cursor: pointer;
-  height: 20px;
-  border: none;
-  background: none;
-  outline: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-image: initial;
+  background-color: transparent;
+  color: rgb(169, 168, 182);
+  margin-right: 5px;
+  position: absolute;
+  right: 0px;
+  top: 6px;
+  z-index: 10;
+  height: 23px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 50px;
+  border-left: 1px solid var(--color-intermediatePurple);
+}
+
+.Search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
 }
 
 .Search-Container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  z-index: 1;
 }
 
 .icon-search:hover {
-  color: #713abe;
+  cursor: pointer;
 }
 
 .Search {
+  text-decoration: none;
+  border-radius: 20px;
+  border: 1px solid var(--color-intermediatePurple);
+  background-color: #540795;
+  padding-left: 15px;
+  height: 35px;
+  transition: all 0.2s ease 0s;
+  font-size: 16px;
+  z-index: 10;
+  font-family: var(--font-roboto);
   width: 100%;
-  border: none;
-  background: none;
-  outline: none;
-  font-size: 18px;
-  color: #713abe;
-  margin: 5.5px 0;
+  text-align: left;
 }
 
 .Cart-Button {
   display: flex;
+  margin: 0 3px;
   padding: 10px;
   opacity: 1;
   transition: all 0.2s ease-in-out;
   border-radius: 10px;
-  outline: solid 0px;
 }
 
 .Cart-Button:hover {
   cursor: pointer;
-  outline-width: 2px;
-  opacity: 0.7;
+  opacity: 0.8;
+  background-color: var(--color-Purple);
 }
 
 .Button-Mode {
   display: flex;
-  margin: 0 10px;
+  margin: 0 3px;
+  padding: 10px;
+  border-radius: 10px;
   border: none;
   background: none;
   outline: none;
+  transition: all 0.2s ease-in-out;
 }
 
 .Button-Mode:hover {
   cursor: pointer;
+  opacity: 0.8;
+  background-color: var(--color-Purple);
 }
 
 .Navbar {
@@ -139,7 +172,7 @@
   color: white;
   width: 100%;
   height: 50px;
-  border-top: 2px solid rgba(124, 124, 124, 0.27);
+  border-top: 1px solid #530a8fb7;
   background-color: var(--color-intermediatePurple);
   box-sizing: border-box;
   display: flex;
@@ -148,7 +181,7 @@
   -webkit-box-align: center;
   align-items: center;
   position: sticky;
-  top: 63px;
+  top: 64px;
   left: 0px;
   padding: 0 160px;
 }
@@ -178,6 +211,7 @@
   gap: 20px;
   transition: all 0.3s ease 0s;
   padding-right: 20px;
+  margin: 0 500px;
 }
 
 .Category-Element {
@@ -257,7 +291,7 @@
 .Carrousel-ImageContainer {
   display: flex;
   width: 100%;
-  height: 100%; /* Cambiar altura a 100% */
+  height: 100%;
   user-select: none;
 }
 
@@ -273,7 +307,6 @@
   height: 100%;
   object-fit: cover;
   transition: 0.6s ease;
-  border: 2px solid #713abe;
 }
 
 .Carrousel-ImageWrapper:hover img {
@@ -603,7 +636,27 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1760px) {
+  .Search-Background {
+    position: relative;
+    border-radius: 20px;
+    width: 10%;
+    padding: 0 10px;
+    margin: 0 5px 0 0px;
+  }
+
+  .Container {
+    display: flex;
+    justify-content: baseline;
+  }
+}
+@media (min-width: 801px) {
+  .burger {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
   .Logo-Container {
     position: absolute;
     width: 40px;
@@ -615,28 +668,91 @@
     width: 170px;
   }
 
+  .Buttons {
+    position: absolute;
+    top: -700px;
+    left: -2000px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    transition: all .5s ease;
+  }
+
+  .initial {
+    position: fixed;
+    background-color: var(--color-intermediatePurple);
+    top: -700px;
+    left: -1000px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all .8s ease;
+    &.active {
+      border-radius: 0 0 80% 0;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .Buttons.active {
+    margin-top: 100px;
+    width: 100%;
+    display: grid;
+    position: absolute;
+    justify-content: center;
+    top: 100%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .burger {
+    display: flex;
+    margin-right: -130px;
+  }
+
   .User-Button {
+    display: inline-flex;
     margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Cart-Button {
+    margin-top: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Button-Mode {
+    margin-top: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .NavBar-Text {
+    margin-left: 20px;
+    display: flex;
   }
 
   .Container {
-    position: absolute;
+    display: flex;
   }
 
   .Search-Background {
+    position: absolute;
     border-radius: 20px;
     width: 10%;
     padding: 0 10px;
     margin: 0 5px 0 0px;
   }
 
-  .Search-Button {
-    position: inherit;
-  }
-
-  .Search-Background.expanded {
-    width: 37%;
-    display: flex;
+  .Search-Container {
+    width: 150%;
+    left: -17px;
   }
 
   .Search::-webkit-search-cancel-button {
@@ -712,19 +828,19 @@
   .Trends-MainContainer:f .Trends-Product-Buy {
     bottom: -10px;
   }
-  
+
   .Trends-MainContainer:focus .Trends-Product-Info {
     height: calc(100% - 235px);
     bottom: 40px;
   }
-  
+
   .Trends-MainContainer:focus .Trends-ImgContainer {
     padding-right: 25px;
     padding-bottom: 25px;
     padding-left: 25px;
     padding-top: 50px;
   }
-  
+
   .Trends-MainContainer:focus {
     border: 2px solid var(--color-Purple);
   }

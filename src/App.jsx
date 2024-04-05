@@ -15,18 +15,19 @@ import PlacasJSON from "./mocks/VideoCards.json";
 import ProceJSON from "./mocks/Procesors.json";
 import "./App.css";
 import "./index.css";
+import HamburgerButton from "./components/hamburgerButton.jsx";
 import SearchIcon from "./svg/busqueda.jsx";
 import UserIcon from "./svg/usuario.jsx";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [expanded, setExpanded] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [products, setProducts] = useState([]);
   const [procesador, setProcesador] = useState([]);
+  const [activo, setActivo] = useState(false);
 
-  const toggleSearch = () => {
-    setExpanded(!expanded);
+  const handleClick = () => {
+    setActivo(!activo);
   };
 
   const toggleDarkMode = () => {
@@ -38,7 +39,7 @@ function App() {
     const AllVideo = PlacasJSON.VideoCards;
     const AllProcesador = ProceJSON.Procesadores;
     // Establecer los productos filtrados en el estado
-    setProcesador(AllProcesador)
+    setProcesador(AllProcesador);
     setProducts(AllVideo);
   }, []);
 
@@ -51,63 +52,83 @@ function App() {
               <img src={Logo} alt="Componentes PC Logo" className="Logo" />
             </div>
 
-            <div className="User-Button">
-              <UserIcon color="white" className="user-icon" />
+            <div className="Search-Container">
+              <input
+                className="Search"
+                type="search"
+                placeholder="Busqueda..."
+              />
+              <button className="Search-Button">
+                <SearchIcon className="icon-search" />
+              </button>
             </div>
 
-            <div className={`Search-Background ${expanded ? "expanded" : ""}`}>
-              <div className="Search-Container">
-                <input
-                  className="Search"
-                  type="search"
-                  placeholder="Busqueda..."
+            <div className={`Buttons ${activo ? "active" : ""}`}>
+              <div className="User-Button">
+                <UserIcon color="white" className="user-icon" />
+                {activo && <span className="NavBar-Text"> Perfil </span>}
+              </div>
+
+              <div className="Cart-Button">
+                <img
+                  src={ShoppingCart}
+                  alt="Componentes PC CartIcon"
+                  className="Cart"
                 />
-                <button className="Search-Button" onClick={toggleSearch}>
-                  <SearchIcon className="icon-search" />
-                </button>
+                {activo && <span className="NavBar-Text"> Carrito </span>}
+              </div>
+
+              <div
+                className="Button-Mode"
+                onClick={() => {
+                  toggleDarkMode();
+                }}
+              >
+                {isDarkMode ? (
+                  <>
+                    <SolIcon />
+                    {activo && (
+                      <span className="NavBar-Text"> Modo Oscuro </span>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <LunaIcon />
+                    {activo && (
+                      <span className="NavBar-Text"> Modo Claro </span>
+                    )}
+                  </>
+                )}
               </div>
             </div>
 
-            <div className="Cart-Button">
-              <img
-                src={ShoppingCart}
-                alt="Componentes PC CartIcon"
-                className="Cart"
-              />
+            <div className="burger">
+              <HamburgerButton activo={activo} handleClick={handleClick} />
             </div>
-
-            <button className="Button-Mode" onClick={toggleDarkMode}>
-              {isDarkMode ? <SolIcon /> : <LunaIcon />}
-            </button>
+            <div className={`initial ${activo ? "active" : ""}`}></div>
           </div>
         </header>
 
         <nav className="All-Categories">
           <div className="Categories-Container">
-            <button direction="left" className="Displace__Content"></button>
             <div className="Categories">
               <div className="Category-Element">
-                <span> VideoCard </span>
+                <span className="Cartegory-tag"> VideoCard </span>
               </div>
               <div className="Category-Element">
-                <span> Procesadores </span>
+                <span className="Cartegory-tag"> Procesadores </span>
               </div>
               <div className="Category-Element">
-                <span> Motherboard </span>
+                <span className="Cartegory-tag"> Motherboard </span>
               </div>
               <div className="Category-Element">
-                <span> Mouse </span>
+                <span className="Cartegory-tag"> Mouse </span>
               </div>
             </div>
-            <button direction="right" className="Displace__Content"></button>
           </div>
         </nav>
 
         <div className="Web-Container">
-          <h1 className={isDarkMode ? "Web-Title-2" : "Web-Title"}>
-            {" "}
-            Componentes de PC{" "}
-          </h1>
           <div className="Carrousel-Seccion">
             <div className="flechaL"></div>
             <div className="Carrousel-Item">
@@ -244,7 +265,10 @@ function App() {
 
           <div className="Trends-Container">
             <div className="Trends-Header">
-              <h2 className="Trends-Title"> LAS TENDENCIAS EN PLACAS DE VIDEO </h2>
+              <h2 className="Trends-Title">
+                {" "}
+                LAS TENDENCIAS EN PLACAS DE VIDEO{" "}
+              </h2>
             </div>
             <div className="Trends-Body">
               <div className="Trends-Items">
@@ -257,7 +281,11 @@ function App() {
                     <article className="Trends-MainContainer">
                       <div className="Trends-SubContainer">
                         <div className="Trends-ImgContainer">
-                          <img className="Trends-Product-Img" src={product.thumbnail} alt={product.name} />
+                          <img
+                            className="Trends-Product-Img"
+                            src={product.thumbnail}
+                            alt={product.name}
+                          />
                         </div>
                         <div className="Trends-Product-Info">
                           <div className="Product-Stock"></div>
@@ -267,7 +295,10 @@ function App() {
                           <span className="Product-Main-Price"> $999 </span>
                         </div>
                         <div className="Trends-Product-Buy">
-                          <button className="Buy-Button"> Comprar Ahora </button>
+                          <button className="Buy-Button">
+                            {" "}
+                            Comprar Ahora{" "}
+                          </button>
                         </div>
                         <div className="Trends-Product-AddCart"></div>
                       </div>
@@ -293,7 +324,11 @@ function App() {
                     <article className="Trends-MainContainer">
                       <div className="Trends-SubContainer">
                         <div className="Trends-ImgContainer">
-                          <img className="Trends-Product-Img" src={proce.thumbnail} alt={proce.name} />
+                          <img
+                            className="Trends-Product-Img"
+                            src={proce.thumbnail}
+                            alt={proce.name}
+                          />
                         </div>
                         <div className="Trends-Product-Info">
                           <div className="Product-Stock"></div>
@@ -303,7 +338,10 @@ function App() {
                           <span className="Product-Main-Price"> $999 </span>
                         </div>
                         <div className="Trends-Product-Buy">
-                          <button className="Buy-Button"> Comprar Ahora </button>
+                          <button className="Buy-Button">
+                            {" "}
+                            Comprar Ahora{" "}
+                          </button>
                         </div>
                         <div className="Trends-Product-AddCart"></div>
                       </div>
