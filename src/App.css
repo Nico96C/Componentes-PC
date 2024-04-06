@@ -57,17 +57,7 @@
   opacity: 0.8;
   background-color: var(--color-Purple);
 }
-/*
-.Search-Background {
-  background-color: #540795;
-  border-radius: 15px;
-  padding: 0 10px;
-  width: 20%;
-  height: 50%;
-  margin: 0 0 0 950px;
-  transition: width 0.5s ease;
-}
-*/
+
 .Search-Button {
   border-top: none;
   border-right: none;
@@ -231,6 +221,12 @@
   border-bottom: 2px solid var(--color-Purple);
 }
 
+.Category-link {
+  font-size: 14px;
+  color: var(--color-lightpink);
+  text-decoration-line: none;
+}
+
 .Displace__Content {
   display: none;
 }
@@ -283,63 +279,47 @@
 .Carrousel-Item {
   position: relative;
   width: 100%;
-  max-width: 120em;
-  height: auto;
-  overflow: hidden;
-}
-
-.Carrousel-ImageContainer {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  user-select: none;
 }
 
 .Carrousel-ImageWrapper {
   position: relative;
-  flex-grow: 1;
-  margin-right: 0;
-  max-width: 25%;
+  height: 500px;
+  outline: none;
 }
 
 .Carrousel-ImageWrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 0.6s ease;
-}
-
-.Carrousel-ImageWrapper:hover img {
-  filter: contrast(115%);
-  transform: scale(1.05);
 }
 
 .Carrousel-Text {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 10px;
+  left: 10px;
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 6px;
+  padding: 10px;
 }
 
 .Carrousel-Text h1 {
-  margin: 2px;
+  font-size: 24px;
+  margin: 0;
 }
 
 .Carrousel-Text button {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--color-Purple);
+  color: #ffffff;
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
-  margin: 2px;
+  margin-top: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .Carrousel-Text button:hover {
-  background-color: #cccccc;
+  background-color: var(--color-intermediatePurple);
 }
 
 .Featured-Container {
@@ -452,8 +432,8 @@
 }
 
 .Trends-Title {
-  font-weight: 500;
-  font-size: 40px;
+  font-weight: bold;
+  font-size: 35px;
   font-family: var(--font-roboto);
 }
 
@@ -564,7 +544,7 @@
 
 .Product-Main-Info {
   overflow: hidden;
-  height: 65px;
+  height: 85px;
   padding-right: 1px;
   background-color: white;
   display: block;
@@ -636,7 +616,70 @@
   }
 }
 
-@media (max-width: 1760px) {
+@media (max-width: 1600px) {
+  .Trends-Items {
+    overflow: scroll;
+    scrollbar-width: thin;
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: 1670px) {
+  
+  .Carrousel-Text h1 {
+    margin: 2px;
+    font-size: 20px;
+  }
+  
+  .Carrousel-Text button {
+    background-color: var(--color-Purple);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+}
+
+@media (max-width: 1450px) {
+  
+  .Carrousel-Text h1 {
+    margin: 2px;
+    font-size: 14px;
+  }
+  
+  .Carrousel-Text button {
+    background-color: var(--color-Purple);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+}
+
+@media (max-width: 900px) {
+  
+  .Carrousel-Text h1 {
+    margin: 2px;
+    font-size: 14px;
+  }
+  
+  .Carrousel-Text button {
+    background-color: var(--color-Purple);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+}
+
+@media (max-width: 1825px) {
   .Search-Background {
     position: relative;
     border-radius: 20px;
@@ -649,7 +692,61 @@
     display: flex;
     justify-content: baseline;
   }
+
+  .Categories {
+    display: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul li {
+    display: inline-block;
+    position: relative;
+  }
+
+  ul li a {
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  ul li ul.dropdown li {
+    display: block;
+  }
+
+  ul li ul.dropdown {
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    background: var(--color-intermediatePurple);
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  ul li a:hover {
+    color: var(--color-Purple);
+  }
+
+  ul li:hover ul.dropdown {
+    border: 1px solid var(--color-Purple);
+    display: block;
+    animation: moveDown 0.5s ease forwards;
+  }
 }
+
+@media (min-width: 1826px) {
+  .Category-drop {
+    display: none;
+  }
+}
+
 @media (min-width: 801px) {
   .burger {
     display: none;
@@ -676,7 +773,7 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
   }
 
   .initial {
@@ -686,8 +783,8 @@
     left: -1000px;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    transition: all .8s ease;
+    z-index: 1;
+    transition: all 0.8s ease;
     &.active {
       border-radius: 0 0 80% 0;
       top: 0;
@@ -705,11 +802,13 @@
     left: 0;
     right: 0;
     text-align: center;
+    z-index: 2;
   }
 
   .burger {
     display: flex;
     margin-right: -130px;
+    z-index: 2;
   }
 
   .User-Button {
@@ -770,36 +869,39 @@
   .Carrousel-Text {
     position: absolute;
     bottom: 10px;
-    left: 3px;
+    left: 5px;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 6px;
   }
 
   .Carrousel-Text h1 {
-    font-size: 15px;
+    font-size: 14px;
     margin: 2px;
   }
 
   .Carrousel-Text button {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--color-Purple);
+    color: #ffffff;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 10px 20px;
     margin: 2px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
 
   .Carrousel-Text button:hover {
-    background-color: #cccccc;
+    background-color: var(--color-intermediatePurple);
   }
 
   .Featured-Container {
     width: 100%;
     height: 604px;
-    margin: 0;
+    margin: 25px 0px;
+  }
+
+  .Featured-Title {
+    font-size: 35px;
   }
 
   .overlay {
@@ -811,7 +913,8 @@
 
   .text-menu {
     position: relative;
-    font-size: 17px;
+    font-size: 13px;
+    padding: 15px 15px;
   }
 
   .Trends-Container {
@@ -823,6 +926,11 @@
     margin-right: 10px;
     overflow: auto hidden;
     width: 100%;
+  }
+
+  .Trends-Title {
+    font-size: 30px;
+    font-weight: bold;
   }
 
   .Trends-MainContainer:f .Trends-Product-Buy {
@@ -846,11 +954,27 @@
   }
 }
 
+@media (max-width: 480px) {
+  .Trends-Items {
+    scrollbar-width: none;
+  }
+
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
   }
 }

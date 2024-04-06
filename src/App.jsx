@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Logo from "./svg/logo.svg";
 import motherboard from "./img/motherboard.png";
 import Placas from "./img/Placas.webp";
@@ -9,6 +12,7 @@ import Procesador from "./img/Category2/mejores-proce.jpg";
 import Perifericos from "./img/Category3/razer-perifericos.jpg";
 import SillasGamer from "./img/Category4/sillas-gamer.png";
 import ShoppingCart from "./svg/shopping-cart.svg";
+import DropDown from "./svg/dropdown.svg";
 import SolIcon from "./svg/sol.jsx";
 import LunaIcon from "./svg/luna.jsx";
 import PlacasJSON from "./mocks/VideoCards.json";
@@ -33,6 +37,21 @@ function App() {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 800 && activo) {
+        //Verifica que el estado sea true y segun resolucion pasa el estado a false.
+        setActivo(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [activo]);
 
   useEffect(() => {
     // Filtrar los productos con 'oferta: true'
@@ -113,26 +132,72 @@ function App() {
           <div className="Categories-Container">
             <div className="Categories">
               <div className="Category-Element">
-                <span className="Cartegory-tag"> VideoCard </span>
+                <span className="Category-tag">
+                  <a className="Category-link" href="./videocards">
+                    PLACAS DE VIDEO
+                  </a>
+                </span>
               </div>
               <div className="Category-Element">
-                <span className="Cartegory-tag"> Procesadores </span>
+                <span className="Category-tag">
+                  <a className="Category-link" href="./procesors">
+                    PROCESADORES
+                  </a>
+                </span>
               </div>
               <div className="Category-Element">
-                <span className="Cartegory-tag"> Motherboard </span>
+                <span className="Cartegory-tag">
+                  <a className="Category-link">MOTHERBOARD</a>
+                </span>
               </div>
               <div className="Category-Element">
-                <span className="Cartegory-tag"> Mouse </span>
+                <span className="Category-tag">
+                  <a className="Category-link">MOUSE</a>
+                </span>
               </div>
+            </div>
+            <div className="Category-drop">
+              <ul>
+                <li>
+                  <a href="#">
+                    VER CATEGORIAS
+                    <img
+                      src={DropDown}
+                      className="Drop-SVG"
+                      alt="Categorias Drop"
+                    />
+                  </a>
+                  <ul className="dropdown">
+                    <li>
+                      <a href="./videocards">PLACAS DE VIDEO</a>
+                    </li>
+                    <li>
+                      <a href="./procesors">PROCESADORES</a>
+                    </li>
+                    <li>
+                      <a href="#">MOTHERBOARD</a>
+                    </li>
+                    <li>
+                      <a href="#">MOUSE</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
         </nav>
 
         <div className="Web-Container">
           <div className="Carrousel-Seccion">
-            <div className="flechaL"></div>
             <div className="Carrousel-Item">
-              <section className="Carrousel-ImageContainer">
+              <Slider
+                dots={true}
+                infinite={true}
+                speed={500}
+                slidesToShow={1}
+                slidesToScroll={1}
+                arrows={false}
+              >
                 <div className="Carrousel-ImageWrapper">
                   <img
                     src={motherboard}
@@ -151,7 +216,7 @@ function App() {
                     className="Image-Corrousel"
                   />
                   <div className="Carrousel-Text">
-                    <h1>Mejores Placas de Video!</h1>
+                    <h1> Las mejores Placas de Video! AMD y NVIDIA </h1>
                     <button>Ver Precios</button>
                   </div>
                 </div>
@@ -177,7 +242,7 @@ function App() {
                     <button>Ver más</button>
                   </div>
                 </div>
-              </section>
+              </Slider>
             </div>
           </div>
 
@@ -291,13 +356,14 @@ function App() {
                           <div className="Product-Stock"></div>
                           <div className="Product-Main-Info">
                             <h3> {product.name} </h3>
+                            <h5> {product.chipset} </h5>
                           </div>
-                          <span className="Product-Main-Price"> $999 </span>
+                          <span className="Product-Main-Price">{`$${product.price}`}</span>
                         </div>
                         <div className="Trends-Product-Buy">
                           <button className="Buy-Button">
                             {" "}
-                            Comprar Ahora{" "}
+                            Añadir al Carrito{" "}
                           </button>
                         </div>
                         <div className="Trends-Product-AddCart"></div>
@@ -335,7 +401,7 @@ function App() {
                           <div className="Product-Main-Info">
                             <h3> {proce.name} </h3>
                           </div>
-                          <span className="Product-Main-Price"> $999 </span>
+                          <span className="Product-Main-Price">{`$${proce.price}`}</span>
                         </div>
                         <div className="Trends-Product-Buy">
                           <button className="Buy-Button">
