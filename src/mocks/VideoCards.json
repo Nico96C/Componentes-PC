@@ -1,6 +1,7 @@
 { "VideoCards" :[
     {
         "id": 1,
+        "type": "Placa de Video",
         "name": "MSI GeForce RTX 3060 Ventus 2X 12G",
         "price": 289.39,
         "chipset": "GeForce RTX 3060 12GB",
@@ -14,6 +15,7 @@
     },
     {
         "id": 2,
+        "type": "Placa de Video",
         "name": "Gigabyte WINDFORCE OC",
         "price": 529.99,
         "chipset": "GeForce RTX 4070",
@@ -27,6 +29,7 @@
     },
     {
         "id": 3,
+        "type": "Placa de Video",
         "name": "Asus DUAL OC",
         "price": 304.99,
         "chipset": "GeForce RTX 4060",
@@ -40,6 +43,7 @@
     },
     {
         "id": 4,
+        "type": "Placa de Video",
         "name": "Asus ROG STRIX GAMING OC",
         "price": 2049.99,
         "chipset": "GeForce RTX 4090",
@@ -53,6 +57,7 @@
     },
     {
         "id": 5,
+        "type": "Placa de Video",
         "name": "Gigabyte GAMING OC",
         "price": 499.99,
         "chipset": "Radeon RX 7800 XT",
@@ -66,6 +71,7 @@
     },
     {
         "id": 6,
+        "type": "Placa de Video",
         "name": "PNY VCNRTX6000ADA-PB",
         "price": 9999,
         "chipset": "RTX 6000 Ada Generation",
@@ -79,6 +85,7 @@
     },
     {
         "id": 7,
+        "type": "Placa de Video",
         "name": "ASRock Challenger D",
         "price": 199.99,
         "chipset": "Radeon RX 6600",
@@ -92,6 +99,7 @@
     },
     {
         "id": 8,
+        "type": "Placa de Video",
         "name": "Gigabyte EAGLE",
         "price": 399.99,
         "chipset": "GeForce RTX 4060 Ti",
@@ -105,6 +113,7 @@
     },
     {
         "id": 9,
+        "type": "Placa de Video",
         "name": "Gigabyte WINDFORCE OC",
         "price": 875.99,
         "chipset": "GeForce RTX 4070 Ti SUPER",
@@ -118,6 +127,7 @@
     },
     {
         "id": 10,
+        "type": "Placa de Video",
         "name": "MSI VENTUS 2X BLACK OC",
         "price": 285,
         "chipset": "GeForce RTX 4060",

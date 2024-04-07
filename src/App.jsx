@@ -23,12 +23,46 @@ import HamburgerButton from "./components/hamburgerButton.jsx";
 import SearchIcon from "./svg/busqueda.jsx";
 import UserIcon from "./svg/usuario.jsx";
 import { useEffect, useState } from "react";
+import ModalBusqueda from "./components/modalBusqueda.jsx";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [products, setProducts] = useState([]);
   const [procesador, setProcesador] = useState([]);
   const [activo, setActivo] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+    if (event.target.value === "") {
+      setSearchResults([]);
+    }
+  };
+
+  const handleSearch = () => {
+    if (searchTerm.trim() === '') {
+      setSearchResults([]);
+    } else {
+      search(searchTerm);
+    }
+  };
+
+  const search = (term) => {
+    const combinedData = [...PlacasJSON.VideoCards, ...ProceJSON.Procesadores];
+
+    const results = combinedData.filter((item) =>
+      item.name.toLowerCase().includes(term.toLowerCase()) ||
+      item.type.toLowerCase().includes(term.toLowerCase())
+    );
+    console.log(results)
+    setSearchResults(results);
+  };
+
+  const ChangeModal = () => {
+    setShowModal(!showModal);
+  };
 
   const handleClick = () => {
     setActivo(!activo);
@@ -74,13 +108,17 @@ function App() {
             <div className="Search-Container">
               <input
                 className="Search"
-                type="search"
-                placeholder="Busqueda..."
+                type="text"
+                placeholder="Buscar..."
+                value={searchTerm}
+                onChange={handleChange}
               />
-              <button className="Search-Button">
+              <button className="Search-Button" onClick={() => { handleSearch(); ChangeModal(); }}>
                 <SearchIcon className="icon-search" />
               </button>
             </div>
+
+            {showModal && <ModalBusqueda results={searchResults} onClose={ChangeModal} />}
 
             <div className={`Buttons ${activo ? "active" : ""}`}>
               <div className="User-Button">

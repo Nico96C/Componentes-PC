@@ -1,0 +1,112 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi transparente */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.modal {
+  position: fixed;
+  width: 66%;
+  top: 11%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1001; /* Asegúrate de que esté por encima del fondo */
+}
+
+.close-btn {
+    border: none;
+    background-color: var(--color-Purple);
+    width: 4%;
+    height: 2%;
+}
+
+.modal-Coincidence {
+  position: absolute;
+  top: 55px;
+  left: 0px;
+  z-index: 1100;
+  height: 655px;
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(15, 10, 64, 0.85) 0px 12px 25px;
+}
+
+.modal-items {
+  direction: ltr;
+  overflow-y: hidden;
+  height: 535px;
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+}
+
+.modal-items:hover {
+  overflow-y: auto;
+}
+
+.modal-item {
+  display: flex;
+  direction: ltr;
+  cursor: pointer;
+  width: 100%;
+  height: 106px;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
+  padding-left: 5px;
+}
+
+.modal-item:hover {
+  border: 2px solid rgb(236, 236, 236);
+}
+
+.modal-item:hover .modal-img {
+    transition: all 0.4s ease-in-out;
+    scale: 1.1;
+}
+
+.modal-img {
+  order: 1;
+  display: flex;
+  width: 73px;
+  min-width: 73px;
+  height: 100%;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.modal-info {
+  margin-left: 10px;
+  order: 2;
+}
+
+.modal-item-name {
+  padding: 20px 0px 0px 10px;
+  width: 100%;
+  font-family: var(--font-roboto);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--color-veryHight);
+  max-height: 75px;
+  overflow: hidden;
+}
+
+.modal-item-price {
+  padding: 0px 0px 0px 10px;
+  font-weight: 400;
+  font-family: var(--font-roboto);
+  color: var(--color-Purple);
+  font-size: 20px;
+}
+
+.modal-open {
+  overflow: hidden;
+}
