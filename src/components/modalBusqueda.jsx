@@ -29,20 +29,33 @@ function ModalBusqueda({ results, onClose }) {
         <div className="modal-Coincidence">
           <div className="modal-items">
             {results.map((item) => (
-              <>
-                <div className="modal-item" key={item.id}>
-                  <div className="modal-img">
-                    <img
-                      src={item.thumbnail}
-                      style={{ width: "200px", height: "90px" }}
-                    />
-                  </div>
-                  <div className="modal-info">
-                    <div className="modal-item-name"> {item.name} </div>
-                    <div className="modal-item-price"> {`$${item.price}`} </div>
-                  </div>
+              <div className="modal-item" key={item.id}>
+                <div className="modal-img">
+                  <img
+                    src={item.thumbnail}
+                    style={{ width: "200px", height: "90px" }}
+                  />
                 </div>
-              </>
+                <div className="modal-info">
+                  <div className="modal-item-name"> {item.name} </div>
+                  <div className="modal-item-price"> {`$${item.price}`} </div>
+                </div>
+
+                <div className="modal-path">
+
+                    <a
+                      href={
+                        item.type === "Placa de Video"
+                          ? `/videocards/${item.id}`
+                          : `/procesadores/${item.id}`
+                      }
+                      className="modal-item-link"
+                    >
+                      Ver más
+                    </a>
+
+                </div>
+              </div>
             ))}
           </div>
         </div>

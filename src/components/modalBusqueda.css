@@ -21,10 +21,15 @@
 }
 
 .close-btn {
-    border: none;
-    background-color: var(--color-Purple);
-    width: 4%;
-    height: 2%;
+  border: none;
+  background-color: var(--color-Purple);
+  width: 4%;
+  height: 2%;
+}
+
+.close-btn:hover {
+  cursor: pointer;
+  background-color: var(--color-intermediatePurple);
 }
 
 .modal-Coincidence {
@@ -54,7 +59,6 @@
 .modal-item {
   display: flex;
   direction: ltr;
-  cursor: pointer;
   width: 100%;
   height: 106px;
   transition: all 0.2s ease-in-out;
@@ -67,8 +71,8 @@
 }
 
 .modal-item:hover .modal-img {
-    transition: all 0.4s ease-in-out;
-    scale: 1.1;
+  transition: all 0.4s ease-in-out;
+  scale: 1.1;
 }
 
 .modal-img {
@@ -105,6 +109,26 @@
   font-family: var(--font-roboto);
   color: var(--color-Purple);
   font-size: 20px;
+}
+
+.modal-path {
+  position: relative;
+  left: -100px;
+  top: 35%;
+  margin-right: 20px;
+  transition: left 0.5s ease;
+}
+
+.modal-item:hover .modal-path {
+  left: 0;
+}
+
+.modal-item-link {
+  text-decoration: none;
+  padding: 5px;
+  font-size: 15px;
+  background-color: var(--color-Purple);
+  color: #ffffff;
 }
 
 .modal-open {

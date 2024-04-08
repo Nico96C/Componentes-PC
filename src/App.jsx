@@ -24,6 +24,7 @@ import SearchIcon from "./svg/busqueda.jsx";
 import UserIcon from "./svg/usuario.jsx";
 import { useEffect, useState } from "react";
 import ModalBusqueda from "./components/modalBusqueda.jsx";
+import ModalCarrito from "./components/modalCarrito.jsx";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -33,6 +34,20 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const addToCart = (product) => {
+    setCartItems([...cartItems, product]);
+  };
+
+  const removeFromCart = (productId) => {
+    setCartItems(cartItems.filter((item) => item.id !== productId));
+  };
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -42,7 +57,7 @@ function App() {
   };
 
   const handleSearch = () => {
-    if (searchTerm.trim() === '') {
+    if (searchTerm.trim() === "") {
       setSearchResults([]);
     } else {
       search(searchTerm);
@@ -52,11 +67,12 @@ function App() {
   const search = (term) => {
     const combinedData = [...PlacasJSON.VideoCards, ...ProceJSON.Procesadores];
 
-    const results = combinedData.filter((item) =>
-      item.name.toLowerCase().includes(term.toLowerCase()) ||
-      item.type.toLowerCase().includes(term.toLowerCase())
+    const results = combinedData.filter(
+      (item) =>
+        item.name.toLowerCase().includes(term.toLowerCase()) ||
+        item.type.toLowerCase().includes(term.toLowerCase())
     );
-    console.log(results)
+    console.log(results);
     setSearchResults(results);
   };
 
@@ -113,20 +129,39 @@ function App() {
                 value={searchTerm}
                 onChange={handleChange}
               />
-              <button className="Search-Button" onClick={() => { handleSearch(); ChangeModal(); }}>
+              <button
+                className="Search-Button"
+                onClick={() => {
+                  handleSearch();
+                  ChangeModal();
+                }}
+              >
                 <SearchIcon className="icon-search" />
               </button>
             </div>
 
-            {showModal && <ModalBusqueda results={searchResults} onClose={ChangeModal} />}
+            {showModal && (
+              <ModalBusqueda results={searchResults} onClose={ChangeModal} />
+            )}
+
+            {isCartOpen && (
+              <ModalCarrito
+                cartItems={cartItems}
+                removeFromCart={removeFromCart}
+                onClose={toggleCart}
+              />
+            )}
 
             <div className={`Buttons ${activo ? "active" : ""}`}>
-              <div className="User-Button">
+              <div className="User-Button" onClick={handleClick}>
                 <UserIcon color="white" className="user-icon" />
                 {activo && <span className="NavBar-Text"> Perfil </span>}
               </div>
 
-              <div className="Cart-Button">
+              <div className="Cart-Button" onClick={() => {
+                  toggleCart();
+                  handleClick();
+                }}>
                 <img
                   src={ShoppingCart}
                   alt="Componentes PC CartIcon"
@@ -376,20 +411,19 @@ function App() {
             <div className="Trends-Body">
               <div className="Trends-Items">
                 {products.slice(0, 5).map((product) => (
-                  <a
+                  <div
                     className="Trends-Item"
                     key={product.id}
-                    href={`/videocards/${product.id}`}
                   >
                     <article className="Trends-MainContainer">
                       <div className="Trends-SubContainer">
-                        <div className="Trends-ImgContainer">
+                        <a className="Trends-ImgContainer" href={`/videocards/${product.id}`}>
                           <img
                             className="Trends-Product-Img"
                             src={product.thumbnail}
                             alt={product.name}
                           />
-                        </div>
+                        </a>
                         <div className="Trends-Product-Info">
                           <div className="Product-Stock"></div>
                           <div className="Product-Main-Info">
@@ -398,16 +432,17 @@ function App() {
                           </div>
                           <span className="Product-Main-Price">{`$${product.price}`}</span>
                         </div>
-                        <div className="Trends-Product-Buy">
-                          <button className="Buy-Button">
-                            {" "}
-                            Añadir al Carrito{" "}
-                          </button>
-                        </div>
-                        <div className="Trends-Product-AddCart"></div>
                       </div>
                     </article>
-                  </a>
+                    <div className="Trends-Product-Buy">
+                      <button
+                        className="Buy-Button"
+                        onClick={() => addToCart(product)}
+                      >
+                        Añadir al Carrito
+                      </button>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -420,37 +455,37 @@ function App() {
             <div className="Trends-Body">
               <div className="Trends-Items">
                 {procesador.slice(0, 5).map((proce) => (
-                  <a
-                    className="Trends-Item"
-                    key={proce.id}
-                    href={`/procesors/${proce.id}`}
-                  >
-                    <article className="Trends-MainContainer">
-                      <div className="Trends-SubContainer">
-                        <div className="Trends-ImgContainer">
-                          <img
-                            className="Trends-Product-Img"
-                            src={proce.thumbnail}
-                            alt={proce.name}
-                          />
-                        </div>
-                        <div className="Trends-Product-Info">
-                          <div className="Product-Stock"></div>
-                          <div className="Product-Main-Info">
-                            <h3> {proce.name} </h3>
+                    <div
+                      className="Trends-Item"
+                      key={proce.id}
+                    >
+                      <article className="Trends-MainContainer">
+                        <div className="Trends-SubContainer">
+                          <a className="Trends-ImgContainer" href={`/procesors/${proce.id}`}>
+                            <img
+                              className="Trends-Product-Img"
+                              src={proce.thumbnail}
+                              alt={proce.name}
+                            />
+                          </a>
+                          <div className="Trends-Product-Info">
+                            <div className="Product-Stock"></div>
+                            <div className="Product-Main-Info">
+                              <h3> {proce.name} </h3>
+                            </div>
+                            <span className="Product-Main-Price">{`$${proce.price}`}</span>
                           </div>
-                          <span className="Product-Main-Price">{`$${proce.price}`}</span>
                         </div>
-                        <div className="Trends-Product-Buy">
-                          <button className="Buy-Button">
-                            {" "}
-                            Comprar Ahora{" "}
-                          </button>
-                        </div>
-                        <div className="Trends-Product-AddCart"></div>
-                      </div>
-                    </article>
-                  </a>
+                      </article>
+                      <div className="Trends-Product-Buy">
+                            <button
+                              className="Buy-Button"
+                              onClick={() => addToCart(proce)}
+                            >
+                              Añadir al Carrito
+                            </button>
+                          </div>
+                    </div>
                 ))}
               </div>
             </div>
