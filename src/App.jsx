@@ -81,7 +81,9 @@ function App() {
   };
 
   const handleClick = () => {
-    setActivo(!activo);
+    if (window.innerWidth <= 800) {
+      setActivo(!activo);
+    }
   };
 
   const toggleDarkMode = () => {
@@ -158,10 +160,13 @@ function App() {
                 {activo && <span className="NavBar-Text"> Perfil </span>}
               </div>
 
-              <div className="Cart-Button" onClick={() => {
+              <div
+                className="Cart-Button"
+                onClick={() => {
                   toggleCart();
                   handleClick();
-                }}>
+                }}
+              >
                 <img
                   src={ShoppingCart}
                   alt="Componentes PC CartIcon"
@@ -411,13 +416,13 @@ function App() {
             <div className="Trends-Body">
               <div className="Trends-Items">
                 {products.slice(0, 5).map((product) => (
-                  <div
-                    className="Trends-Item"
-                    key={product.id}
-                  >
+                  <div className="Trends-Item" key={product.id}>
                     <article className="Trends-MainContainer">
                       <div className="Trends-SubContainer">
-                        <a className="Trends-ImgContainer" href={`/videocards/${product.id}`}>
+                        <a
+                          className="Trends-ImgContainer"
+                          href={`/videocards/${product.id}`}
+                        >
                           <img
                             className="Trends-Product-Img"
                             src={product.thumbnail}
@@ -455,37 +460,37 @@ function App() {
             <div className="Trends-Body">
               <div className="Trends-Items">
                 {procesador.slice(0, 5).map((proce) => (
-                    <div
-                      className="Trends-Item"
-                      key={proce.id}
-                    >
-                      <article className="Trends-MainContainer">
-                        <div className="Trends-SubContainer">
-                          <a className="Trends-ImgContainer" href={`/procesors/${proce.id}`}>
-                            <img
-                              className="Trends-Product-Img"
-                              src={proce.thumbnail}
-                              alt={proce.name}
-                            />
-                          </a>
-                          <div className="Trends-Product-Info">
-                            <div className="Product-Stock"></div>
-                            <div className="Product-Main-Info">
-                              <h3> {proce.name} </h3>
-                            </div>
-                            <span className="Product-Main-Price">{`$${proce.price}`}</span>
+                  <div className="Trends-Item" key={proce.id}>
+                    <article className="Trends-MainContainer">
+                      <div className="Trends-SubContainer">
+                        <a
+                          className="Trends-ImgContainer"
+                          href={`/procesors/${proce.id}`}
+                        >
+                          <img
+                            className="Trends-Product-Img"
+                            src={proce.thumbnail}
+                            alt={proce.name}
+                          />
+                        </a>
+                        <div className="Trends-Product-Info">
+                          <div className="Product-Stock"></div>
+                          <div className="Product-Main-Info">
+                            <h3> {proce.name} </h3>
                           </div>
+                          <span className="Product-Main-Price">{`$${proce.price}`}</span>
                         </div>
-                      </article>
-                      <div className="Trends-Product-Buy">
-                            <button
-                              className="Buy-Button"
-                              onClick={() => addToCart(proce)}
-                            >
-                              Añadir al Carrito
-                            </button>
-                          </div>
+                      </div>
+                    </article>
+                    <div className="Trends-Product-Buy">
+                      <button
+                        className="Buy-Button"
+                        onClick={() => addToCart(proce)}
+                      >
+                        Añadir al Carrito
+                      </button>
                     </div>
+                  </div>
                 ))}
               </div>
             </div>

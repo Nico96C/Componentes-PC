@@ -47,11 +47,11 @@ function ModalBusqueda({ results, onClose }) {
                       href={
                         item.type === "Placa de Video"
                           ? `/videocards/${item.id}`
-                          : `/procesadores/${item.id}`
+                          : `/procesors/${item.id}`
                       }
                       className="modal-item-link"
                     >
-                      Ver más
+                      INFO
                     </a>
 
                 </div>

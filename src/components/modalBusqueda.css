@@ -37,7 +37,7 @@
   top: 55px;
   left: 0px;
   z-index: 1100;
-  height: 655px;
+  height: 580px;
   width: 100%;
   background-color: white;
   box-shadow: rgba(15, 10, 64, 0.85) 0px 12px 25px;
@@ -45,15 +45,11 @@
 
 .modal-items {
   direction: ltr;
-  overflow-y: hidden;
+  overflow-y: auto;
   height: 535px;
   background-color: white;
   width: 100%;
   padding: 20px;
-}
-
-.modal-items:hover {
-  overflow-y: auto;
 }
 
 .modal-item {
@@ -133,4 +129,15 @@
 
 .modal-open {
   overflow: hidden;
+}
+
+@media (max-width: 450px) {
+  .modal {
+    width: 100%;
+  }
+
+  .close-btn {
+    width: 15%;
+    height: 4%;
+  }
 }
