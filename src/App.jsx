@@ -25,25 +25,18 @@ import UserIcon from "./svg/usuario.jsx";
 import { useEffect, useState } from "react";
 import ModalBusqueda from "./components/modalBusqueda.jsx";
 import ModalCarrito from "./components/modalCarrito.jsx";
+import { useCart } from "./hooks/useCart.jsx";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [products, setProducts] = useState([]);
+  const [isProducts, setIsProducts] = useState([]);
   const [procesador, setProcesador] = useState([]);
   const [activo, setActivo] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
-  };
-
-  const removeFromCart = (productId) => {
-    setCartItems(cartItems.filter((item) => item.id !== productId));
-  };
+  const { addToCart } = useCart()
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
@@ -111,7 +104,7 @@ function App() {
     const AllProcesador = ProceJSON.Procesadores;
     // Establecer los productos filtrados en el estado
     setProcesador(AllProcesador);
-    setProducts(AllVideo);
+    setIsProducts(AllVideo);
   }, []);
 
   return (
@@ -148,8 +141,6 @@ function App() {
 
             {isCartOpen && (
               <ModalCarrito
-                cartItems={cartItems}
-                removeFromCart={removeFromCart}
                 onClose={toggleCart}
               />
             )}
@@ -409,13 +400,12 @@ function App() {
           <div className="Trends-Container">
             <div className="Trends-Header">
               <h2 className="Trends-Title">
-                {" "}
-                LAS TENDENCIAS EN PLACAS DE VIDEO{" "}
+                LAS TENDENCIAS EN PLACAS DE VIDEO
               </h2>
             </div>
             <div className="Trends-Body">
               <div className="Trends-Items">
-                {products.slice(0, 5).map((product) => (
+                {isProducts.slice(0, 5).map((product) => (
                   <div className="Trends-Item" key={product.id}>
                     <article className="Trends-MainContainer">
                       <div className="Trends-SubContainer">

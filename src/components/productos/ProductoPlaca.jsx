@@ -12,7 +12,7 @@ const productoPlaca = () => {
   };
 
   return (
-    <div>
+    <div className="Placas-Product-Main">
       <button>
         <Link to="/">GO BACK</Link>
       </button>

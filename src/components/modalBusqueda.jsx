@@ -4,16 +4,14 @@ import "./modalBusqueda.css";
 
 function ModalBusqueda({ results, onClose }) {
   useEffect(() => {
-    // Agregar la clase 'modal-open' al cuerpo del documento cuando la modal está abierta
     document.body.classList.add("modal-open");
 
-    // Remover la clase 'modal-open' del cuerpo del documento cuando la modal se cierra
     return () => {
       document.body.classList.remove("modal-open");
     };
   }, []);
 
-  // Función para cerrar la modal cuando se hace clic fuera de ella
+  // Función para cerrar la modal cuando se hace clic afuera
   const handleCloseModal = (event) => {
     if (event.target === event.currentTarget) {
       onClose();

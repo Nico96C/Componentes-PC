@@ -2,19 +2,19 @@
 import { useEffect } from "react";
 import CartItem from "./CartItem.jsx";
 import "./modalCarrito.css";
+import { useCart } from "../hooks/useCart.jsx";
 
-const ModalCarrito = ({ cartItems, removeFromCart, onClose }) => {
+const ModalCarrito = ({ onClose }) => {
+  const { cart } = useCart();
   useEffect(() => {
-    // Agregar la clase 'modal-open' al cuerpo del documento cuando la modal está abierta
     document.body.classList.add("modal-open");
 
-    // Remover la clase 'modal-open' del cuerpo del documento cuando la modal se cierra
     return () => {
       document.body.classList.remove("modal-open");
     };
   }, []);
 
-  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+  const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
   const modalClassName = onClose ? "cart-modal active" : "cart-modal";
 
@@ -26,11 +26,10 @@ const ModalCarrito = ({ cartItems, removeFromCart, onClose }) => {
         </button>
         <h2 className="cart-title"> Carrito de Compras </h2>
         <div className="cart-items">
-          {cartItems.map((item) => (
+          {cart.map((item) => (
             <CartItem
               key={item.id}
-              product={item}
-              removeFromCart={removeFromCart}
+              item={item}
             />
           ))}
         </div>
