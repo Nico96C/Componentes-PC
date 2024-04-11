@@ -1,42 +1,50 @@
 /* eslint-disable react/prop-types */
+export const cartInitialState = JSON.parse(window.localStorage.getItem('cart')) || []
+
 import { createContext, useState } from "react";
+
+//Update LocalStorage
+export const updateLocalStorage = state => {
+    window.localStorage.setItem('cart', JSON.stringify(state))
+}
 
 //Contexto creado
 export const CartContext = createContext();
 
 //Provider Creado
 export function CartProvider({ children }) {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(cartInitialState);
 
   const addToCart = (product) => {
-
-    //if para ver si esta el producto en el carrito
-    const productInCart = cart.findIndex((item) => item.id === product.id);
-
-    if (productInCart >= 0) {
-      //Usando StructuredClone
-      const newCart = structuredClone(cart);
-      newCart[productInCart].quantity += 1;
-      return setCart(newCart);
+    const productInCartIndex = cart.findIndex((item) => item.id === product.id);
+  
+    if (productInCartIndex >= 0) {
+      const updatedCart = cart.map((item, index) =>
+        index === productInCartIndex ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setCart(updatedCart);
+      updateLocalStorage(updatedCart);
+      return updatedCart;
     }
-
-    //Si el producto no esta en el carrito
-    setCart((prevState) => [
-      ...prevState,
-      {
-        ...product,
-        quantity: 1,
-      },
-    ]);
-
+  
+    const updatedCart = [...cart, { ...product, quantity: 1 }];
+    setCart(updatedCart);
+    updateLocalStorage(updatedCart);
+    return updatedCart;
   };
 
   const removeFromCart = (productId) => {
-    setCart(cart.filter((item) => item.id !== productId));
+    const updatedCart = cart.filter((item) => item.id !== productId);
+    setCart(updatedCart);
+    updateLocalStorage(updatedCart);
+    return updatedCart;
   };
-
+  
   const clearCart = () => {
-    setCart([]);
+    const updatedCart = [];
+    setCart(updatedCart);
+    updateLocalStorage(updatedCart);
+    return updatedCart;
   };
 
   return (

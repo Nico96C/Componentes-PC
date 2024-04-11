@@ -27,6 +27,11 @@
   background-color: var(--color-Purple);
 }
 
+.cart-delete-item:hover {
+  cursor: pointer;
+  background-color: var(--color-intermediatePurple);
+}
+
 .item-img {
 
   object-fit: contain;

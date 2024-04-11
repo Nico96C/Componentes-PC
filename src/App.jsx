@@ -36,7 +36,12 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const { addToCart } = useCart()
+  const [isCartNotEmpty, setIsCartNotEmpty] = useState(false);
+  const { addToCart, cart } = useCart()
+
+  useEffect(() => {
+    setIsCartNotEmpty(cart.length > 0);
+  }, [cart]);
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
@@ -152,7 +157,7 @@ function App() {
               </div>
 
               <div
-                className="Cart-Button"
+                className={`Cart-Button ${isCartNotEmpty ? 'cart-not-empty' : ''}`}
                 onClick={() => {
                   toggleCart();
                   handleClick();
@@ -422,8 +427,8 @@ function App() {
                         <div className="Trends-Product-Info">
                           <div className="Product-Stock"></div>
                           <div className="Product-Main-Info">
-                            <h3> {product.name} </h3>
-                            <h5> {product.chipset} </h5>
+                            <h3> {product.chipset} </h3>
+                            <h5> {product.name} </h5>
                           </div>
                           <span className="Product-Main-Price">{`$${product.price}`}</span>
                         </div>

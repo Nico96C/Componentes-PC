@@ -2,8 +2,39 @@ import "./videocards.css";
 import "../App.css";
 import VideoBanner from "../img/Category1/bannerVideo.jpg";
 import PlacasVideo from "../mocks/VideoCards.json";
+import { useFilters } from "../hooks/useFilters";
+import { useId } from "react";
 
 function VideoCards() {
+  const { filters, setFilters, filterProducts } = useFilters();
+
+  const minPriceFilterId = useId();
+  const categoryFilterId = useId();
+  const sortFilterId = useId();
+
+  const filteredProducts = filterProducts(PlacasVideo.VideoCards);
+  /*
+  <div className="Search-PanelFilter"></div>
+  */
+  const handleChangeMinPrice = (event) => {
+    setFilters((prevState) => ({
+      ...prevState,
+      minPrice: event.target.value,
+    }));
+  };
+
+  const handleChangeCategory = (event) => {
+    setFilters((prevState) => ({
+      ...prevState,
+      category: event.target.value,
+    }));
+  };
+
+  const handleSortChange = (event) => {
+    const newSort = event.target.value;
+    setFilters({ ...filters, sort: newSort });
+};
+
   return (
     <div className="Placas-Main">
       <div className="Placas-Header">
@@ -28,16 +59,52 @@ function VideoCards() {
       <div className="Placas-Search-Container">
         <div className="Search-headBar">
           <div className="Search-Order">
-            <span>DESTACADO</span>
+            <div>
+              <span>FILTROS —</span>
+            </div>
+
+            <div>
+              <label htmlFor={minPriceFilterId}> Precio mayor a: </label>
+              <input
+                type="range"
+                id={minPriceFilterId}
+                value={filters.minPrice}
+                min="0"
+                max="2000"
+                onChange={handleChangeMinPrice}
+              />
+              <span> ${filters.minPrice} </span>
+            </div>
+
+            <div>
+              <label htmlFor={categoryFilterId}>Categoria</label>
+              <select id={categoryFilterId} onChange={handleChangeCategory}>
+                <option value="all"> Todas </option>
+                <option value="AMD"> AMD </option>
+                <option value="Nvidia"> NVIDIA </option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor={sortFilterId}>Ordenar por precio:</label>
+              <select
+                id={sortFilterId}
+                value={filters.sort}
+                onChange={handleSortChange}
+              >
+                <option value="default">Por defecto</option>
+                <option value="lowToHigh">Menor a Mayor</option>
+                <option value="highToLow">Mayor a Menor</option>
+              </select>
+            </div>
           </div>
         </div>
 
-        <div className="Search-PanelFilter"></div>
         <div className="Search-Items-Container">
           <div className="Search-Items-Render">
             <div className="Search-Item-Head"></div>
             <div className="Search-Item-Card">
-              {PlacasVideo.VideoCards.map((product) => (
+              {filteredProducts.map((product) => (
                 <a
                   className="Trends-Item"
                   key={product.id}
@@ -68,6 +135,7 @@ function VideoCards() {
           </div>
         </div>
       </div>
+      <footer className="Web-End"> Footer </footer>
     </div>
   );
 }

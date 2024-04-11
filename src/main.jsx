@@ -8,19 +8,22 @@ import Procesors from "./components/procesors";
 import ProductoProce from "./components/productos/ProductoProce";
 import "./index.css";
 import { CartProvider } from "./context/Cart";
+import { FiltersProviders } from "./context/filters";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <CartProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/videocards" element={<VideoCards />} />
-          <Route path="/videocards/:id" element={<ProductoPlaca />} />
-          <Route path="/procesors" element={<Procesors />} />
-          <Route path="/procesors/:id" element={<ProductoProce />} />
-        </Routes>
-      </BrowserRouter>
+      <FiltersProviders>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/videocards" element={<VideoCards />} />
+            <Route path="/videocards/:id" element={<ProductoPlaca />} />
+            <Route path="/procesors" element={<Procesors />} />
+            <Route path="/procesors/:id" element={<ProductoProce />} />
+          </Routes>
+        </BrowserRouter>
+      </FiltersProviders>
     </CartProvider>
   </React.StrictMode>
 );
