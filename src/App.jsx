@@ -26,9 +26,9 @@ import { useEffect, useState } from "react";
 import ModalBusqueda from "./components/modalBusqueda.jsx";
 import ModalCarrito from "./components/modalCarrito.jsx";
 import { useCart } from "./hooks/useCart.jsx";
+import { useDarkMode } from "./context/DarkMode.jsx";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isProducts, setIsProducts] = useState([]);
   const [procesador, setProcesador] = useState([]);
   const [activo, setActivo] = useState(false);
@@ -38,6 +38,7 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCartNotEmpty, setIsCartNotEmpty] = useState(false);
   const { addToCart, cart } = useCart()
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   useEffect(() => {
     setIsCartNotEmpty(cart.length > 0);
@@ -82,10 +83,6 @@ function App() {
     if (window.innerWidth <= 800) {
       setActivo(!activo);
     }
-  };
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
   };
 
   useEffect(() => {

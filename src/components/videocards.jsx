@@ -4,9 +4,15 @@ import VideoBanner from "../img/Category1/bannerVideo.jpg";
 import PlacasVideo from "../mocks/VideoCards.json";
 import { useFilters } from "../hooks/useFilters";
 import { useId } from "react";
+import { useDarkMode } from "../context/DarkMode";
+import SolIcon from "../svg/sol.jsx";
+import LunaIcon from "../svg/luna.jsx";
+import { Link } from "react-router-dom";
+import "../index.css";
 
 function VideoCards() {
   const { filters, setFilters, filterProducts } = useFilters();
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   const minPriceFilterId = useId();
   const categoryFilterId = useId();
@@ -33,12 +39,35 @@ function VideoCards() {
   const handleSortChange = (event) => {
     const newSort = event.target.value;
     setFilters({ ...filters, sort: newSort });
-};
+  };
 
   return (
-    <div className="Placas-Main">
+    <div className={isDarkMode ? "dark-mode" : "light-mode"}>
       <div className="Placas-Header">
-        <div className="Placas-Navegation">HEADER</div>
+        <div className="Placas-Navegation">
+          <div>
+            <button>
+              <Link to="/">GO BACK</Link>
+            </button>
+          </div>
+
+          <div
+            className="Button-Mode"
+            onClick={() => {
+              toggleDarkMode();
+            }}
+          >
+            {isDarkMode ? (
+              <>
+                <SolIcon />
+              </>
+            ) : (
+              <>
+                <LunaIcon />
+              </>
+            )}
+          </div>
+        </div>
       </div>
       <div className="Placas-Element-1">
         <div className="Element-1-ImgContainer">

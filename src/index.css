@@ -20,6 +20,14 @@
   display: block;
 }
 
+.Element-1-textContainer h1 {
+  color: white;
+}
+
+.Element-1-textContainer p {
+  color: white;
+}
+
 .dark-mode {
   background-color: #242424;
   color: white;

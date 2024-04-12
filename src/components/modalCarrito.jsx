@@ -35,7 +35,6 @@ const ModalCarrito = ({ onClose }) => {
         </div>
 
         <div className="cart-footer">
-          <div>1</div>
           <div className="total-price">Total: ${totalPrice.toFixed(2)}</div>
         </div>
       </div>
