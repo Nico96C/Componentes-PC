@@ -39,3 +39,15 @@
   color: #242424;
   transition: background-color 0.3s ease;
 }
+
+.cart-modal.dark-mode {
+  background-color: #242424;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.cart-modal.light-mode {
+  background-color: #ffffff;
+  color: #242424;
+  transition: background-color 0.3s ease;
+}

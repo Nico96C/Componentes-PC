@@ -20,6 +20,9 @@
   font-size: 15px;
 }
 
+.cart-item-quantity {
+}
+
 .cart-delete-item {
   margin-left: auto;
   border: none;
@@ -33,7 +36,6 @@
 }
 
 .item-img {
-
   object-fit: contain;
   object-position: center center;
 }

@@ -148,5 +148,70 @@
         "cuotas": false,
         "category": "Nvidia",
         "length": 199
+    },
+    {
+        "id": 11,
+        "name": "Gigabyte GAMING",
+        "price": 120,
+        "chipset": "Radeon RX 590",
+        "memory": 8,
+        "core_clock": 1545,
+        "boost_clock": 1560,
+        "color": "Black / Orange",
+        "thumbnail": "/src/img/Category1/11.png",
+        "category": "AMD",
+        "length": 232
+    },
+    {
+        "id": 12,
+        "name": "MSI MECH",
+        "price": 180,
+        "chipset": "Radeon RX 5700",
+        "memory": 8,
+        "core_clock": 1465,
+        "boost_clock": 1725,
+        "color": "Black",
+        "thumbnail": "/src/img/Category1/12.webp",
+        "category": "AMD",
+        "length": 232
+    },
+    {
+        "id": 13,
+        "name": "Sapphire TOXIC Limited Edition",
+        "price": 1336,
+        "chipset": "Radeon RX 6900 XT",
+        "memory": 16,
+        "core_clock": 1825,
+        "boost_clock": 2600,
+        "color": "Black",
+        "thumbnail": "/src/img/Category1/13.webp",
+        "category": "AMD",
+        "length": 270
+    },
+    {
+        "id": 14,
+        "name": "VisionTek 900270",
+        "price": 65,
+        "chipset": "Radeon HD 4350",
+        "memory": 0.5,
+        "core_clock": 575,
+        "boost_clock": null,
+        "color": null,
+        "thumbnail": "/src/img/Category1/14.jpg",
+        "category": "AMD",
+        "length": null
+    },
+    {
+        "id": 15,
+        "name": "Asus STRIX GAMING",
+        "price": 450,
+        "chipset": "GeForce RTX 2070 SUPER",
+        "memory": 8,
+        "core_clock": 1635,
+        "boost_clock": 1800,
+        "color": "Black",
+        "thumbnail": "/src/img/Category1/15.webp",
+        "category": "Nvidia",
+        "length": 300
     }
 ]}

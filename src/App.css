@@ -621,6 +621,71 @@
   border-top: 1px solid rgba(144, 139, 194, 0.2);
 }
 
+.Web-End-Containers {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.Web-End-Categorys {
+  max-width: 600px;
+}
+
+.Web-End-Categorys h4 {
+  font-size: 17px;
+  margin-bottom: 35px;
+}
+
+.Web-End-Categorys ul {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  list-style: none;
+}
+
+.Web-End-Categorys li {
+  width: 40%;
+  margin-bottom: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.Web-End-Categorys a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.Web-End-SocialMedia {
+  width: 350px;
+}
+
+.Redes {
+  margin-top: 30px;
+}
+
+.Redes-link {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.Redes h4 {
+  font-size: 17px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
 @media (min-width: 1600px) {
   .Web-End {
     padding: 55px 160px 100px;
@@ -636,12 +701,11 @@
 }
 
 @media (max-width: 1670px) {
-  
   .Carrousel-Text h1 {
     margin: 2px;
     font-size: 20px;
   }
-  
+
   .Carrousel-Text button {
     background-color: var(--color-Purple);
     color: #ffffff;
@@ -654,12 +718,11 @@
 }
 
 @media (max-width: 1450px) {
-  
   .Carrousel-Text h1 {
     margin: 2px;
     font-size: 14px;
   }
-  
+
   .Carrousel-Text button {
     background-color: var(--color-Purple);
     color: #ffffff;
@@ -669,16 +732,14 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
 }
 
 @media (max-width: 900px) {
-  
   .Carrousel-Text h1 {
     margin: 2px;
     font-size: 14px;
   }
-  
+
   .Carrousel-Text button {
     background-color: var(--color-Purple);
     color: #ffffff;
@@ -963,13 +1024,24 @@
   .Trends-MainContainer:focus {
     border: 2px solid var(--color-Purple);
   }
+
+  .Web-End-Containers {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    margin: 0px auto;
+    position: relative;
+  }
+
+  .Web-End-Categorys {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
   .Trends-Items {
     scrollbar-width: none;
   }
-
 }
 
 @keyframes scaleAnimation {

@@ -125,15 +125,23 @@
   background-color: var(--color-intermediatePurple);
   display: flex;
   -webkit-box-pack: center;
-  justify-content: center;
+  justify-content: space-between;
   -webkit-box-align: center;
   align-items: center;
-  top: 0px;
   border: 2px solid var(--color-Purple);
-  z-index: 504;
 }
 
-.Button-Mode-Mod {
+.navegation {
+  margin-left: 7px;
   display: flex;
-  background-color: blue;
+  gap: .4rem;
+}
+
+.home-button {
+  border: none;
+  background: none;
+}
+
+.home-button a {
+  text-decoration: none;
 }

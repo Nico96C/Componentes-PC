@@ -45,9 +45,12 @@ function VideoCards() {
     <div className={isDarkMode ? "dark-mode" : "light-mode"}>
       <div className="Placas-Header">
         <div className="Placas-Navegation">
-          <div>
-            <button>
-              <Link to="/">GO BACK</Link>
+          <div className="navegation">
+            <button className="home-button">
+              <Link to="/">Home {">"}</Link>
+            </button>
+            <button className="home-button">
+              <Link to="/videocards">Placas de Video</Link>
             </button>
           </div>
 
@@ -106,7 +109,7 @@ function VideoCards() {
             </div>
 
             <div>
-              <label htmlFor={categoryFilterId}>Categoria</label>
+              <label htmlFor={categoryFilterId}>Categoria:</label>
               <select id={categoryFilterId} onChange={handleChangeCategory}>
                 <option value="all"> Todas </option>
                 <option value="AMD"> AMD </option>
@@ -151,8 +154,8 @@ function VideoCards() {
                       <div className="Trends-Product-Info">
                         <div className="Product-Stock"></div>
                         <div className="Product-Main-Info">
-                          <h3> {product.name} </h3>
-                          <h5> {product.chipset} </h5>
+                          <h3> {product.chipset} </h3>
+                          <h5> {product.name} </h5>
                         </div>
                         <span className="Product-Main-Price">{`$${product.price}`}</span>
                       </div>

@@ -15,6 +15,9 @@ import ShoppingCart from "./svg/shopping-cart.svg";
 import DropDown from "./svg/dropdown.svg";
 import SolIcon from "./svg/sol.jsx";
 import LunaIcon from "./svg/luna.jsx";
+import Instagram from "./svg/instagram.jsx";
+import LinkedIn from "./svg/linkedin.jsx";
+import Github from "./svg/github.jsx";
 import PlacasJSON from "./mocks/VideoCards.json";
 import ProceJSON from "./mocks/Procesors.json";
 import "./App.css";
@@ -488,7 +491,46 @@ function App() {
             </div>
           </div>
         </div>
-        <footer className="Web-End"> Footer </footer>
+        
+        <footer className="Web-End">
+          <div className="Web-End-Containers">
+            <section className="Web-End-Categorys">
+              <h4> CATEGORIAS DETACADAS </h4>
+              <nav>
+                <ul>
+                  <li>
+                    <a href="/videocards">Placas de Video</a>
+                  </li>
+                  <li>
+                    <a href="/procesors">Procesadores</a>
+                  </li>
+                  <li>
+                    <a href="#">Motherboards</a>
+                  </li>
+                  <li>
+                    <a href="#">Mouse</a>
+                  </li>
+                </ul>
+              </nav>
+            </section>
+            <div className="Web-End-SocialMedia">
+              <section className="Redes">
+                <h4>REDES Y CONTACTO</h4>
+                <div className="Redes-link">
+                  <a href="https://www.instagram.com/megabits96/" target="_blank">
+                    <Instagram />
+                  </a>
+                  <a href="https://www.linkedin.com/in/nicolás-andres-cuello" target="_blank">
+                    <LinkedIn />
+                  </a>
+                  <a href="https://www.Github.com/Nico96C" target="_blank">
+                    <Github />
+                  </a>
+                </div>
+              </section>
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   );
