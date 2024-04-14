@@ -9,6 +9,10 @@ import SolIcon from "../svg/sol.jsx";
 import LunaIcon from "../svg/luna.jsx";
 import { Link } from "react-router-dom";
 import "../index.css";
+import InstagramIcon from "../svg/instagram.jsx";
+import LinkedInIcon from "../svg/linkedin.jsx";
+import GithubIcon from "../svg/github.jsx";
+import Logo from "../svg/logo.svg"
 
 function VideoCards() {
   const { filters, setFilters, filterProducts } = useFilters();
@@ -53,9 +57,15 @@ function VideoCards() {
               <Link to="/videocards">Placas de Video</Link>
             </button>
           </div>
+          
+          <div>
+            <a href="/">
+              <img src={Logo} alt="Componentes PC Logo" className="Logo" />
+            </a>
+          </div>
 
           <div
-            className="Button-Mode"
+            className="Button-Mode-1"
             onClick={() => {
               toggleDarkMode();
             }}
@@ -167,7 +177,47 @@ function VideoCards() {
           </div>
         </div>
       </div>
-      <footer className="Web-End"> Footer </footer>
+
+      <footer className="Web-End">
+          <div className="Web-End-Containers">
+            <section className="Web-End-Categorys">
+              <h4> CATEGORIAS DETACADAS </h4>
+              <nav>
+                <ul>
+                  <li>
+                    <a href="/videocards">Placas de Video</a>
+                  </li>
+                  <li>
+                    <a href="/procesors">Procesadores</a>
+                  </li>
+                  <li>
+                    <a href="#">Motherboards</a>
+                  </li>
+                  <li>
+                    <a href="#">Mouse</a>
+                  </li>
+                </ul>
+              </nav>
+            </section>
+            <div className="Web-End-SocialMedia">
+              <section className="Redes">
+                <h4>REDES Y CONTACTO</h4>
+                <div className="Redes-link">
+                  <a href="https://www.instagram.com/megabits96/" target="_blank">
+                    <InstagramIcon />
+                  </a>
+                  <a href="https://www.linkedin.com/in/nicolás-andres-cuello" target="_blank">
+                    <LinkedInIcon />
+                  </a>
+                  <a href="https://www.Github.com/Nico96C" target="_blank">
+                    <GithubIcon />
+                  </a>
+                </div>
+              </section>
+            </div>
+          </div>
+        </footer>
+      
     </div>
   );
 }
