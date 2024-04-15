@@ -4,8 +4,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi transparente */
-  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
 .modal {
@@ -14,17 +14,15 @@
   top: 11%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
   padding: 20px;
   border-radius: 8px;
-  z-index: 1001; /* Asegúrate de que esté por encima del fondo */
+  z-index: 1001;
 }
 
 .close-btn {
   border: none;
   background-color: var(--color-Purple);
-  width: 4%;
-  height: 2%;
+  padding: 3px;
 }
 
 .close-btn:hover {
@@ -37,7 +35,7 @@
   top: 55px;
   left: 0px;
   z-index: 1100;
-  height: 580px;
+  height: 550px;
   width: 100%;
   background-color: white;
   box-shadow: rgba(15, 10, 64, 0.85) 0px 12px 25px;
@@ -77,6 +75,7 @@
   width: 73px;
   min-width: 73px;
   height: 100%;
+  margin-left: 20px;
   -webkit-box-pack: center;
   justify-content: center;
   -webkit-box-align: center;
@@ -84,7 +83,7 @@
 }
 
 .modal-info {
-  margin-left: 10px;
+  margin-left: 30px;
   order: 2;
 }
 
@@ -131,13 +130,8 @@
   overflow: hidden;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 700px) {
   .modal {
     width: 100%;
-  }
-
-  .close-btn {
-    width: 15%;
-    height: 4%;
   }
 }

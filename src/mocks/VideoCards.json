@@ -151,6 +151,7 @@
     },
     {
         "id": 11,
+        "type": "Placa de Video",
         "name": "Gigabyte GAMING",
         "price": 120,
         "chipset": "Radeon RX 590",
@@ -164,6 +165,7 @@
     },
     {
         "id": 12,
+        "type": "Placa de Video",
         "name": "MSI MECH",
         "price": 180,
         "chipset": "Radeon RX 5700",
@@ -177,6 +179,7 @@
     },
     {
         "id": 13,
+        "type": "Placa de Video",
         "name": "Sapphire TOXIC Limited Edition",
         "price": 1336,
         "chipset": "Radeon RX 6900 XT",
@@ -190,6 +193,7 @@
     },
     {
         "id": 14,
+        "type": "Placa de Video",
         "name": "VisionTek 900270",
         "price": 65,
         "chipset": "Radeon HD 4350",
@@ -203,6 +207,7 @@
     },
     {
         "id": 15,
+        "type": "Placa de Video",
         "name": "Asus STRIX GAMING",
         "price": 450,
         "chipset": "GeForce RTX 2070 SUPER",

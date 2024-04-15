@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import "./modalBusqueda.css";
+import { useDarkMode } from "../context/DarkMode";
 
 function ModalBusqueda({ results, onClose }) {
+  const { isDarkMode } = useDarkMode();
+
   useEffect(() => {
     document.body.classList.add("modal-open");
 
@@ -18,9 +21,11 @@ function ModalBusqueda({ results, onClose }) {
     }
   };
 
+  const modeClassName = isDarkMode ? "dark-mode" : "light-mode";
+
   return (
     <div className="modal-overlay" onClick={handleCloseModal}>
-      <div className="modal">
+      <div className={`modal ${modeClassName}`}>
         <button className="close-btn" onClick={onClose}>
           CLOSE
         </button>

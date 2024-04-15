@@ -303,7 +303,7 @@
   bottom: 10px;
   left: 10px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 6px;
   padding: 10px;
 }
@@ -556,7 +556,6 @@
   padding-right: 1px;
   background-color: white;
   display: block;
-  margin-bottom: 10px;
 }
 
 .Trends-Product-Buy {
@@ -593,7 +592,7 @@
 
 .Buy-Button {
   width: 100%;
-  height: 50px;
+  height: 40px;
   background-color: var(--color-Purple);
   color: white;
   border-width: 2px;
@@ -943,7 +942,7 @@
     bottom: 10px;
     left: 5px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     border-radius: 6px;
   }
 

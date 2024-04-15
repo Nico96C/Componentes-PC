@@ -15,21 +15,27 @@
   position: relative;
   width: 100%;
   height: auto;
-  /*background-color: rgb(255, 255, 255);*/
   margin-bottom: 20px;
+}
+
+.Element-1-ImgContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .Element-1-IMG {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .Element-1-textContainer {
   position: absolute;
+  max-width: 800px;
   margin: auto;
-  left: 60px;
-  max-height: 80%;
-  overflow: auto;
+  padding: 0 10px;
 }
 
 .Element-1-textContainer h1 {
@@ -40,7 +46,6 @@
 .Element-1-textContainer p {
   font-size: 20px;
   font-weight: 400;
-  width: 800px;
   text-align: left;
 }
 
@@ -163,18 +168,72 @@
   background-color: var(--color-Purple);
 }
 
-@media (max-width: 1150px) {
-  .Element-1-textContainer h1{
+.Trends-Item:hover .Trends-Product-Buy {
+  pointer-events: auto;
+  bottom: -25px;
+  opacity: 1;
+}
+
+select {
+  font-size: 16px;
+  border: none;
+  background-color: var(--color-Purple);
+}
+
+option {
+  font-size: 14px;
+  color: #ffffff;
+  background-color: var(--color-Purple);
+}
+
+option:checked {
+  background-color: #007bff;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 20px;
+  background: #ddd;
+  outline: none;
+  border-radius: 5px; 
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 22px;
+  background: var(--color-Purple);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb::active {
+  background: #0056b3;
+}
+
+@media (max-width: 1200px) {
+  .Element-1-textContainer h1 {
     font-size: 50px;
   }
 
   .Element-1-textContainer p {
     font-size: 14px;
   }
+
+  .Placas-Search-Container {
+    padding: 0 80px;
+  }
+}
+
+@media (max-width: 1030px) {
+  .Placas-Search-Container {
+    padding: 0;
+  }
 }
 
 @media (max-width: 900px) {
-  .Element-1-textContainer h1{
+  .Element-1-textContainer h1 {
     font-size: 40px;
   }
 
@@ -183,16 +242,54 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 870px) {
+  .Search-headBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 2px solid var(--color-Purple);
+    background-color: var(--color-intermediatePurple);
+  }
+
+  .Search-Order {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .Search-Order > div {
+    flex-basis: calc(50% - 10px);
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 760px) {
   .Element-1-textContainer {
     left: 10px;
   }
 
-  .Element-1-textContainer h1{
+  .Element-1-textContainer h1 {
     font-size: 25px;
   }
 
   .Element-1-textContainer p {
     font-size: 10px;
+  }
+
+  .Element-1-IMG {
+    height: 300px;
+  }
+}
+
+@media (max-width: 550px) {
+  label {
+    font-size: 11px;
+  }
+
+  .Search-Order span {
+    font-size: 12px;
   }
 }

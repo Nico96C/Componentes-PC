@@ -84,7 +84,7 @@ function VideoCards() {
       </div>
       <div className="Placas-Element-1">
         <div className="Element-1-ImgContainer">
-          <img
+        <img
             className="Element-1-IMG"
             src={VideoBanner}
             alt="VideoBannerIMG"
@@ -102,11 +102,11 @@ function VideoCards() {
         <div className="Search-headBar">
           <div className="Search-Order">
             <div>
-              <span>FILTROS —</span>
+              <span>FILTROS:</span>
             </div>
 
             <div>
-              <label htmlFor={minPriceFilterId}> Precio mayor a: </label>
+              <label htmlFor={minPriceFilterId}> Un precio superior a [${filters.minPrice}] </label>
               <input
                 type="range"
                 id={minPriceFilterId}
@@ -115,7 +115,7 @@ function VideoCards() {
                 max="2000"
                 onChange={handleChangeMinPrice}
               />
-              <span> ${filters.minPrice} </span>
+              
             </div>
 
             <div>
@@ -168,6 +168,9 @@ function VideoCards() {
                           <h5> {product.name} </h5>
                         </div>
                         <span className="Product-Main-Price">{`$${product.price}`}</span>
+                      </div>
+                      <div className="Trends-Product-Buy">
+                        <button className="Buy-Button">Ver Info</button>
                       </div>
                     </div>
                   </article>
