@@ -24,7 +24,7 @@
         "core_clock": 1920,
         "boost_clock": 2490,
         "color": "Black",
-        "thumbnail": "/src/img/Category1/2.webp",
+        "thumbnail": "/src/img/Category1/2.png",
         "cuotas": false,
         "category": "Nvidia",
         "length": 261
@@ -84,7 +84,7 @@
         "core_clock": 1295,
         "boost_clock": 2475,
         "color": "White",
-        "thumbnail": "/src/img/Category1/6.jpg",
+        "thumbnail": "/src/img/Category1/6.png",
         "cuotas": false,
         "category": "AMD",
         "length": 320
@@ -173,7 +173,7 @@
         "core_clock": 1465,
         "boost_clock": 1725,
         "color": "Black",
-        "thumbnail": "/src/img/Category1/12.webp",
+        "thumbnail": "/src/img/Category1/12.png",
         "category": "AMD",
         "length": 232
     },
@@ -187,7 +187,7 @@
         "core_clock": 1825,
         "boost_clock": 2600,
         "color": "Black",
-        "thumbnail": "/src/img/Category1/13.webp",
+        "thumbnail": "/src/img/Category1/13.png",
         "category": "AMD",
         "length": 270
     },
@@ -201,7 +201,7 @@
         "core_clock": 575,
         "boost_clock": null,
         "color": null,
-        "thumbnail": "/src/img/Category1/14.jpg",
+        "thumbnail": "/src/img/Category1/14.png",
         "category": "AMD",
         "length": null
     },
@@ -215,7 +215,7 @@
         "core_clock": 1635,
         "boost_clock": 1800,
         "color": "Black",
-        "thumbnail": "/src/img/Category1/15.webp",
+        "thumbnail": "/src/img/Category1/15.png",
         "category": "Nvidia",
         "length": 300
     }

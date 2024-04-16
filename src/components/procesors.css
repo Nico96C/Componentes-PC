@@ -1,0 +1,18 @@
+.Element-1-IMG {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 760px) {
+
+  .Element-1-textContainer h1 {
+    font-size: 25px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Element-1-IMG {
+    height: 160px;
+  }
+}

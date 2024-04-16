@@ -1,6 +1,7 @@
 import "./videocards.css";
 import "../App.css";
-import VideoBanner from "../img/Category1/bannerVideo.jpg";
+import "./procesors.css";
+import ProceBanner from "../img/Category2/BannerProce.jpg";
 import Procesors from "../mocks/Procesors.json";
 import { useFilters } from "../hooks/useFilters";
 import { useId } from "react";
@@ -86,8 +87,8 @@ function Procesor() {
         <div className="Element-1-ImgContainer">
           <img
             className="Element-1-IMG"
-            src={VideoBanner}
-            alt="VideoBannerIMG"
+            src={ProceBanner}
+            alt="ProceBannerIMG"
           />
         </div>
         <div className="Element-1-textContainer">

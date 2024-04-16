@@ -30,7 +30,7 @@ function ModalBusqueda({ results, onClose }) {
           CLOSE
         </button>
         <div className="modal-Coincidence">
-          <div className="modal-items">
+          <div className={`modal-items ${modeClassName}`}>
             {results.map((item) => (
               <div className="modal-item" key={item.id}>
                 <div className="modal-img">
