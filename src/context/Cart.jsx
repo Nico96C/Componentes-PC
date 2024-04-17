@@ -13,10 +13,12 @@ export function CartProvider({ children }) {
     : [];
 
   const [cart, setCart] = useState(initialCartState);
+  const [isCartNotEmpty, setIsCartNotEmpty] = useState(false);
 
   // Guardar el estado del carrito en el almacenamiento local cuando cambie
   useEffect(() => {
     window.localStorage.setItem("cart", JSON.stringify(cart));
+    setIsCartNotEmpty(cart.length > 0);
   }, [cart]);
 
   const addToCart = (product) => {
@@ -53,6 +55,7 @@ export function CartProvider({ children }) {
     <CartContext.Provider
       value={{
         cart,
+        isCartNotEmpty,
         addToCart,
         clearCart,
         removeFromCart,

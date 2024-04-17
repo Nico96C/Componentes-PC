@@ -62,7 +62,7 @@
 }
 
 .modal-item:hover {
-  border: 2px solid rgb(236, 236, 236);
+  border: 2px solid rgba(236, 236, 236, 0.555);
 }
 
 .modal-item:hover .modal-img {
@@ -94,7 +94,7 @@
   font-family: var(--font-roboto);
   font-weight: 400;
   font-size: 15px;
-  color: var(--color-Purple);
+  color: var(--color-intermediatePurple);
   max-height: 75px;
   overflow: hidden;
 }
@@ -103,7 +103,7 @@
   padding: 0px 0px 0px 10px;
   font-weight: 400;
   font-family: var(--font-roboto);
-  color: var(--color-Purple);
+  color: var(--color-intermediatePurple);
   font-size: 20px;
 }
 

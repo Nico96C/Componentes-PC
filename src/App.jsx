@@ -39,13 +39,8 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isCartNotEmpty, setIsCartNotEmpty] = useState(false);
-  const { addToCart, cart } = useCart()
+  const { addToCart, isCartNotEmpty } = useCart()
   const { isDarkMode, toggleDarkMode } = useDarkMode();
-
-  useEffect(() => {
-    setIsCartNotEmpty(cart.length > 0);
-  }, [cart]);
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);

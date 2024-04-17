@@ -1,0 +1,34 @@
+.Placas-Navegation {
+  width: 100%;
+  height: 65px;
+  background-color: var(--color-intermediatePurple);
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 2px solid var(--color-Purple);
+}
+.navegation {
+    display: flex;
+    margin-left: 7px;
+    gap: 0.3rem;
+  }
+
+@media (max-width: 800px) {
+  .Logo {
+    width: 140px;
+  }
+
+  .Placas-Navegation {
+    justify-content: normal;
+  }
+
+  .nav-icon-5 {
+    margin: 0;
+  }
+
+  .Buttons.active {
+    top: 0;
+  }
+}

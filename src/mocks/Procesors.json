@@ -8,7 +8,7 @@
         "core_clock": 4.2,
         "boost_clock": 5,
         "tdp": 120,
-        "thumbnail": "/src/img/Category2/1.jpg",
+        "thumbnail": "/src/img/Category2/1.png",
         "category": "AMD",
         "graphics": "Radeon",
         "smt": true
@@ -36,7 +36,7 @@
         "core_clock": 3.2,
         "boost_clock": 6,
         "tdp": 125,
-        "thumbnail": "/src/img/Category2/3.webp",
+        "thumbnail": "/src/img/Category2/3.png",
         "category": "INTEL",
         "graphics": "Intel UHD Graphics 770",
         "smt": true
@@ -50,7 +50,7 @@
         "core_clock": 3.4,
         "boost_clock": 5.4,
         "tdp": 125,
-        "thumbnail": "/src/img/Category2/4.webp",
+        "thumbnail": "/src/img/Category2/4.png",
         "category": "INTEL",
         "graphics": "Intel UHD Graphics 770",
         "smt": true
@@ -92,7 +92,7 @@
         "core_clock": 3.4,
         "boost_clock": 5.6,
         "tdp": 125,
-        "thumbnail": "/src/img/Category2/7-9.jpg",
+        "thumbnail": "/src/img/Category2/7-9.png",
         "category": "INTEL",
         "graphics": "Intel UHD Graphics 770",
         "smt": true
@@ -106,7 +106,7 @@
         "core_clock": 3,
         "boost_clock": 5.8,
         "tdp": 125,
-        "thumbnail": "/src/img/Category2/8.webp",
+        "thumbnail": "/src/img/Category2/8.png",
         "category": "INTEL",
         "graphics": "Intel UHD Graphics 770",
         "smt": true
@@ -120,7 +120,7 @@
         "core_clock": 3.4,
         "boost_clock": 5.4,
         "tdp": 125,
-        "thumbnail": "/src/img/Category2/4.webp",
+        "thumbnail": "/src/img/Category2/4.png",
         "category": "INTEL",
         "graphics": null,
         "smt": true
@@ -148,7 +148,7 @@
         "core_clock": 3.6,
         "boost_clock": 4.4,
         "tdp": 65,
-        "thumbnail": "/src/img/Category2/11.webp",
+        "thumbnail": "/src/img/Category2/11.png",
         "category": "AMD",
         "graphics": null,
         "smt": true
@@ -162,7 +162,7 @@
         "core_clock": 3.6,
         "boost_clock": 5.3,
         "tdp": 65,
-        "thumbnail": "/src/img/Category2/12.webp",
+        "thumbnail": "/src/img/Category2/12.png",
         "category": "AMD",
         "graphics": "Radeon",
         "smt": true
@@ -176,7 +176,7 @@
         "core_clock": 4.4,
         "boost_clock": 5.6,
         "tdp": 120,
-        "thumbnail": "/src/img/Category2/13.webp",
+        "thumbnail": "/src/img/Category2/13.png",
         "category": "AMD",
         "graphics": "Radeon",
         "smt": true
@@ -190,7 +190,7 @@
         "core_clock": 3.4,
         "boost_clock": 4.9,
         "tdp": 105,
-        "thumbnail": "/src/img/Category2/14.webp",
+        "thumbnail": "/src/img/Category2/14.png",
         "category": "AMD",
         "graphics": null,
         "smt": true
@@ -204,7 +204,7 @@
         "core_clock": 3.4,
         "boost_clock": 3.9,
         "tdp": 65,
-        "thumbnail": "/src/img/Category2/15.webp",
+        "thumbnail": "/src/img/Category2/15.png",
         "category": "AMD",
         "graphics": null,
         "smt": true

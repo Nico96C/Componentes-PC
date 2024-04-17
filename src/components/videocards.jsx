@@ -48,8 +48,8 @@ function VideoCards() {
   return (
     <div className={isDarkMode ? "dark-mode" : "light-mode"}>
       <div className="Placas-Header">
-        <div className="Placas-Navegation">
-          <div className="navegation">
+        <div className="Placas-Navegation-2">
+          <div className="navegation-2">
             <button className="home-button">
               <Link to="/">Home {">"}</Link>
             </button>
