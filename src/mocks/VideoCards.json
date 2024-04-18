@@ -4,12 +4,15 @@
         "type": "Placa de Video",
         "name": "MSI Ventus 2X 12G",
         "price": 289.39,
-        "chipset": "GeForce RTX 3060 12GB",
+        "chipset": "GeForce RTX 3060",
         "memory": 12,
         "core_clock": 1320,
         "boost_clock": 1777,
         "color": "Black",
         "thumbnail": "/src/img/Category1/1.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
+        "text": "La tarjeta gráfica Gigabyte GeForce RTX 4070 WINDFORCE OC 12G ofrece un rendimiento excepcional y una serie de características avanzadas",
         "cuotas": true,
         "category": "Nvidia",
         "length": 235
@@ -25,6 +28,9 @@
         "boost_clock": 2490,
         "color": "Black",
         "thumbnail": "/src/img/Category1/2.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
+        "text": "La tarjeta gráfica Gigabyte GeForce RTX 4070 WINDFORCE OC 12G ofrece un rendimiento excepcional y una serie de características avanzadas",
         "cuotas": false,
         "category": "Nvidia",
         "length": 261
@@ -40,6 +46,9 @@
         "boost_clock": 2535,
         "color": "Black",
         "thumbnail": "/src/img/Category1/3.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
+        "text": "La tarjeta gráfica Gigabyte GeForce RTX 4070 WINDFORCE OC 12G ofrece un rendimiento excepcional y una serie de características avanzadas",
         "cuotas": false,
         "category": "Nvidia",
         "length": 227
@@ -55,6 +64,8 @@
         "boost_clock": 2640,
         "color": "Black",
         "thumbnail": "/src/img/Category1/4.webp",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "cuotas": true,
         "category": "Nvidia",
         "length": 358
@@ -70,6 +81,8 @@
         "boost_clock": 2565,
         "color": "Black",
         "thumbnail": "/src/img/Category1/5.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "cuotas": false,
         "category": "AMD",
         "length": 302
@@ -85,6 +98,8 @@
         "boost_clock": 2475,
         "color": "White",
         "thumbnail": "/src/img/Category1/6.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "cuotas": false,
         "category": "AMD",
         "length": 320
@@ -100,6 +115,8 @@
         "boost_clock": null,
         "color": "Black",
         "thumbnail": "/src/img/Category1/7.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "cuotas": false,
         "category": "AMD",
         "length": 269
@@ -115,6 +132,8 @@
         "boost_clock": null,
         "color": "Black",
         "thumbnail": "/src/img/Category1/8.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "cuotas": false,
         "category": "Nvidia",
         "length": 272
@@ -130,6 +149,8 @@
         "boost_clock": 2625,
         "color": "Black",
         "thumbnail": "/src/img/Category1/9.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "cuotas": false,
         "category": "Nvidia",
         "length": 261
@@ -145,6 +166,8 @@
         "boost_clock": 2505,
         "color": "Black",
         "thumbnail": "/src/img/Category1/10.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "cuotas": false,
         "category": "Nvidia",
         "length": 199
@@ -160,6 +183,8 @@
         "boost_clock": 1560,
         "color": "Black / Orange",
         "thumbnail": "/src/img/Category1/11.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "category": "AMD",
         "length": 232
     },
@@ -174,6 +199,8 @@
         "boost_clock": 1725,
         "color": "Black",
         "thumbnail": "/src/img/Category1/12.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "category": "AMD",
         "length": 232
     },
@@ -188,6 +215,8 @@
         "boost_clock": 2600,
         "color": "Black",
         "thumbnail": "/src/img/Category1/13.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "category": "AMD",
         "length": 270
     },
@@ -202,6 +231,8 @@
         "boost_clock": null,
         "color": null,
         "thumbnail": "/src/img/Category1/14.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "category": "AMD",
         "length": null
     },
@@ -216,6 +247,8 @@
         "boost_clock": 1800,
         "color": "Black",
         "thumbnail": "/src/img/Category1/15.png",
+        "img-1": "/src/img/Category1/2front.png",
+        "img-2": "/src/img/Category1/2back.png",
         "category": "Nvidia",
         "length": 300
     }

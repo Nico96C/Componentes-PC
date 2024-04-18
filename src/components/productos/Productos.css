@@ -10,10 +10,199 @@
   border: 2px solid var(--color-Purple);
 }
 .navegation {
-    display: flex;
-    margin-left: 7px;
-    gap: 0.3rem;
-  }
+  display: flex;
+  margin-left: 7px;
+  gap: 0.3rem;
+}
+
+.Container-Products-Main {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.Container-Products-Scroll {
+  background-color: white;
+  position: relative;
+  min-height: 80vh;
+}
+
+.Products-Banner {
+  display: grid;
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+  background-color: #e8e8e8;
+}
+
+.Products-Banner a {
+  width: 100%;
+  height: 200px;
+  cursor: pointer;
+}
+
+.Products-Banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.Products-General {
+  padding: 0 160px;
+}
+
+.Products-View-Container {
+  display: flex;
+  position: relative;
+  padding-top: 20px;
+}
+
+.Products-View {
+  height: 100%;
+  width: 45%;
+  top: 12%;
+  display: flex;
+  position: sticky;
+  padding-right: 20px;
+}
+
+.Products-Details {
+  display: flex;
+  width: 55%;
+  border-left: 1px solid rgb(229, 228, 232);
+}
+
+.Products-Images {
+  width: 150px;
+  height: 100%;
+  margin-top: 40px;
+}
+
+.Products-Images img {
+  width: 85px;
+  height: 85px;
+  border: 1px solid rgb(161, 150, 150);
+  margin-top: 15px;
+  transition: all 0.3s ease 0s;
+  padding: 5px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.Products-Image-View {
+  width: calc(100% - 140px);
+  margin-top: 40px;
+  overflow: hidden;
+}
+
+.Products-Image-View img {
+  cursor: zoom-in;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.1s ease-out 0s;
+}
+
+.Products-Image-View img:hover {
+  transform: translate(0px, 0px) scale(1.2);
+}
+
+.Products-Stock-Info {
+  float: right;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  display: flex;
+}
+
+.Details-Main {
+  width: 50%;
+  height: 100%;
+  margin: 0px 20px;
+  float: right;
+}
+
+.Details-Purchase {
+  width: 50%;
+  height: min-content;
+  top: 0px;
+  border: 1px solid rgb(229, 228, 232);
+  position: sticky;
+  padding-bottom: 10px;
+}
+
+.Category-Nav {
+  width: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 15px 0px;
+  display: flex;
+}
+
+.Category-Nav h1 {
+  color: black;
+  font-size: 15px;
+  margin-top: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.Details-Main h2 {
+  font-size: 25px;
+  margin-bottom: 8px;
+  color: var(--color-Purple);
+  font-weight: 500;
+}
+
+.Details-Main ul {
+  padding-left: 20px;
+}
+
+.Details-Main li {
+  padding: 4px 0px;
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--color-Purple);
+  font-family: var(--font-roboto);
+  background-size: 1.6rem 1.6rem;
+}
+
+.Details-SpecialPrice {
+  margin: 5% 5% 20px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  position: relative;
+}
+
+.Details-FinalPrice {
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 100%;
+  height: 45px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.Details-Buy-Buttons {
+  padding: 0px 5%;
+}
+
+.Details-Tags {
+  margin: 5%;
+}
+
+.Special-Price h2 {
+  margin-bottom: 5px;
+  font-size: 38px;
+  margin: 10px 0px;
+  color: var(--color-Purple);
+}
+
+.Special-Price h3 {
+  color: rgb(169, 168, 182);
+  font-size: 14px;
+  font-weight: var(--font-medium);
+  margin: auto auto auto 20px;
+}
 
 @media (max-width: 800px) {
   .Logo {
