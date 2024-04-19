@@ -192,21 +192,25 @@ const productoPlaca = () => {
                     <h1> PLACAS DE VIDEO </h1>
                   </div>
                   <h2>
+                    {searchProduct(idBuscado).type}{" "}
                     {searchProduct(idBuscado).chipset}{" "}
                     {searchProduct(idBuscado).name}
                   </h2>
+                  <h3>A</h3>
                   <ul>
                     <li>{searchProduct(idBuscado).text}</li>
-                    <li>{searchProduct(idBuscado).category}</li>
+                    <li>Marca: {searchProduct(idBuscado).category}</li>
                     <li>{searchProduct(idBuscado).memory} GB de memoria.</li>
                     <li>
-                      Reloj de nucleo: {searchProduct(idBuscado).core_clock}
+                      Reloj de nucleo: {searchProduct(idBuscado).core_clock} MHz.
                     </li>
                     <li>
-                      Con un Boost de: {searchProduct(idBuscado).boost_clock}
+                      Con un Boost de: {searchProduct(idBuscado).boost_clock} MHz.
                     </li>
-                    <li>Color: {searchProduct(idBuscado).color}</li>
-                    <li>Longitud de: {searchProduct(idBuscado).length} mm</li>
+                    <li>{searchProduct(idBuscado)["text-2"]}</li>
+                    <li>{searchProduct(idBuscado)["text-3"]}</li>
+                    <li>Color: {searchProduct(idBuscado).color}.</li>
+                    <li>Longitud de: {searchProduct(idBuscado).length} mm.</li>
                   </ul>
                 </div>
                 <div className="Details-Purchase">
