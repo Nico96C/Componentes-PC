@@ -330,9 +330,8 @@ function App() {
                       />
                       <div className="overlay">
                         <p className="text-menu">
-                          {" "}
-                          LAS MEJORES PLACAS DE VIDEO CON HASTA ¡12 CUOTAS SIN
-                          INTERES!{" "}
+                          LAS MEJORES PLACAS DE VIDEO CON HASTA ¡6 CUOTAS SIN
+                          INTERES!
                         </p>
                       </div>
                     </span>
@@ -347,9 +346,8 @@ function App() {
                       />
                       <div className="overlay">
                         <p className="text-menu">
-                          {" "}
                           LO MEJOR DE INTEL Y SUS ULTIMAS GENERACIONES CON EL
-                          MEJOR PRECIO{" "}
+                          MEJOR PRECIO
                         </p>
                       </div>
                     </span>
@@ -368,9 +366,8 @@ function App() {
                       />
                       <div className="overlay">
                         <p className="text-menu">
-                          {" "}
                           RAZER, PRECIO Y CALIDAD DE INCREIBLES PERIFERICOS!
-                          AHORA EN 12 CUOTAS FIJAS{" "}
+                          AHORA EN 12 CUOTAS FIJAS
                         </p>
                       </div>
                     </span>
@@ -385,9 +382,8 @@ function App() {
                       />
                       <div className="overlay">
                         <p className="text-menu">
-                          {" "}
                           VARIEDAD DE SILLAS GAMERS, CON LA MEJOR COMODIDAD PARA
-                          JUGAR!{" "}
+                          JUGAR!
                         </p>
                       </div>
                     </span>

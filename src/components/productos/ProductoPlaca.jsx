@@ -13,6 +13,9 @@ import ModalCarrito from "../modalCarrito.jsx";
 import HamburgerButton from "../hamburgerButton.jsx";
 import BannerVideo from "../../img/Category1/PLACASVIDEO.png";
 import { useEffect, useState } from "react";
+import InstagramIcon from "../../svg/instagram.jsx";
+import LinkedInIcon from "../../svg/linkedin.jsx";
+import GithubIcon from "../../svg/github.jsx";
 
 const productoPlaca = () => {
   const { id } = useParams();
@@ -29,7 +32,30 @@ const productoPlaca = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const { addToCart, isCartNotEmpty } = useCart();
-  const [selectedImage, setSelectedImage] = useState(searchProduct(idBuscado).thumbnail);
+  const [selectedImage, setSelectedImage] = useState(
+    searchProduct(idBuscado).thumbnail
+  );
+  const [quantity, setQuantity] = useState(1);
+  const [isProducts, setIsProducts] = useState([]);
+
+  useEffect(() => {
+    // Filtrar los productos con 'oferta: true'
+    const AllVideo = JSON.VideoCards;
+    // Establecer los productos filtrados en el estado
+    setIsProducts(AllVideo);
+  }, []);
+
+  const incrementQuantity = () => {
+    if (quantity < 9) {
+      setQuantity(quantity + 1);
+    }
+  };
+
+  const decrementQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
 
   const handleThumbnailClick = (imageUrl) => {
     setSelectedImage(imageUrl);
@@ -68,8 +94,10 @@ const productoPlaca = () => {
         />
   */
 
+  const modeClassName = isDarkMode ? "dark-mode" : "light-mode";
+
   return (
-    <div className="Placas-Product-Main">
+    <div className={`Placas-Product-Main ${modeClassName}`}>
       <div className="Placas-Header">
         <div className="Placas-Navegation">
           <div className="navegation">
@@ -178,11 +206,7 @@ const productoPlaca = () => {
                   />
                 </div>
                 <div className="Products-Image-View">
-                  <img
-                    src={selectedImage}
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <img src={selectedImage} loading="lazy" decoding="async" />
                 </div>
                 <div className="Products-Stock-Info"></div>
               </div>
@@ -196,16 +220,18 @@ const productoPlaca = () => {
                     {searchProduct(idBuscado).chipset}{" "}
                     {searchProduct(idBuscado).name}
                   </h2>
-                  <h3>A</h3>
+                  <div className="line"></div>
                   <ul>
                     <li>{searchProduct(idBuscado).text}</li>
                     <li>Marca: {searchProduct(idBuscado).category}</li>
                     <li>{searchProduct(idBuscado).memory} GB de memoria.</li>
                     <li>
-                      Reloj de nucleo: {searchProduct(idBuscado).core_clock} MHz.
+                      Reloj de nucleo: {searchProduct(idBuscado).core_clock}{" "}
+                      MHz.
                     </li>
                     <li>
-                      Con un Boost de: {searchProduct(idBuscado).boost_clock} MHz.
+                      Con un Boost de: {searchProduct(idBuscado).boost_clock}{" "}
+                      MHz.
                     </li>
                     <li>{searchProduct(idBuscado)["text-2"]}</li>
                     <li>{searchProduct(idBuscado)["text-3"]}</li>
@@ -216,14 +242,47 @@ const productoPlaca = () => {
                 <div className="Details-Purchase">
                   <div className="Details-SpecialPrice">
                     <div className="Special-Price">
-                      <h2>
-                        $ {searchProduct(idBuscado).price}
-                      </h2>
-                      <h3> Exclusivo para transferencias y deposito bancario </h3>
+                      <h2>$ {searchProduct(idBuscado).price}</h2>
+                      <h3>Exclusivo para transferencias y deposito bancario</h3>
                     </div>
                   </div>
-                  <div className="Details-FinalPrice"></div>
-                  <div className="Details-Buy-Buttons"></div>
+
+                  <div className="Details-SpecialPrice">
+                    <div className="Special-Price">
+                      <h2>$ {searchProduct(idBuscado).subprice}</h2>
+                      <h3 className="Info-SubPrice">
+                        Tambien tienes 6 cuotas sin interes en este producto.
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="Details-Buy-Buttons">
+                    <div className="Details-buy-item">
+                      <div className="Selector">
+                        <div className="down" onClick={decrementQuantity}>
+                          —
+                        </div>
+                        <input
+                          className="Quantity-Cart"
+                          value={quantity}
+                          onChange={(e) =>
+                            setQuantity(parseInt(e.target.value))
+                          }
+                        ></input>
+                        <div
+                          className="up"
+                          onClick={incrementQuantity}
+                        >
+                          +
+                        </div>
+                      </div>
+                      <button className="Buy-Cart-item"> Comprar </button>
+                    </div>
+                    <button className="Add-Cart-item"
+                    onClick={() => addToCart(searchProduct(idBuscado))}>
+                      Agregar al Carrito
+                    </button>
+                  </div>
                   <div className="Details-Tags"></div>
                 </div>
               </div>
@@ -231,6 +290,93 @@ const productoPlaca = () => {
           </div>
         </div>
       </div>
+
+      <div className="Trends-Container">
+        <div className="Trends-Header">
+          <h2 className="Trends-Title">PRODUCTOS DESTACADOS DE ESTA CATEGORIA</h2>
+        </div>
+        <div className="Trends-Body">
+          <div className="Trends-Items">
+            {isProducts.slice(0, 5).map((product) => (
+              <div className="Trends-Item" key={product.id}>
+                <article className="Trends-MainContainer">
+                  <div className="Trends-SubContainer">
+                    <a
+                      className="Trends-ImgContainer"
+                      href={`/videocards/${product.id}`}
+                    >
+                      <img
+                        className="Trends-Product-Img"
+                        src={product.thumbnail}
+                        alt={product.name}
+                      />
+                    </a>
+                    <div className="Trends-Product-Info">
+                      <div className="Product-Stock"></div>
+                      <div className="Product-Main-Info">
+                        <h3> {product.chipset} </h3>
+                        <h5> {product.name} </h5>
+                      </div>
+                      <span className="Product-Main-Price">{`$${product.price}`}</span>
+                    </div>
+                  </div>
+                </article>
+                <div className="Trends-Product-Buy">
+                  <button
+                    className="Buy-Button"
+                    onClick={() => addToCart(product)}
+                  >
+                    Añadir al Carrito
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <footer className="Web-End">
+        <div className="Web-End-Containers">
+          <section className="Web-End-Categorys">
+            <h4> CATEGORIAS DETACADAS </h4>
+            <nav>
+              <ul>
+                <li>
+                  <a href="/videocards">Placas de Video</a>
+                </li>
+                <li>
+                  <a href="/procesors">Procesadores</a>
+                </li>
+                <li>
+                  <a href="#">Motherboards</a>
+                </li>
+                <li>
+                  <a href="#">Mouse</a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+          <div className="Web-End-SocialMedia">
+            <section className="Redes">
+              <h4>REDES Y CONTACTO</h4>
+              <div className="Redes-link">
+                <a href="https://www.instagram.com/megabits96/" target="_blank">
+                  <InstagramIcon />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/nicolás-andres-cuello"
+                  target="_blank"
+                >
+                  <LinkedInIcon />
+                </a>
+                <a href="https://www.Github.com/Nico96C" target="_blank">
+                  <GithubIcon />
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
