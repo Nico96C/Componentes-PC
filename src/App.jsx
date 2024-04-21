@@ -9,8 +9,8 @@ import gaming from "./img/gaming.webp";
 import Razer from "./img/Razer.webp";
 import Graficas from "./img/Category1/mejores-graficas.webp";
 import Procesador from "./img/Category2/mejores-proce.jpg";
-import Perifericos from "./img/Category3/razer-perifericos.jpg";
-import SillasGamer from "./img/Category4/sillas-gamer.png";
+import Perifericos from "./img/razer-perifericos.jpg";
+import SillasGamer from "./img/sillas-gamer.png";
 import ShoppingCart from "./svg/shopping-cart.svg";
 import DropDown from "./svg/dropdown.svg";
 import SolIcon from "./svg/sol.jsx";
@@ -20,6 +20,7 @@ import LinkedIn from "./svg/linkedin.jsx";
 import Github from "./svg/github.jsx";
 import PlacasJSON from "./mocks/VideoCards.json";
 import ProceJSON from "./mocks/Procesors.json";
+import MotherJSON from "./mocks/Motherboard.json";
 import "./App.css";
 import "./index.css";
 import HamburgerButton from "./components/hamburgerButton.jsx";
@@ -34,6 +35,7 @@ import { useDarkMode } from "./context/DarkMode.jsx";
 function App() {
   const [isProducts, setIsProducts] = useState([]);
   const [procesador, setProcesador] = useState([]);
+  const [mothers, setMothers] = useState([]);
   const [activo, setActivo] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -62,7 +64,7 @@ function App() {
   };
 
   const search = (term) => {
-    const combinedData = [...PlacasJSON.VideoCards, ...ProceJSON.Procesadores];
+    const combinedData = [...PlacasJSON.VideoCards, ...ProceJSON.Procesadores, ...MotherJSON.Motherboard];
 
     const results = combinedData.filter(
       (item) =>
@@ -102,9 +104,12 @@ function App() {
     // Filtrar los productos con 'oferta: true'
     const AllVideo = PlacasJSON.VideoCards;
     const AllProcesador = ProceJSON.Procesadores;
+    const AllMother = MotherJSON.Motherboard;
     // Establecer los productos filtrados en el estado
+
     setProcesador(AllProcesador);
     setIsProducts(AllVideo);
+    setMothers(AllMother);
   }, []);
 
   return (
@@ -216,7 +221,7 @@ function App() {
               </div>
               <div className="Category-Element">
                 <span className="Cartegory-tag">
-                  <a className="Category-link">MOTHERBOARD</a>
+                  <a className="Category-link" href="./motherboard">MOTHERBOARD</a>
                 </span>
               </div>
               <div className="Category-Element">
@@ -244,7 +249,7 @@ function App() {
                       <a href="./procesors">PROCESADORES</a>
                     </li>
                     <li>
-                      <a href="#">MOTHERBOARD</a>
+                      <a href="./motherboard">MOTHERBOARD</a>
                     </li>
                     <li>
                       <a href="#">MOUSE</a>
@@ -481,7 +486,52 @@ function App() {
               </div>
             </div>
           </div>
+
+          <div className="Trends-Container">
+            <div className="Trends-Header">
+              <h2 className="Trends-Title"> LAS TENDENCIAS EN MOTHERS </h2>
+            </div>
+            <div className="Trends-Body">
+              <div className="Trends-Items">
+                {mothers.slice(0, 5).map((mother) => (
+                  <div className="Trends-Item" key={mother.id}>
+                    <article className="Trends-MainContainer">
+                      <div className="Trends-SubContainer">
+                        <a
+                          className="Trends-ImgContainer"
+                          href={`/motherboard/${mother.id}`}
+                        >
+                          <img
+                            className="Trends-Product-Img"
+                            src={mother.thumbnail}
+                            alt={mother.name}
+                          />
+                        </a>
+                        <div className="Trends-Product-Info">
+                          <div className="Product-Stock"></div>
+                          <div className="Product-Main-Info">
+                            <h3> {mother.name} </h3>
+                          </div>
+                          <span className="Product-Main-Price">{`$${mother.price}`}</span>
+                        </div>
+                      </div>
+                    </article>
+                    <div className="Trends-Product-Buy">
+                      <button
+                        className="Buy-Button"
+                        onClick={() => addToCart(mother)}
+                      >
+                        Añadir al Carrito
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
+
+        
         
         <footer className="Web-End">
           <div className="Web-End-Containers">
@@ -496,7 +546,7 @@ function App() {
                     <a href="/procesors">Procesadores</a>
                   </li>
                   <li>
-                    <a href="#">Motherboards</a>
+                    <a href="/motherboard">Motherboards</a>
                   </li>
                   <li>
                     <a href="#">Mouse</a>
