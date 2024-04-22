@@ -1,7 +1,8 @@
 import "./videocards.css";
 import "../App.css";
-import VideoBanner from "../img/Category1/bannerVideo.jpg";
-import PlacasVideo from "../mocks/VideoCards.json";
+import "./procesors.css";
+import PeriBanner from "../img/BannerRazer.jpg";
+import Peripherals from "../mocks/Peripherals.json";
 import { useFilters } from "../hooks/useFilters";
 import { useId } from "react";
 import { useDarkMode } from "../context/DarkMode";
@@ -14,7 +15,7 @@ import LinkedInIcon from "../svg/linkedin.jsx";
 import GithubIcon from "../svg/github.jsx";
 import Logo from "../svg/logo.svg";
 
-function VideoCards() {
+function Peripheral() {
   const { filters, setFilters, filterProducts } = useFilters();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
@@ -22,7 +23,7 @@ function VideoCards() {
   const categoryFilterId = useId();
   const sortFilterId = useId();
 
-  const filteredProducts = filterProducts(PlacasVideo.VideoCards);
+  const filteredProducts = filterProducts(Peripherals.perifericos);
   /*
   <div className="Search-PanelFilter"></div>
   */
@@ -54,7 +55,7 @@ function VideoCards() {
               <Link to="/">Home {">"}</Link>
             </button>
             <button className="home-button">
-              <Link to="/videocards">Placas de Video</Link>
+              <Link to="/peripherals">Perifericos</Link>
             </button>
           </div>
 
@@ -84,14 +85,10 @@ function VideoCards() {
       </div>
       <div className="Placas-Element-1">
         <div className="Element-1-ImgContainer">
-          <img
-            className="Element-1-IMG"
-            src={VideoBanner}
-            alt="VideoBannerIMG"
-          />
+          <img className="Element-1-IMG" src={PeriBanner} alt="PeriBannerIMG" />
         </div>
         <div className="Element-1-textContainer">
-          <h1> PLACAS DE VIDEO </h1>
+          <h1> PERIFERICOS </h1>
           <p>
             Con las tecnologias mas importantes! AMD y Nvidia para brindarte lo
             mejor en Gaming.
@@ -115,7 +112,7 @@ function VideoCards() {
                 id={minPriceFilterId}
                 value={filters.minPrice}
                 min="0"
-                max="2000"
+                max="200"
                 onChange={handleChangeMinPrice}
               />
             </div>
@@ -124,8 +121,9 @@ function VideoCards() {
               <label htmlFor={categoryFilterId}>Categoria:</label>
               <select id={categoryFilterId} onChange={handleChangeCategory}>
                 <option value="all"> Todas </option>
-                <option value="AMD"> AMD </option>
-                <option value="Nvidia"> NVIDIA </option>
+                <option value="Mouse"> MOUSE </option>
+                <option value="Auricular"> AURICULAR </option>
+                <option value="Teclado"> TECLADO </option>
               </select>
             </div>
 
@@ -152,7 +150,7 @@ function VideoCards() {
                 <a
                   className="Trends-Item"
                   key={product.id}
-                  href={`/videocards/${product.id}`}
+                  href={`/peripherals/${product.id}`}
                 >
                   <article className="Trends-MainContainer">
                     <div className="Trends-SubContainer">
@@ -166,8 +164,8 @@ function VideoCards() {
                       <div className="Trends-Product-Info">
                         <div className="Product-Stock"></div>
                         <div className="Product-Main-Info">
-                          <h3> {product.chipset} </h3>
-                          <h5> {product.name} </h5>
+                          <h3> {product.name} </h3>
+                          <h5> {product.type} </h5>
                         </div>
                         <span className="Product-Main-Price">{`$${product.price}`}</span>
                       </div>
@@ -234,4 +232,4 @@ function VideoCards() {
   );
 }
 
-export default VideoCards;
+export default Peripheral;

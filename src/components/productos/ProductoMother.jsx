@@ -40,7 +40,7 @@ const productoMother = () => {
 
   useEffect(() => {
     // Filtrar los productos con 'oferta: true'
-    const AllMother= JSON.Motherboard;
+    const AllMother = JSON.Motherboard;
     // Establecer los productos filtrados en el estado
     setIsProducts(AllMother);
   }, []);
@@ -341,15 +341,20 @@ const productoMother = () => {
                   <a href="/procesors">Procesadores</a>
                 </li>
                 <li>
-                  <a href="#">Motherboards</a>
+                  <a href="/motherboard">Motherboards</a>
                 </li>
                 <li>
-                  <a href="#">Mouse</a>
+                  <a href="/peripherals">Perifericos</a>
                 </li>
               </ul>
             </nav>
           </section>
           <div className="Web-End-SocialMedia">
+            <section className="Mail">
+              <h4>CONTACTAME</h4>
+              <p>nicolas.cuello96@hotmail.com</p>
+              <a href="mailto:nicolas.cuello96@hotmail.com">Enviar correo</a>
+            </section>
             <section className="Redes">
               <h4>REDES Y CONTACTO</h4>
               <div className="Redes-link">

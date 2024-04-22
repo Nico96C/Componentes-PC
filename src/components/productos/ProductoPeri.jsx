@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Link, useParams } from "react-router-dom";
-import JSON from "../../mocks/Procesors.json";
+import JSON from "../../mocks/Peripherals.json";
 import "../videocards.css";
 import "./Productos.css";
 import { useDarkMode } from "../../context/DarkMode";
@@ -11,18 +11,18 @@ import ShoppingCart from "../../svg/shopping-cart.svg";
 import { useCart } from "../../hooks/useCart.jsx";
 import ModalCarrito from "../modalCarrito.jsx";
 import HamburgerButton from "../hamburgerButton.jsx";
-import BannerProce from "../../img/Category2/Procesadores.png";
+import BannerPeri from "../../img/Category4/perifericos.png";
 import { useEffect, useState } from "react";
 import InstagramIcon from "../../svg/instagram.jsx";
 import LinkedInIcon from "../../svg/linkedin.jsx";
 import GithubIcon from "../../svg/github.jsx";
 
-const productoProce = () => {
+const productoPeri = () => {
   const { id } = useParams();
   const idBuscado = parseInt(id);
 
   const searchProduct = (id) => {
-    const productoEncontrado = JSON.Procesadores.find(
+    const productoEncontrado = JSON.perifericos.find(
       (producto) => producto.id === id
     );
     return productoEncontrado || null;
@@ -40,9 +40,9 @@ const productoProce = () => {
 
   useEffect(() => {
     // Filtrar los productos con 'oferta: true'
-    const AllProce = JSON.Procesadores;
+    const AllPeri = JSON.perifericos;
     // Establecer los productos filtrados en el estado
-    setIsProducts(AllProce);
+    setIsProducts(AllPeri);
   }, []);
 
   const incrementQuantity = () => {
@@ -105,10 +105,10 @@ const productoProce = () => {
               <Link to="/">Home {">"}</Link>
             </button>
             <button className="home-button">
-              <Link to="/procesors">Procesadores {">"}</Link>
+              <Link to="/peripherals">Perifericos {">"}</Link>
             </button>
             <button className="home-button">
-              <Link to={`/procesors/${searchProduct(idBuscado).id}`}>
+              <Link to={`/peripherals/${searchProduct(idBuscado).id}`}>
                 {searchProduct(idBuscado).name}
               </Link>
             </button>
@@ -171,8 +171,8 @@ const productoProce = () => {
         <div className="Container-Products-Scroll">
           <div>
             <div className="Products-Banner">
-              <a href="/procesors">
-                <img src={BannerProce} alt="Banner de procesadores" />
+              <a href="/peripherals">
+                <img src={BannerPeri} alt="Banner de perifericos" />
               </a>
             </div>
           </div>
@@ -197,11 +197,11 @@ const productoProce = () => {
               <div className="Products-Details">
                 <div className="Details-Main">
                   <div className="Category-Nav">
-                    <h1> PROCESADORES </h1>
+                    <h1> PERIFERICOS </h1>
                   </div>
                   <h2>
                     {searchProduct(idBuscado).type}{" "}
-                    {searchProduct(idBuscado).chipset}{" "}
+                    {searchProduct(idBuscado).color}{" "}
                     {searchProduct(idBuscado).name}
                   </h2>
                   <div className="line"></div>
@@ -288,7 +288,7 @@ const productoProce = () => {
                   <div className="Trends-SubContainer">
                     <a
                       className="Trends-ImgContainer"
-                      href={`/videocards/${product.id}`}
+                      href={`/peripherals/${product.id}`}
                     >
                       <img
                         className="Trends-Product-Img"
@@ -371,4 +371,4 @@ const productoProce = () => {
   );
 };
 
-export default productoProce;
+export default productoPeri;

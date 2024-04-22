@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .Logo {
   transition: filter 0.5s ease;
   cursor: pointer;
@@ -425,13 +429,25 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 0 160px;
+  margin-bottom: 10px;
 }
 
 .Trends-Header {
   width: 100%;
+  height: 95px;
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.Trends-Subheader {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: center;
   -webkit-box-align: center;
   align-items: center;
 }
@@ -683,6 +699,40 @@
   font-size: 17px;
   margin-bottom: 35px;
   text-align: center;
+}
+
+.Mail {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.Mail h4 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 17px;
+}
+
+.Mail a {
+  text-decoration: none;
+  padding: 2px;
+  border: 1px solid var(--color-Purple);
+  color: #ffffff;
+  transition: 1s ease;
+}
+
+.Mail a:hover {
+  background-color: var(--color-Purple);
+}
+
+@media (min-width: 750px) {
+  .Mail {
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
 }
 
 @media (min-width: 1600px) {

@@ -5,12 +5,11 @@ import "slick-carousel/slick/slick-theme.css";
 import Logo from "./svg/logo.svg";
 import motherboard from "./img/motherboard.png";
 import Placas from "./img/Placas.webp";
-import gaming from "./img/gaming.webp";
+import gaming from "./img/micro.webp";
 import Razer from "./img/Razer.webp";
 import Graficas from "./img/Category1/mejores-graficas.webp";
 import Procesador from "./img/Category2/mejores-proce.jpg";
 import Perifericos from "./img/razer-perifericos.jpg";
-import SillasGamer from "./img/sillas-gamer.png";
 import ShoppingCart from "./svg/shopping-cart.svg";
 import DropDown from "./svg/dropdown.svg";
 import SolIcon from "./svg/sol.jsx";
@@ -21,6 +20,8 @@ import Github from "./svg/github.jsx";
 import PlacasJSON from "./mocks/VideoCards.json";
 import ProceJSON from "./mocks/Procesors.json";
 import MotherJSON from "./mocks/Motherboard.json";
+import PeriJSON from "./mocks/Peripherals.json";
+import BannerRazer from "./img/RazerBanner.jpg";
 import "./App.css";
 import "./index.css";
 import HamburgerButton from "./components/hamburgerButton.jsx";
@@ -35,13 +36,14 @@ import { useDarkMode } from "./context/DarkMode.jsx";
 function App() {
   const [isProducts, setIsProducts] = useState([]);
   const [procesador, setProcesador] = useState([]);
+  const [perifericos, setPerifericos] = useState([]);
   const [mothers, setMothers] = useState([]);
   const [activo, setActivo] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const { addToCart, isCartNotEmpty } = useCart()
+  const { addToCart, isCartNotEmpty } = useCart();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   const toggleCart = () => {
@@ -64,12 +66,18 @@ function App() {
   };
 
   const search = (term) => {
-    const combinedData = [...PlacasJSON.VideoCards, ...ProceJSON.Procesadores, ...MotherJSON.Motherboard];
+    const combinedData = [
+      ...PlacasJSON.VideoCards,
+      ...ProceJSON.Procesadores,
+      ...MotherJSON.Motherboard,
+      ...PeriJSON.perifericos,
+    ];
 
     const results = combinedData.filter(
       (item) =>
         item.name.toLowerCase().includes(term.toLowerCase()) ||
-        item.type.toLowerCase().includes(term.toLowerCase())
+        item.type.toLowerCase().includes(term.toLowerCase()) ||
+        item.category.toLowerCase().includes(term.toLowerCase())
     );
     console.log(results);
     setSearchResults(results);
@@ -105,11 +113,13 @@ function App() {
     const AllVideo = PlacasJSON.VideoCards;
     const AllProcesador = ProceJSON.Procesadores;
     const AllMother = MotherJSON.Motherboard;
+    const AllPeri = PeriJSON.perifericos;
     // Establecer los productos filtrados en el estado
 
     setProcesador(AllProcesador);
     setIsProducts(AllVideo);
     setMothers(AllMother);
+    setPerifericos(AllPeri);
   }, []);
 
   return (
@@ -118,7 +128,12 @@ function App() {
         <header className="Navbar">
           <div className="Container">
             <div className="Logo-Container">
-              <img src={Logo} alt="Componentes PC Logo" className="Logo" />
+              <img
+                src={Logo}
+                alt="Componentes PC Logo"
+                className="Logo"
+                loading="lazy"
+              />
             </div>
 
             <div className="Search-Container">
@@ -144,11 +159,7 @@ function App() {
               <ModalBusqueda results={searchResults} onClose={ChangeModal} />
             )}
 
-            {isCartOpen && (
-              <ModalCarrito
-                onClose={toggleCart}
-              />
-            )}
+            {isCartOpen && <ModalCarrito onClose={toggleCart} />}
 
             <div className={`Buttons ${activo ? "active" : ""}`}>
               <div className="User-Button" onClick={handleClick}>
@@ -157,7 +168,9 @@ function App() {
               </div>
 
               <div
-                className={`Cart-Button ${isCartNotEmpty ? 'cart-not-empty' : ''}`}
+                className={`Cart-Button ${
+                  isCartNotEmpty ? "cart-not-empty" : ""
+                }`}
                 onClick={() => {
                   toggleCart();
                   handleClick();
@@ -167,6 +180,7 @@ function App() {
                   src={ShoppingCart}
                   alt="Componentes PC CartIcon"
                   className="Cart"
+                  loading="lazy"
                 />
                 {activo && <span className="NavBar-Text"> Carrito </span>}
               </div>
@@ -221,12 +235,16 @@ function App() {
               </div>
               <div className="Category-Element">
                 <span className="Cartegory-tag">
-                  <a className="Category-link" href="./motherboard">MOTHERBOARD</a>
+                  <a className="Category-link" href="./motherboard">
+                    MOTHERBOARD
+                  </a>
                 </span>
               </div>
               <div className="Category-Element">
                 <span className="Category-tag">
-                  <a className="Category-link">MOUSE</a>
+                  <a className="Category-link" href="./peripherals">
+                    PERIFERICOS
+                  </a>
                 </span>
               </div>
             </div>
@@ -239,6 +257,7 @@ function App() {
                       src={DropDown}
                       className="Drop-SVG"
                       alt="Categorias Drop"
+                      loading="lazy"
                     />
                   </a>
                   <ul className="dropdown">
@@ -252,7 +271,7 @@ function App() {
                       <a href="./motherboard">MOTHERBOARD</a>
                     </li>
                     <li>
-                      <a href="#">MOUSE</a>
+                      <a href="./peripherals">PERIFERICOS</a>
                     </li>
                   </ul>
                 </li>
@@ -277,10 +296,13 @@ function App() {
                     src={motherboard}
                     alt="motherboard-Image"
                     className="Image-Corrousel"
+                    loading="lazy"
                   />
                   <div className="Carrousel-Text">
-                    <h1>¡Marca Lider y Calidad! Asus ROG motherboard</h1>
-                    <button>Explora</button>
+                    <h1>¡Marcas Lideres y de Calidad! MSI, ASUS y GIGABYTE!</h1>
+                    <a href="/motherboard">
+                      <button>Explora</button>
+                    </a>
                   </div>
                 </div>
                 <div className="Carrousel-ImageWrapper">
@@ -288,10 +310,13 @@ function App() {
                     src={Placas}
                     alt="Placas-Video-Image"
                     className="Image-Corrousel"
+                    loading="lazy"
                   />
                   <div className="Carrousel-Text">
                     <h1> Las mejores Placas de Video! AMD y NVIDIA </h1>
-                    <button>Ver Precios</button>
+                    <a href="/videocards">
+                      <button>Ver Precios</button>
+                    </a>
                   </div>
                 </div>
                 <div className="Carrousel-ImageWrapper">
@@ -299,10 +324,16 @@ function App() {
                     src={gaming}
                     alt="PC-Gamer-Image"
                     className="Image-Corrousel"
+                    loading="lazy"
                   />
                   <div className="Carrousel-Text">
-                    <h1>Armado Completo de PC Gamer</h1>
-                    <button>Empezar</button>
+                    <h1>
+                      {" "}
+                      Intel y AMD! La potencia de procesado que necesita tu PC.
+                    </h1>
+                    <a href="/procesors">
+                      <button>Ver Más</button>
+                    </a>
                   </div>
                 </div>
                 <div className="Carrousel-ImageWrapper">
@@ -310,10 +341,14 @@ function App() {
                     src={Razer}
                     alt="Razer-Image"
                     className="Image-Corrousel"
+                    loading="lazy"
                   />
                   <div className="Carrousel-Text">
                     <h1>Razer! Todo para Gamers</h1>
-                    <button>Ver más</button>
+                    <a href="/peripherals">
+                      {" "}
+                      <button>Ver más</button>{" "}
+                    </a>
                   </div>
                 </div>
               </Slider>
@@ -332,6 +367,7 @@ function App() {
                         src={Graficas}
                         alt="Graphic Cards"
                         width="100%"
+                        loading="lazy"
                       />
                       <div className="overlay">
                         <p className="text-menu">
@@ -341,6 +377,8 @@ function App() {
                       </div>
                     </span>
                   </div>
+                </Link>
+                <Link className="videocards-link" to="/procesors">
                   <div className="Featured-Contain">
                     <span>
                       <img
@@ -348,6 +386,7 @@ function App() {
                         src={Procesador}
                         alt="CPU's"
                         width="100%"
+                        loading="lazy"
                       />
                       <div className="overlay">
                         <p className="text-menu">
@@ -360,7 +399,7 @@ function App() {
                 </Link>
               </div>
               <div className="Featured-Links">
-                <Link className="videocards-link" to="/videocards">
+                <a className="videocards-link" href="#razer-section">
                   <div className="Featured-Contain">
                     <span>
                       <img
@@ -368,6 +407,7 @@ function App() {
                         src={Perifericos}
                         alt="Razer"
                         width="105%"
+                        loading="lazy"
                       />
                       <div className="overlay">
                         <p className="text-menu">
@@ -377,23 +417,7 @@ function App() {
                       </div>
                     </span>
                   </div>
-                  <div className="Featured-Contain">
-                    <span>
-                      <img
-                        className="Featured-Img-Video"
-                        src={SillasGamer}
-                        alt="Gamer Chairs"
-                        width="113%"
-                      />
-                      <div className="overlay">
-                        <p className="text-menu">
-                          VARIEDAD DE SILLAS GAMERS, CON LA MEJOR COMODIDAD PARA
-                          JUGAR!
-                        </p>
-                      </div>
-                    </span>
-                  </div>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -418,6 +442,7 @@ function App() {
                             className="Trends-Product-Img"
                             src={product.thumbnail}
                             alt={product.name}
+                            loading="lazy"
                           />
                         </a>
                         <div className="Trends-Product-Info">
@@ -462,6 +487,7 @@ function App() {
                             className="Trends-Product-Img"
                             src={proce.thumbnail}
                             alt={proce.name}
+                            loading="lazy"
                           />
                         </a>
                         <div className="Trends-Product-Info">
@@ -505,6 +531,7 @@ function App() {
                             className="Trends-Product-Img"
                             src={mother.thumbnail}
                             alt={mother.name}
+                            loading="lazy"
                           />
                         </a>
                         <div className="Trends-Product-Info">
@@ -529,10 +556,62 @@ function App() {
               </div>
             </div>
           </div>
+
+          <div className="Trends-Container">
+            <div
+              className="Trends-Header"
+              id="razer-section"
+              style={{ backgroundImage: `url(${BannerRazer})` }}
+            />
+
+            <div className="Trends-Subheader">
+              <h2 className="Trends-Title"> ¡LOS MEJORES PERIFERICOS! </h2>
+            </div>
+            <div className="Trends-Body">
+              <div className="Trends-Items">
+                {perifericos.slice(0, 5).map((periferico) => (
+                  <div className="Trends-Item" key={periferico.id}>
+                    <article className="Trends-MainContainer">
+                      <div className="Trends-SubContainer">
+                        <a
+                          className="Trends-ImgContainer"
+                          href={`/motherboard/${periferico.id}`}
+                        >
+                          <img
+                            className="Trends-Product-Img"
+                            src={periferico.thumbnail}
+                            alt={periferico.name}
+                            loading="lazy"
+                          />
+                        </a>
+                        <div className="Trends-Product-Info">
+                          <div className="Product-Stock"></div>
+                          <div className="Product-Main-Info">
+                            <h3> {periferico.name} </h3>
+                          </div>
+                          <span className="Product-Main-Price">{`$${periferico.price}`}</span>
+                        </div>
+                      </div>
+                    </article>
+                    <div className="Trends-Product-Buy">
+                      <button
+                        className="Buy-Button"
+                        onClick={() => addToCart(periferico)}
+                      >
+                        Añadir al Carrito
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div
+              className="Trends-Header"
+              style={{ backgroundImage: `url(${BannerRazer})` }}
+            />
+          </div>
         </div>
 
-        
-        
         <footer className="Web-End">
           <div className="Web-End-Containers">
             <section className="Web-End-Categorys">
@@ -549,19 +628,30 @@ function App() {
                     <a href="/motherboard">Motherboards</a>
                   </li>
                   <li>
-                    <a href="#">Mouse</a>
+                    <a href="/peripherals">Perifericos</a>
                   </li>
                 </ul>
               </nav>
             </section>
             <div className="Web-End-SocialMedia">
+              <section className="Mail">
+                <h4>CONTACTAME</h4>
+                <p>nicolas.cuello96@hotmail.com</p>
+                <a href="mailto:nicolas.cuello96@hotmail.com">Enviar correo</a>
+              </section>
               <section className="Redes">
-                <h4>REDES Y CONTACTO</h4>
+                <h4>REDES Y REPOSITORIO</h4>
                 <div className="Redes-link">
-                  <a href="https://www.instagram.com/megabits96/" target="_blank">
+                  <a
+                    href="https://www.instagram.com/megabits96/"
+                    target="_blank"
+                  >
                     <Instagram />
                   </a>
-                  <a href="https://www.linkedin.com/in/nicolás-andres-cuello" target="_blank">
+                  <a
+                    href="https://www.linkedin.com/in/nicolás-andres-cuello"
+                    target="_blank"
+                  >
                     <LinkedIn />
                   </a>
                   <a href="https://www.Github.com/Nico96C" target="_blank">

@@ -45,18 +45,22 @@ function ModalBusqueda({ results, onClose }) {
                 </div>
 
                 <div className="modal-path">
-
-                    <a
-                      href={
-                        item.type === "Placa de Video"
-                          ? `/videocards/${item.id}`
-                          : `/procesors/${item.id}`
-                      }
-                      className="modal-item-link"
-                    >
-                      INFO
-                    </a>
-
+                  <a
+                    href={
+                      item.type === "Placa de Video"
+                        ? `/videocards/${item.id}`
+                        : item.type === "Procesador"
+                        ? `/procesors/${item.id}`
+                        : item.type === "Motherboard"
+                        ? `/motherboards/${item.id}`
+                        : item.type === "Periferico"
+                        ? `/peripherals/${item.id}`
+                        : "#"
+                    }
+                    className="modal-item-link"
+                  >
+                    INFO
+                  </a>
                 </div>
               </div>
             ))}

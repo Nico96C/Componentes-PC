@@ -8,6 +8,8 @@ import Procesors from "./components/procesors";
 import ProductoProce from "./components/productos/ProductoProce";
 import MotherBoard from "./components/motherboard";
 import ProductoMother from "./components/productos/ProductoMother";
+import Peripheral from "./components/peripherals";
+import ProductoPeri from "./components/productos/ProductoPeri";
 
 import "./index.css";
 import { CartProvider } from "./context/Cart";
@@ -29,6 +31,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="/procesors/:id" element={<ProductoProce />} />
               <Route path="/motherboard" element={<MotherBoard />} />
               <Route path="/motherboard/:id" element={<ProductoMother />} />
+              <Route path="/peripherals" element={<Peripheral />} />
+              <Route path="/peripherals/:id" element={<ProductoPeri />} />
             </Routes>
           </BrowserRouter>
         </DarkModeProvider>

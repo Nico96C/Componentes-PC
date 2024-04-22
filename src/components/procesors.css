@@ -3,11 +3,27 @@
   height: 100%;
 }
 
+.Placas-Element-1 { 
+  flex-direction: column;
+}
+
+.Element-1-textContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media (max-width: 760px) {
 
   .Element-1-textContainer h1 {
     font-size: 25px;
     margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Element-1-textContainer p {
+    margin-top: 40px;
     display: flex;
     justify-content: center;
   }

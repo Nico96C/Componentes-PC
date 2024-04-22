@@ -269,17 +269,16 @@ const productoPlaca = () => {
                             setQuantity(parseInt(e.target.value))
                           }
                         ></input>
-                        <div
-                          className="up"
-                          onClick={incrementQuantity}
-                        >
+                        <div className="up" onClick={incrementQuantity}>
                           +
                         </div>
                       </div>
                       <button className="Buy-Cart-item"> Comprar </button>
                     </div>
-                    <button className="Add-Cart-item"
-                    onClick={() => addToCart(searchProduct(idBuscado))}>
+                    <button
+                      className="Add-Cart-item"
+                      onClick={() => addToCart(searchProduct(idBuscado))}
+                    >
                       Agregar al Carrito
                     </button>
                   </div>
@@ -293,7 +292,9 @@ const productoPlaca = () => {
 
       <div className="Trends-Container">
         <div className="Trends-Header">
-          <h2 className="Trends-Title">PRODUCTOS DESTACADOS DE ESTA CATEGORIA</h2>
+          <h2 className="Trends-Title">
+            PRODUCTOS DESTACADOS DE ESTA CATEGORIA
+          </h2>
         </div>
         <div className="Trends-Body">
           <div className="Trends-Items">
@@ -348,15 +349,20 @@ const productoPlaca = () => {
                   <a href="/procesors">Procesadores</a>
                 </li>
                 <li>
-                  <a href="#">Motherboards</a>
+                  <a href="/motherboard">Motherboards</a>
                 </li>
                 <li>
-                  <a href="#">Mouse</a>
+                  <a href="/peripherals">Perifericos</a>
                 </li>
               </ul>
             </nav>
           </section>
           <div className="Web-End-SocialMedia">
+            <section className="Mail">
+              <h4>CONTACTAME</h4>
+              <p>nicolas.cuello96@hotmail.com</p>
+              <a href="mailto:nicolas.cuello96@hotmail.com">Enviar correo</a>
+            </section>
             <section className="Redes">
               <h4>REDES Y CONTACTO</h4>
               <div className="Redes-link">

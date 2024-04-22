@@ -145,7 +145,7 @@
 .home-button {
   border: none;
   background: none;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .home-button a {
@@ -267,12 +267,13 @@ input[type="range"]::-webkit-slider-thumb::active {
     flex-basis: calc(50% - 10px);
     margin-right: 10px;
   }
+
+  .home-button {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 760px) {
-  .Element-1-textContainer {
-    left: 10px;
-  }
 
   .Element-1-textContainer h1 {
     font-size: 25px;

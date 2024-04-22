@@ -12,7 +12,7 @@ import "../index.css";
 import InstagramIcon from "../svg/instagram.jsx";
 import LinkedInIcon from "../svg/linkedin.jsx";
 import GithubIcon from "../svg/github.jsx";
-import Logo from "../svg/logo.svg"
+import Logo from "../svg/logo.svg";
 
 function MotherBoard() {
   const { filters, setFilters, filterProducts } = useFilters();
@@ -57,7 +57,7 @@ function MotherBoard() {
               <Link to="/motherboard"> Motherboard </Link>
             </button>
           </div>
-          
+
           <div>
             <a href="/">
               <img src={Logo} alt="Componentes PC Logo" className="Logo" />
@@ -84,7 +84,7 @@ function MotherBoard() {
       </div>
       <div className="Placas-Element-1">
         <div className="Element-1-ImgContainer">
-        <img
+          <img
             className="Element-1-IMG"
             src={MotherBanner}
             alt="MotherBannerIMG"
@@ -106,7 +106,10 @@ function MotherBoard() {
             </div>
 
             <div>
-              <label htmlFor={minPriceFilterId}> Un precio superior a [${filters.minPrice}] </label>
+              <label htmlFor={minPriceFilterId}>
+                {" "}
+                Un precio superior a [${filters.minPrice}]{" "}
+              </label>
               <input
                 type="range"
                 id={minPriceFilterId}
@@ -115,7 +118,6 @@ function MotherBoard() {
                 max="600"
                 onChange={handleChangeMinPrice}
               />
-              
             </div>
 
             <div>
@@ -183,45 +185,52 @@ function MotherBoard() {
       </div>
 
       <footer className="Web-End">
-          <div className="Web-End-Containers">
-            <section className="Web-End-Categorys">
-              <h4> CATEGORIAS DETACADAS </h4>
-              <nav>
-                <ul>
-                  <li>
-                    <a href="/videocards">Placas de Video</a>
-                  </li>
-                  <li>
-                    <a href="/procesors">Procesadores</a>
-                  </li>
-                  <li>
-                    <a href="/motherboard">Motherboards</a>
-                  </li>
-                  <li>
-                    <a href="#">Mouse</a>
-                  </li>
-                </ul>
-              </nav>
+        <div className="Web-End-Containers">
+          <section className="Web-End-Categorys">
+            <h4> CATEGORIAS DETACADAS </h4>
+            <nav>
+              <ul>
+                <li>
+                  <a href="/videocards">Placas de Video</a>
+                </li>
+                <li>
+                  <a href="/procesors">Procesadores</a>
+                </li>
+                <li>
+                  <a href="/motherboard">Motherboards</a>
+                </li>
+                <li>
+                  <a href="/peripherals">Perifericos</a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+          <div className="Web-End-SocialMedia">
+            <section className="Mail">
+              <h4>CONTACTAME</h4>
+              <p>nicolas.cuello96@hotmail.com</p>
+              <a href="mailto:nicolas.cuello96@hotmail.com">Enviar correo</a>
             </section>
-            <div className="Web-End-SocialMedia">
-              <section className="Redes">
-                <h4>REDES Y CONTACTO</h4>
-                <div className="Redes-link">
-                  <a href="https://www.instagram.com/megabits96/" target="_blank">
-                    <InstagramIcon />
-                  </a>
-                  <a href="https://www.linkedin.com/in/nicolás-andres-cuello" target="_blank">
-                    <LinkedInIcon />
-                  </a>
-                  <a href="https://www.Github.com/Nico96C" target="_blank">
-                    <GithubIcon />
-                  </a>
-                </div>
-              </section>
-            </div>
+            <section className="Redes">
+              <h4>REDES Y CONTACTO</h4>
+              <div className="Redes-link">
+                <a href="https://www.instagram.com/megabits96/" target="_blank">
+                  <InstagramIcon />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/nicolás-andres-cuello"
+                  target="_blank"
+                >
+                  <LinkedInIcon />
+                </a>
+                <a href="https://www.Github.com/Nico96C" target="_blank">
+                  <GithubIcon />
+                </a>
+              </div>
+            </section>
           </div>
-        </footer>
-      
+        </div>
+      </footer>
     </div>
   );
 }
