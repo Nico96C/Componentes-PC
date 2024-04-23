@@ -93,6 +93,21 @@ function App() {
     }
   };
 
+  const handleSearchChange = (value) => {
+    search(value);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearchChange(searchTerm);
+      ChangeModal();
+    }
+  };
+
+  const handleButtonClick = () => {
+    handleSearchChange(searchTerm);
+  };
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 800 && activo) {
@@ -143,12 +158,14 @@ function App() {
                 placeholder="Buscar..."
                 value={searchTerm}
                 onChange={handleChange}
+                onKeyDown={handleKeyDown}
               />
               <button
                 className="Search-Button"
                 onClick={() => {
                   handleSearch();
                   ChangeModal();
+                  handleButtonClick();
                 }}
               >
                 <SearchIcon className="icon-search" />
@@ -467,6 +484,9 @@ function App() {
                 ))}
               </div>
             </div>
+            <button className="Mas-Button">
+              <a href="/videocards">+ VER MAS</a>
+            </button>
           </div>
 
           <div className="Trends-Container">
@@ -511,6 +531,9 @@ function App() {
                 ))}
               </div>
             </div>
+            <button className="Mas-Button">
+              <a href="/procesors">+ VER MAS</a>
+            </button>
           </div>
 
           <div className="Trends-Container">
@@ -555,6 +578,9 @@ function App() {
                 ))}
               </div>
             </div>
+            <button className="Mas-Button">
+              <a href="/motherboard">+ VER MAS</a>
+            </button>
           </div>
 
           <div className="Trends-Container">
@@ -605,6 +631,9 @@ function App() {
                 ))}
               </div>
             </div>
+            <button className="Mas-Button">
+              <a href="/peripherals">+ VER MAS</a>
+            </button>
             <div
               className="Trends-Header"
               style={{ backgroundImage: `url(${BannerRazer})` }}

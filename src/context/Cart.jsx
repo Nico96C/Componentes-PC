@@ -21,20 +21,20 @@ export function CartProvider({ children }) {
     setIsCartNotEmpty(cart.length > 0);
   }, [cart]);
 
-  const addToCart = (product) => {
+  const addToCart = (product, quantityToAdd) => {
     const productInCartIndex = cart.findIndex((item) => item.id === product.id);
 
     if (productInCartIndex >= 0) {
       const updatedCart = cart.map((item, index) =>
         index === productInCartIndex
-          ? { ...item, quantity: item.quantity + 1 }
+          ? { ...item, quantity: item.quantity + quantityToAdd }
           : item
       );
       setCart(updatedCart);
       return updatedCart;
     }
 
-    const updatedCart = [...cart, { ...product, quantity: 1 }];
+    const updatedCart = [...cart, { ...product, quantity: quantityToAdd }];
     setCart(updatedCart);
     return updatedCart;
   };

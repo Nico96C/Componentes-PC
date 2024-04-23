@@ -728,6 +728,23 @@ html {
   background-color: var(--color-Purple);
 }
 
+.Mas-Button {
+  border: none;
+  background-color: var(--color-intermediatePurple);
+  padding: 5px;
+  transition: 1s ease;
+}
+
+.Mas-Button:hover {
+  cursor: pointer;
+  background-color: var(--color-Purple);
+}
+
+.Mas-Button a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 @media (min-width: 750px) {
   .Mail {
     margin-top: 0px;
@@ -800,7 +817,7 @@ html {
   }
 }
 
-@media (max-width: 1825px) {
+@media (max-width: 1864px) {
   .Search-Background {
     position: relative;
     border-radius: 20px;
@@ -862,7 +879,7 @@ html {
   }
 }
 
-@media (min-width: 1826px) {
+@media (min-width: 1865px) {
   .Category-drop {
     display: none;
   }
@@ -971,8 +988,8 @@ html {
   }
 
   .Search-Container {
-    width: 150%;
-    left: -17px;
+    width: 200%;
+    left: -37px;
   }
 
   .Search::-webkit-search-cancel-button {

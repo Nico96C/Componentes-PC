@@ -90,8 +90,7 @@ function Peripheral() {
         <div className="Element-1-textContainer">
           <h1> PERIFERICOS </h1>
           <p>
-            Con las tecnologias mas importantes! AMD y Nvidia para brindarte lo
-            mejor en Gaming.
+            Perifericos superiores! con comodidad y calidad, Razer sera tu mejor aliado!
           </p>
         </div>
       </div>

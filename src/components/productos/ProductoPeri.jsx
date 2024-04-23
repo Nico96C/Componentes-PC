@@ -201,26 +201,37 @@ const productoPeri = () => {
                   </div>
                   <h2>
                     {searchProduct(idBuscado).type}{" "}
-                    {searchProduct(idBuscado).color}{" "}
-                    {searchProduct(idBuscado).name}
+                    {searchProduct(idBuscado).name}{" "}
+                    {searchProduct(idBuscado).color}
                   </h2>
                   <div className="line"></div>
                   <ul>
-                    <li>{searchProduct(idBuscado).text}</li>
                     <li>Marca: {searchProduct(idBuscado).category}</li>
-                    <li>{searchProduct(idBuscado).memory} GB de memoria.</li>
-                    <li>
-                      Reloj de nucleo: {searchProduct(idBuscado).core_clock}{" "}
-                      MHz.
-                    </li>
-                    <li>
-                      Con un Boost de: {searchProduct(idBuscado).boost_clock}{" "}
-                      MHz.
-                    </li>
-                    <li>{searchProduct(idBuscado)["text-2"]}</li>
-                    <li>{searchProduct(idBuscado)["text-3"]}</li>
+
+                    {searchProduct(idBuscado).category === "Mouse" && (
+                      <>
+                        <li>{searchProduct(idBuscado)["text-2"]}</li>
+                        <li>{searchProduct(idBuscado)["text-3"]}</li>
+                      </>
+                    )}
+                    {searchProduct(idBuscado).category === "Teclado" && (
+                      <>
+                        <li>{searchProduct(idBuscado)["text-2"]}</li>
+                        <li>{searchProduct(idBuscado)["text-3"]}</li>
+                      </>
+                    )}
+                    {searchProduct(idBuscado).category === "Auricular" && (
+                      <>
+                        <li>forma: {searchProduct(idBuscado).form}</li>
+                        <li>
+                          Frecuencias: {searchProduct(idBuscado).frequency_response[0]} {" ~ "} {searchProduct(idBuscado).frequency_response[1]}.
+                        </li>
+                        <li>¿Tiene Microfono? {" "} {searchProduct(idBuscado).microphone ? "SI" : "NO"}</li>
+                        <li>¿Es Wireless? {" "} {searchProduct(idBuscado).wireless ? "SI" : "NO"}</li>
+                      </>
+                    )}
+
                     <li>Color: {searchProduct(idBuscado).color}.</li>
-                    <li>Longitud de: {searchProduct(idBuscado).length} mm.</li>
                   </ul>
                 </div>
                 <div className="Details-Purchase">
@@ -261,7 +272,9 @@ const productoPeri = () => {
                     </div>
                     <button
                       className="Add-Cart-item"
-                      onClick={() => addToCart(searchProduct(idBuscado))}
+                      onClick={() =>
+                        addToCart(searchProduct(idBuscado, quantity))
+                      }
                     >
                       Agregar al Carrito
                     </button>

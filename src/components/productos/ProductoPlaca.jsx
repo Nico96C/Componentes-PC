@@ -277,7 +277,7 @@ const productoPlaca = () => {
                     </div>
                     <button
                       className="Add-Cart-item"
-                      onClick={() => addToCart(searchProduct(idBuscado))}
+                      onClick={() => addToCart(searchProduct(idBuscado), quantity)}
                     >
                       Agregar al Carrito
                     </button>

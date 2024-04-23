@@ -93,8 +93,7 @@ function MotherBoard() {
         <div className="Element-1-textContainer">
           <h1> MOTHERBOARD </h1>
           <p>
-            Con las tecnologias mas importantes! AMD y Nvidia para brindarte lo
-            mejor en Gaming.
+            Gamas superiores en el centro de tu PC Gamer, preparados para lo que este por venir.
           </p>
         </div>
       </div>

@@ -205,30 +205,27 @@ const productoMother = () => {
               <div className="Products-Details">
                 <div className="Details-Main">
                   <div className="Category-Nav">
-                    <h1> PLACAS DE VIDEO </h1>
+                    <h1> MOTHERBOARDS </h1>
                   </div>
                   <h2>
                     {searchProduct(idBuscado).type}{" "}
-                    {searchProduct(idBuscado).chipset}{" "}
-                    {searchProduct(idBuscado).name}
+                    {searchProduct(idBuscado).name}{" "}
+                    {searchProduct(idBuscado).socket}
                   </h2>
                   <div className="line"></div>
                   <ul>
                     <li>{searchProduct(idBuscado).text}</li>
                     <li>Marca: {searchProduct(idBuscado).category}</li>
-                    <li>{searchProduct(idBuscado).memory} GB de memoria.</li>
+                    <li>Socket: {searchProduct(idBuscado).socket}</li>
                     <li>
-                      Reloj de nucleo: {searchProduct(idBuscado).core_clock}{" "}
-                      MHz.
+                      Maximo de Memoria: {searchProduct(idBuscado).max_memory}{" "} GBs
                     </li>
                     <li>
-                      Con un Boost de: {searchProduct(idBuscado).boost_clock}{" "}
-                      MHz.
+                      Slots de memoria: {searchProduct(idBuscado).memory_slots}
                     </li>
                     <li>{searchProduct(idBuscado)["text-2"]}</li>
-                    <li>{searchProduct(idBuscado)["text-3"]}</li>
                     <li>Color: {searchProduct(idBuscado).color}.</li>
-                    <li>Longitud de: {searchProduct(idBuscado).length} mm.</li>
+                    <li>Forma y Tamaño: {searchProduct(idBuscado).form_factor}</li>
                   </ul>
                 </div>
                 <div className="Details-Purchase">
@@ -269,7 +266,7 @@ const productoMother = () => {
                     </div>
                     <button
                       className="Add-Cart-item"
-                      onClick={() => addToCart(searchProduct(idBuscado))}
+                      onClick={() => addToCart(searchProduct(idBuscado, quantity))}
                     >
                       Agregar al Carrito
                     </button>

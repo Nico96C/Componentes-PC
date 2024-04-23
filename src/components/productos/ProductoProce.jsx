@@ -201,14 +201,18 @@ const productoProce = () => {
                   </div>
                   <h2>
                     {searchProduct(idBuscado).type}{" "}
-                    {searchProduct(idBuscado).chipset}{" "}
                     {searchProduct(idBuscado).name}
                   </h2>
-                  <div className="line"></div>
+                  <div className="line" />
                   <ul>
-                    <li>{searchProduct(idBuscado).text}</li>
+                    <li>
+                      Grafica integrada: {" "}
+                      {searchProduct(idBuscado).graphics
+                        ? searchProduct(idBuscado).graphics
+                        : "Sin grafica integrada!"}
+                    </li>
                     <li>Marca: {searchProduct(idBuscado).category}</li>
-                    <li>{searchProduct(idBuscado).memory} GB de memoria.</li>
+                    <li>Cantidad de nucleos: {searchProduct(idBuscado).core_count}</li>
                     <li>
                       Reloj de nucleo: {searchProduct(idBuscado).core_clock}{" "}
                       MHz.
@@ -217,10 +221,7 @@ const productoProce = () => {
                       Con un Boost de: {searchProduct(idBuscado).boost_clock}{" "}
                       MHz.
                     </li>
-                    <li>{searchProduct(idBuscado)["text-2"]}</li>
-                    <li>{searchProduct(idBuscado)["text-3"]}</li>
-                    <li>Color: {searchProduct(idBuscado).color}.</li>
-                    <li>Longitud de: {searchProduct(idBuscado).length} mm.</li>
+                    <li>¿Tecnologia SMT? {" "} {searchProduct(idBuscado).smt ? "SI" : "NO"}</li>
                   </ul>
                 </div>
                 <div className="Details-Purchase">
@@ -261,7 +262,9 @@ const productoProce = () => {
                     </div>
                     <button
                       className="Add-Cart-item"
-                      onClick={() => addToCart(searchProduct(idBuscado))}
+                      onClick={() =>
+                        addToCart(searchProduct(idBuscado, quantity))
+                      }
                     >
                       Agregar al Carrito
                     </button>
@@ -288,7 +291,7 @@ const productoProce = () => {
                   <div className="Trends-SubContainer">
                     <a
                       className="Trends-ImgContainer"
-                      href={`/videocards/${product.id}`}
+                      href={`/procesors/${product.id}`}
                     >
                       <img
                         className="Trends-Product-Img"

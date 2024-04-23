@@ -94,8 +94,7 @@ function Procesor() {
         <div className="Element-1-textContainer">
           <h1> MICROPROCESADORES </h1>
           <p>
-            Con las tecnologias mas importantes! AMD y Nvidia para brindarte lo
-            mejor en Gaming.
+            Mayor potencia en procesamiento, AMD e Intel en el catalogo para tu experiencia de juego.
           </p>
         </div>
       </div>

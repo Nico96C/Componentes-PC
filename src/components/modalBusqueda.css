@@ -131,6 +131,27 @@
   overflow: hidden;
 }
 
+.error-container {
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.error-container p {
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  color: var(--color-intermediatePurple);
+  font-weight: 500;
+  background-color: var(--color-lightpink);
+}
+
+.results-banner {
+  display: inline-flex;
+  margin-left: 15px;
+}
+
 @media (max-width: 700px) {
   .modal {
     width: 100%;
