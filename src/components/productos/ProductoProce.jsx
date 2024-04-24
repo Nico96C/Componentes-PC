@@ -16,6 +16,8 @@ import { useEffect, useState } from "react";
 import InstagramIcon from "../../svg/instagram.jsx";
 import LinkedInIcon from "../../svg/linkedin.jsx";
 import GithubIcon from "../../svg/github.jsx";
+import { PayModal } from "../payModal.jsx";
+import { usePayModal } from "../../context/Pay.jsx";
 
 const productoProce = () => {
   const { id } = useParams();
@@ -37,6 +39,7 @@ const productoProce = () => {
   );
   const [quantity, setQuantity] = useState(1);
   const [isProducts, setIsProducts] = useState([]);
+  const { showPaymentModal, setShowPaymentModal } = usePayModal();
 
   useEffect(() => {
     // Filtrar los productos con 'oferta: true'
@@ -59,6 +62,10 @@ const productoProce = () => {
 
   const handleThumbnailClick = (imageUrl) => {
     setSelectedImage(imageUrl);
+  };
+
+  const ChangeModalPay = () => {
+    setShowPaymentModal(!showPaymentModal);
   };
 
   useEffect(() => {
@@ -119,6 +126,8 @@ const productoProce = () => {
               <img src={Logo} alt="Componentes PC Logo" className="Logo" />
             </a>
           </div>
+
+          {showPaymentModal && <PayModal onClose={ChangeModalPay} />}
 
           {isCartOpen && <ModalCarrito onClose={toggleCart} />}
 
@@ -206,13 +215,15 @@ const productoProce = () => {
                   <div className="line" />
                   <ul>
                     <li>
-                      Grafica integrada: {" "}
+                      Grafica integrada:{" "}
                       {searchProduct(idBuscado).graphics
                         ? searchProduct(idBuscado).graphics
                         : "Sin grafica integrada!"}
                     </li>
                     <li>Marca: {searchProduct(idBuscado).category}</li>
-                    <li>Cantidad de nucleos: {searchProduct(idBuscado).core_count}</li>
+                    <li>
+                      Cantidad de nucleos: {searchProduct(idBuscado).core_count}
+                    </li>
                     <li>
                       Reloj de nucleo: {searchProduct(idBuscado).core_clock}{" "}
                       MHz.
@@ -221,7 +232,10 @@ const productoProce = () => {
                       Con un Boost de: {searchProduct(idBuscado).boost_clock}{" "}
                       MHz.
                     </li>
-                    <li>¿Tecnologia SMT? {" "} {searchProduct(idBuscado).smt ? "SI" : "NO"}</li>
+                    <li>
+                      ¿Tecnologia SMT?{" "}
+                      {searchProduct(idBuscado).smt ? "SI" : "NO"}
+                    </li>
                   </ul>
                 </div>
                 <div className="Details-Purchase">
@@ -258,12 +272,20 @@ const productoProce = () => {
                           +
                         </div>
                       </div>
-                      <button className="Buy-Cart-item"> Comprar </button>
+                      <button
+                        className="Buy-Cart-item"
+                        onClick={() => {
+                          ChangeModalPay();
+                          addToCart(searchProduct(idBuscado), quantity);
+                        }}
+                      >
+                        Comprar
+                      </button>
                     </div>
                     <button
                       className="Add-Cart-item"
                       onClick={() =>
-                        addToCart(searchProduct(idBuscado, quantity))
+                        addToCart(searchProduct(idBuscado), quantity)
                       }
                     >
                       Agregar al Carrito

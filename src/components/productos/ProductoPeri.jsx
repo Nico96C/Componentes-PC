@@ -16,6 +16,8 @@ import { useEffect, useState } from "react";
 import InstagramIcon from "../../svg/instagram.jsx";
 import LinkedInIcon from "../../svg/linkedin.jsx";
 import GithubIcon from "../../svg/github.jsx";
+import { usePayModal } from "../../context/Pay.jsx";
+import { PayModal } from "../payModal.jsx";
 
 const productoPeri = () => {
   const { id } = useParams();
@@ -37,6 +39,7 @@ const productoPeri = () => {
   );
   const [quantity, setQuantity] = useState(1);
   const [isProducts, setIsProducts] = useState([]);
+  const { showPaymentModal, setShowPaymentModal } = usePayModal();
 
   useEffect(() => {
     // Filtrar los productos con 'oferta: true'
@@ -59,6 +62,10 @@ const productoPeri = () => {
 
   const handleThumbnailClick = (imageUrl) => {
     setSelectedImage(imageUrl);
+  };
+
+  const ChangeModalPay = () => {
+    setShowPaymentModal(!showPaymentModal);
   };
 
   useEffect(() => {
@@ -119,6 +126,8 @@ const productoPeri = () => {
               <img src={Logo} alt="Componentes PC Logo" className="Logo" />
             </a>
           </div>
+
+          {showPaymentModal && <PayModal onClose={ChangeModalPay} />}
 
           {isCartOpen && <ModalCarrito onClose={toggleCart} />}
 
@@ -205,29 +214,61 @@ const productoPeri = () => {
                     {searchProduct(idBuscado).color}
                   </h2>
                   <div className="line"></div>
-                  <ul>
+                  <ul className="List-Details">
                     <li>Marca: {searchProduct(idBuscado).category}</li>
 
                     {searchProduct(idBuscado).category === "Mouse" && (
                       <>
-                        <li>{searchProduct(idBuscado)["text-2"]}</li>
-                        <li>{searchProduct(idBuscado)["text-3"]}</li>
+                        <li>
+                          Tipo de sensor:{" "}
+                          {searchProduct(idBuscado).tracking_method}
+                        </li>
+                        <li>
+                          Tipo de conexión:{" "}
+                          {searchProduct(idBuscado).connection_type}
+                        </li>
+                        <li>
+                          Maximo de DPI: {searchProduct(idBuscado).max_dpi}
+                        </li>
+                        <li>
+                          Orientación de mano:{" "}
+                          {searchProduct(idBuscado).hand_orientation}
+                        </li>
                       </>
                     )}
                     {searchProduct(idBuscado).category === "Teclado" && (
                       <>
-                        <li>{searchProduct(idBuscado)["text-2"]}</li>
-                        <li>{searchProduct(idBuscado)["text-3"]}</li>
+                        <li>Switchers: {searchProduct(idBuscado).switches}</li>
+                        <li>
+                          Tipo de teclado: {searchProduct(idBuscado).style}
+                        </li>
+                        <li>
+                          ¿Teclado sin teclado numerico?{" "}
+                          {searchProduct(idBuscado).tenkeyless ? "SI" : "NO"}
+                        </li>
+                        <li>
+                          Tipo de conexión:{" "}
+                          {searchProduct(idBuscado).connection_type}
+                        </li>
                       </>
                     )}
                     {searchProduct(idBuscado).category === "Auricular" && (
                       <>
                         <li>forma: {searchProduct(idBuscado).form}</li>
                         <li>
-                          Frecuencias: {searchProduct(idBuscado).frequency_response[0]} {" ~ "} {searchProduct(idBuscado).frequency_response[1]}.
+                          Frecuencias:{" "}
+                          {searchProduct(idBuscado).frequency_response[0]}{" "}
+                          {" ~ "}{" "}
+                          {searchProduct(idBuscado).frequency_response[1]}.
                         </li>
-                        <li>¿Tiene Microfono? {" "} {searchProduct(idBuscado).microphone ? "SI" : "NO"}</li>
-                        <li>¿Es Wireless? {" "} {searchProduct(idBuscado).wireless ? "SI" : "NO"}</li>
+                        <li>
+                          ¿Tiene Microfono?{" "}
+                          {searchProduct(idBuscado).microphone ? "SI" : "NO"}
+                        </li>
+                        <li>
+                          ¿Es Wireless?{" "}
+                          {searchProduct(idBuscado).wireless ? "SI" : "NO"}
+                        </li>
                       </>
                     )}
 
@@ -268,12 +309,20 @@ const productoPeri = () => {
                           +
                         </div>
                       </div>
-                      <button className="Buy-Cart-item"> Comprar </button>
+                      <button
+                        className="Buy-Cart-item"
+                        onClick={() => {
+                          ChangeModalPay();
+                          addToCart(searchProduct(idBuscado), quantity);
+                        }}
+                      >
+                        Comprar
+                      </button>
                     </div>
                     <button
                       className="Add-Cart-item"
                       onClick={() =>
-                        addToCart(searchProduct(idBuscado, quantity))
+                        addToCart(searchProduct(idBuscado), quantity)
                       }
                     >
                       Agregar al Carrito

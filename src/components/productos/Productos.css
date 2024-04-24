@@ -115,10 +115,12 @@
 }
 
 .Details-Main {
+  position: relative;
   width: 50%;
   height: 100%;
   margin: 0px 20px;
   float: right;
+  z-index: 0;
 }
 
 .Details-Purchase {
@@ -365,6 +367,13 @@
 }
 
 @media (max-width: 800px) {
+  .Placas-Header {
+    display: flex;
+    position: sticky;
+    top: -1px;
+    z-index: 504;
+  }
+
   .Logo {
     width: 140px;
   }

@@ -65,8 +65,26 @@
   margin-left: 10px;
 }
 
+.pay-price {
+  margin-right: 10px;
+}
+
+.pay-button {
+  color: #ffffff;
+  border: 1px solid var(--color-lightpink);
+  background-color: var(--color-intermediatePurple);
+  padding: 5px;
+  transition: 0.5s ease;
+}
+
+.pay-button:hover {
+  background-color: var(--color-Purple);
+  cursor: pointer;
+}
+
 .cart-footer {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #5b0888;
   width: 100%;

@@ -1,0 +1,107 @@
+.modalPay {
+  position: fixed;
+  width: 66%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 1px solid var(--color-Purple);
+  border-radius: 8px;
+  z-index: 1001;
+}
+
+.modalPay-2 {
+  position: fixed;
+  width: 25%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 1px solid var(--color-Purple);
+  border-radius: 8px;
+  z-index: 1001;
+}
+
+.modal-content {
+  display: flex;
+  border: 1px solid var(--color-Purple);
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.modal-form {
+  display: flex;
+  margin-bottom: 15px;
+  gap: 20px;
+}
+
+.modal-fields {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-endpay {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-Cartpay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 30px;
+  transition: 1s ease;
+}
+
+.close:hover {
+  color: var(--color-Purple);
+}
+
+@media (max-width: 1650px) {
+  .modalPay {
+    width: 66%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .modal-form {
+    flex-direction: column;
+  }
+
+  .modalPay-2 {
+    width: 35%;
+  }
+}
+
+@media (max-width: 810px) {
+  .modalPay {
+    width: 100%;
+  }
+
+  .modal-fields {
+    font-size: 10px;
+  }
+
+  .modal-fields input {
+    width: 120px;
+  }
+
+  .modalPay-2 {
+    width: 70%;
+  }
+}

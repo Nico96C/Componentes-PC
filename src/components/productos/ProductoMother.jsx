@@ -16,6 +16,8 @@ import { useEffect, useState } from "react";
 import InstagramIcon from "../../svg/instagram.jsx";
 import LinkedInIcon from "../../svg/linkedin.jsx";
 import GithubIcon from "../../svg/github.jsx";
+import { usePayModal } from "../../context/Pay.jsx";
+import { PayModal } from "../payModal.jsx";
 
 const productoMother = () => {
   const { id } = useParams();
@@ -37,6 +39,7 @@ const productoMother = () => {
   );
   const [quantity, setQuantity] = useState(1);
   const [isProducts, setIsProducts] = useState([]);
+  const { showPaymentModal, setShowPaymentModal } = usePayModal();
 
   useEffect(() => {
     // Filtrar los productos con 'oferta: true'
@@ -59,6 +62,10 @@ const productoMother = () => {
 
   const handleThumbnailClick = (imageUrl) => {
     setSelectedImage(imageUrl);
+  };
+
+  const ChangeModalPay = () => {
+    setShowPaymentModal(!showPaymentModal);
   };
 
   useEffect(() => {
@@ -119,6 +126,8 @@ const productoMother = () => {
               <img src={Logo} alt="Componentes PC Logo" className="Logo" />
             </a>
           </div>
+
+          {showPaymentModal && <PayModal onClose={ChangeModalPay} />}
 
           {isCartOpen && <ModalCarrito onClose={toggleCart} />}
 
@@ -218,14 +227,17 @@ const productoMother = () => {
                     <li>Marca: {searchProduct(idBuscado).category}</li>
                     <li>Socket: {searchProduct(idBuscado).socket}</li>
                     <li>
-                      Maximo de Memoria: {searchProduct(idBuscado).max_memory}{" "} GBs
+                      Maximo de Memoria: {searchProduct(idBuscado).max_memory}{" "}
+                      GBs
                     </li>
                     <li>
                       Slots de memoria: {searchProduct(idBuscado).memory_slots}
                     </li>
                     <li>{searchProduct(idBuscado)["text-2"]}</li>
                     <li>Color: {searchProduct(idBuscado).color}.</li>
-                    <li>Forma y Tamaño: {searchProduct(idBuscado).form_factor}</li>
+                    <li>
+                      Forma y Tamaño: {searchProduct(idBuscado).form_factor}
+                    </li>
                   </ul>
                 </div>
                 <div className="Details-Purchase">
@@ -262,11 +274,21 @@ const productoMother = () => {
                           +
                         </div>
                       </div>
-                      <button className="Buy-Cart-item"> Comprar </button>
+                      <button
+                        className="Buy-Cart-item"
+                        onClick={() => {
+                          ChangeModalPay();
+                          addToCart(searchProduct(idBuscado), quantity);
+                        }}
+                      >
+                        Comprar
+                      </button>
                     </div>
                     <button
                       className="Add-Cart-item"
-                      onClick={() => addToCart(searchProduct(idBuscado, quantity))}
+                      onClick={() =>
+                        addToCart(searchProduct(idBuscado), quantity)
+                      }
                     >
                       Agregar al Carrito
                     </button>

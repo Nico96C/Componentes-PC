@@ -15,26 +15,28 @@ import "./index.css";
 import { CartProvider } from "./context/Cart";
 import { FiltersProviders } from "./context/filters";
 import { DarkModeProvider } from "./context/DarkMode";
-
+import { PayModalProvider } from "./context/Pay";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <CartProvider>
       <FiltersProviders>
         <DarkModeProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<App />} />
-              <Route path="/videocards" element={<VideoCards />} />
-              <Route path="/videocards/:id" element={<ProductoPlaca />} />
-              <Route path="/procesors" element={<Procesors />} />
-              <Route path="/procesors/:id" element={<ProductoProce />} />
-              <Route path="/motherboard" element={<MotherBoard />} />
-              <Route path="/motherboard/:id" element={<ProductoMother />} />
-              <Route path="/peripherals" element={<Peripheral />} />
-              <Route path="/peripherals/:id" element={<ProductoPeri />} />
-            </Routes>
-          </BrowserRouter>
+          <PayModalProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/videocards" element={<VideoCards />} />
+                <Route path="/videocards/:id" element={<ProductoPlaca />} />
+                <Route path="/procesors" element={<Procesors />} />
+                <Route path="/procesors/:id" element={<ProductoProce />} />
+                <Route path="/motherboard" element={<MotherBoard />} />
+                <Route path="/motherboard/:id" element={<ProductoMother />} />
+                <Route path="/peripherals" element={<Peripheral />} />
+                <Route path="/peripherals/:id" element={<ProductoPeri />} />
+              </Routes>
+            </BrowserRouter>
+          </PayModalProvider>
         </DarkModeProvider>
       </FiltersProviders>
     </CartProvider>

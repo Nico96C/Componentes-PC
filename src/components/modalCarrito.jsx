@@ -5,10 +5,16 @@ import "../index.css";
 import "./modalCarrito.css";
 import { useCart } from "../hooks/useCart.jsx";
 import { useDarkMode } from "../context/DarkMode.jsx";
+import { usePayModal } from "../context/Pay.jsx";
 
 const ModalCarrito = ({ onClose }) => {
   const { cart } = useCart();
   const { isDarkMode } = useDarkMode();
+  const { showPaymentModal, setShowPaymentModal } = usePayModal();
+
+  const ChangeModalPay = () => {
+    setShowPaymentModal(!showPaymentModal)
+  }
 
   useEffect(() => {
     document.body.classList.add("modal-open");
@@ -18,7 +24,10 @@ const ModalCarrito = ({ onClose }) => {
     };
   }, []);
 
-  const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+  const totalPrice = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   const modalClassName = onClose ? "cart-modal active" : "cart-modal";
   const modeClassName = isDarkMode ? "dark-mode" : "light-mode";
@@ -32,15 +41,15 @@ const ModalCarrito = ({ onClose }) => {
         <h2 className="cart-title"> Carrito de Compras </h2>
         <div className="cart-items">
           {cart.map((item) => (
-            <CartItem
-              key={item.id}
-              item={item}
-            />
+            <CartItem key={item.id} item={item} />
           ))}
         </div>
 
         <div className="cart-footer">
           <div className="total-price">Total: ${totalPrice.toFixed(2)}</div>
+          <div className="pay-price">
+            <button className="pay-button" onClick={() => { ChangeModalPay(); onClose(); }}> PAGAR </button>
+          </div>
         </div>
       </div>
     </div>

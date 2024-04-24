@@ -835,16 +835,25 @@ html {
     display: none;
   }
 
-  ul {
+  .List {
     list-style: none;
   }
 
-  ul li {
+  .List li {
     display: inline-block;
     position: relative;
   }
 
-  ul li a {
+  .dropdown {
+    list-style: none;
+  }
+
+  .dropdown li {
+    display: inline-block;
+    position: relative;
+  }
+
+  .List li a {
     display: flex;
     align-items: center;
     padding: 20px 25px;

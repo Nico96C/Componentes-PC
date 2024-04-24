@@ -32,6 +32,8 @@ import ModalBusqueda from "./components/modalBusqueda.jsx";
 import ModalCarrito from "./components/modalCarrito.jsx";
 import { useCart } from "./hooks/useCart.jsx";
 import { useDarkMode } from "./context/DarkMode.jsx";
+import { PayModal } from "./components/payModal.jsx";
+import { usePayModal } from "./context/Pay.jsx";
 
 function App() {
   const [isProducts, setIsProducts] = useState([]);
@@ -45,6 +47,7 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { addToCart, isCartNotEmpty } = useCart();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const { showPaymentModal, setShowPaymentModal } = usePayModal();
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
@@ -86,6 +89,10 @@ function App() {
   const ChangeModal = () => {
     setShowModal(!showModal);
   };
+
+  const ChangeModalPay = () => {
+    setShowPaymentModal(!showPaymentModal)
+  }
 
   const handleClick = () => {
     if (window.innerWidth <= 800) {
@@ -175,6 +182,8 @@ function App() {
             {showModal && (
               <ModalBusqueda results={searchResults} onClose={ChangeModal} />
             )}
+
+            {showPaymentModal && <PayModal onClose={ChangeModalPay}/>}
 
             {isCartOpen && <ModalCarrito onClose={toggleCart} />}
 
@@ -266,7 +275,7 @@ function App() {
               </div>
             </div>
             <div className="Category-drop">
-              <ul>
+              <ul className="List">
                 <li>
                   <a href="#">
                     VER CATEGORIAS
@@ -475,7 +484,7 @@ function App() {
                     <div className="Trends-Product-Buy">
                       <button
                         className="Buy-Button"
-                        onClick={() => addToCart(product)}
+                        onClick={() => addToCart(product, 1)}
                       >
                         Añadir al Carrito
                       </button>
@@ -522,7 +531,7 @@ function App() {
                     <div className="Trends-Product-Buy">
                       <button
                         className="Buy-Button"
-                        onClick={() => addToCart(proce)}
+                        onClick={() => addToCart(proce, 1)}
                       >
                         Añadir al Carrito
                       </button>
@@ -569,7 +578,7 @@ function App() {
                     <div className="Trends-Product-Buy">
                       <button
                         className="Buy-Button"
-                        onClick={() => addToCart(mother)}
+                        onClick={() => addToCart(mother, 1)}
                       >
                         Añadir al Carrito
                       </button>
@@ -601,7 +610,7 @@ function App() {
                       <div className="Trends-SubContainer">
                         <a
                           className="Trends-ImgContainer"
-                          href={`/motherboard/${periferico.id}`}
+                          href={`/peripherals/${periferico.id}`}
                         >
                           <img
                             className="Trends-Product-Img"
@@ -622,7 +631,7 @@ function App() {
                     <div className="Trends-Product-Buy">
                       <button
                         className="Buy-Button"
-                        onClick={() => addToCart(periferico)}
+                        onClick={() => addToCart(periferico, 1)}
                       >
                         Añadir al Carrito
                       </button>
@@ -646,7 +655,7 @@ function App() {
             <section className="Web-End-Categorys">
               <h4> CATEGORIAS DETACADAS </h4>
               <nav>
-                <ul>
+                <ul className="List">
                   <li>
                     <a href="/videocards">Placas de Video</a>
                   </li>
