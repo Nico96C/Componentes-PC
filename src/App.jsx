@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Logo from "./svg/logo.svg";
 import motherboard from "./img/motherboard.png";
 import Placas from "./img/Placas.webp";
 import gaming from "./img/micro.webp";
@@ -10,13 +9,7 @@ import Razer from "./img/Razer.webp";
 import Graficas from "./img/Category1/mejores-graficas.webp";
 import Procesador from "./img/Category2/mejores-proce.jpg";
 import Perifericos from "./img/razer-perifericos.jpg";
-import ShoppingCart from "./svg/shopping-cart.svg";
 import DropDown from "./svg/dropdown.svg";
-import SolIcon from "./svg/sol.jsx";
-import LunaIcon from "./svg/luna.jsx";
-import Instagram from "./svg/instagram.jsx";
-import LinkedIn from "./svg/linkedin.jsx";
-import Github from "./svg/github.jsx";
 import PlacasJSON from "./mocks/VideoCards.json";
 import ProceJSON from "./mocks/Procesors.json";
 import MotherJSON from "./mocks/Motherboard.json";
@@ -24,16 +17,11 @@ import PeriJSON from "./mocks/Peripherals.json";
 import BannerRazer from "./img/RazerBanner.jpg";
 import "./App.css";
 import "./index.css";
-import HamburgerButton from "./components/hamburgerButton.jsx";
-import SearchIcon from "./svg/busqueda.jsx";
-import UserIcon from "./svg/usuario.jsx";
 import { useEffect, useState } from "react";
-import ModalBusqueda from "./components/modalBusqueda.jsx";
-import ModalCarrito from "./components/modalCarrito.jsx";
 import { useCart } from "./hooks/useCart.jsx";
 import { useDarkMode } from "./context/DarkMode.jsx";
-import { PayModal } from "./components/payModal.jsx";
-import { usePayModal } from "./context/Pay.jsx";
+import { Footer } from "./components/Footer.jsx";
+import { Header } from "./components/Header.jsx";
 
 function App() {
   const [isProducts, setIsProducts] = useState([]);
@@ -41,79 +29,8 @@ function App() {
   const [perifericos, setPerifericos] = useState([]);
   const [mothers, setMothers] = useState([]);
   const [activo, setActivo] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const { addToCart, isCartNotEmpty } = useCart();
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
-  const { showPaymentModal, setShowPaymentModal } = usePayModal();
-
-  const toggleCart = () => {
-    setIsCartOpen(!isCartOpen);
-  };
-
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-    if (event.target.value === "") {
-      setSearchResults([]);
-    }
-  };
-
-  const handleSearch = () => {
-    if (searchTerm.trim() === "") {
-      setSearchResults([]);
-    } else {
-      search(searchTerm);
-    }
-  };
-
-  const search = (term) => {
-    const combinedData = [
-      ...PlacasJSON.VideoCards,
-      ...ProceJSON.Procesadores,
-      ...MotherJSON.Motherboard,
-      ...PeriJSON.perifericos,
-    ];
-
-    const results = combinedData.filter(
-      (item) =>
-        item.name.toLowerCase().includes(term.toLowerCase()) ||
-        item.type.toLowerCase().includes(term.toLowerCase()) ||
-        item.category.toLowerCase().includes(term.toLowerCase())
-    );
-    console.log(results);
-    setSearchResults(results);
-  };
-
-  const ChangeModal = () => {
-    setShowModal(!showModal);
-  };
-
-  const ChangeModalPay = () => {
-    setShowPaymentModal(!showPaymentModal)
-  }
-
-  const handleClick = () => {
-    if (window.innerWidth <= 800) {
-      setActivo(!activo);
-    }
-  };
-
-  const handleSearchChange = (value) => {
-    search(value);
-  };
-
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      handleSearchChange(searchTerm);
-      ChangeModal();
-    }
-  };
-
-  const handleButtonClick = () => {
-    handleSearchChange(searchTerm);
-  };
+  const { addToCart} = useCart();
+  const { isDarkMode } = useDarkMode();
 
   useEffect(() => {
     const handleResize = () => {
@@ -147,100 +64,7 @@ function App() {
   return (
     <>
       <div className={isDarkMode ? "dark-mode" : "light-mode"}>
-        <header className="Navbar">
-          <div className="Container">
-            <div className="Logo-Container">
-              <img
-                src={Logo}
-                alt="Componentes PC Logo"
-                className="Logo"
-                loading="lazy"
-              />
-            </div>
-
-            <div className="Search-Container">
-              <input
-                className="Search"
-                type="text"
-                placeholder="Buscar..."
-                value={searchTerm}
-                onChange={handleChange}
-                onKeyDown={handleKeyDown}
-              />
-              <button
-                className="Search-Button"
-                onClick={() => {
-                  handleSearch();
-                  ChangeModal();
-                  handleButtonClick();
-                }}
-              >
-                <SearchIcon className="icon-search" />
-              </button>
-            </div>
-
-            {showModal && (
-              <ModalBusqueda results={searchResults} onClose={ChangeModal} />
-            )}
-
-            {showPaymentModal && <PayModal onClose={ChangeModalPay}/>}
-
-            {isCartOpen && <ModalCarrito onClose={toggleCart} />}
-
-            <div className={`Buttons ${activo ? "active" : ""}`}>
-              <div className="User-Button" onClick={handleClick}>
-                <UserIcon color="white" className="user-icon" />
-                {activo && <span className="NavBar-Text"> Perfil </span>}
-              </div>
-
-              <div
-                className={`Cart-Button ${
-                  isCartNotEmpty ? "cart-not-empty" : ""
-                }`}
-                onClick={() => {
-                  toggleCart();
-                  handleClick();
-                }}
-              >
-                <img
-                  src={ShoppingCart}
-                  alt="Componentes PC CartIcon"
-                  className="Cart"
-                  loading="lazy"
-                />
-                {activo && <span className="NavBar-Text"> Carrito </span>}
-              </div>
-
-              <div
-                className="Button-Mode"
-                onClick={() => {
-                  toggleDarkMode();
-                }}
-              >
-                {isDarkMode ? (
-                  <>
-                    <SolIcon />
-                    {activo && (
-                      <span className="NavBar-Text"> Modo Oscuro </span>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    <LunaIcon />
-                    {activo && (
-                      <span className="NavBar-Text"> Modo Claro </span>
-                    )}
-                  </>
-                )}
-              </div>
-            </div>
-
-            <div className="burger">
-              <HamburgerButton activo={activo} handleClick={handleClick} />
-            </div>
-            <div className={`initial ${activo ? "active" : ""}`}></div>
-          </div>
-        </header>
+        <Header />
 
         <nav className="All-Categories">
           <div className="Categories-Container">
@@ -650,56 +474,7 @@ function App() {
           </div>
         </div>
 
-        <footer className="Web-End">
-          <div className="Web-End-Containers">
-            <section className="Web-End-Categorys">
-              <h4> CATEGORIAS DETACADAS </h4>
-              <nav>
-                <ul className="List">
-                  <li>
-                    <a href="/videocards">Placas de Video</a>
-                  </li>
-                  <li>
-                    <a href="/procesors">Procesadores</a>
-                  </li>
-                  <li>
-                    <a href="/motherboard">Motherboards</a>
-                  </li>
-                  <li>
-                    <a href="/peripherals">Perifericos</a>
-                  </li>
-                </ul>
-              </nav>
-            </section>
-            <div className="Web-End-SocialMedia">
-              <section className="Mail">
-                <h4>CONTACTAME</h4>
-                <p>nicolas.cuello96@hotmail.com</p>
-                <a href="mailto:nicolas.cuello96@hotmail.com">Enviar correo</a>
-              </section>
-              <section className="Redes">
-                <h4>REDES Y REPOSITORIO</h4>
-                <div className="Redes-link">
-                  <a
-                    href="https://www.instagram.com/megabits96/"
-                    target="_blank"
-                  >
-                    <Instagram />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/nicolás-andres-cuello"
-                    target="_blank"
-                  >
-                    <LinkedIn />
-                  </a>
-                  <a href="https://www.Github.com/Nico96C" target="_blank">
-                    <Github />
-                  </a>
-                </div>
-              </section>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );

@@ -346,8 +346,13 @@
 }
 @media (max-width: 850px) {
   .Products-Details {
-    display: block;
+    display: grid;
     border: none;
+  }
+
+  .Details-Main {
+    width: 100%;
+    margin: 0;
   }
 
   .Details-Purchase {

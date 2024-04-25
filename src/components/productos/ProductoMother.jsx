@@ -4,20 +4,12 @@ import "../videocards.css";
 import "./Productos.css";
 import JSON from "../../mocks/Motherboard.json";
 import { useDarkMode } from "../../context/DarkMode";
-import SolIcon from "../../svg/sol.jsx";
-import LunaIcon from "../../svg/luna.jsx";
-import Logo from "../../svg/logo.svg";
-import ShoppingCart from "../../svg/shopping-cart.svg";
 import { useCart } from "../../hooks/useCart.jsx";
-import ModalCarrito from "../modalCarrito.jsx";
-import HamburgerButton from "../hamburgerButton.jsx";
 import BannerMother from "../../img/Category3/Motherboard.png";
 import { useEffect, useState } from "react";
-import InstagramIcon from "../../svg/instagram.jsx";
-import LinkedInIcon from "../../svg/linkedin.jsx";
-import GithubIcon from "../../svg/github.jsx";
 import { usePayModal } from "../../context/Pay.jsx";
-import { PayModal } from "../payModal.jsx";
+import { Footer } from "../Footer.jsx";
+import { Header } from "../Header.jsx";
 
 const productoMother = () => {
   const { id } = useParams();
@@ -31,9 +23,8 @@ const productoMother = () => {
   };
 
   const [activo, setActivo] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
-  const { addToCart, isCartNotEmpty } = useCart();
+  const { isDarkMode } = useDarkMode();
+  const { addToCart } = useCart();
   const [selectedImage, setSelectedImage] = useState(
     searchProduct(idBuscado).thumbnail
   );
@@ -83,16 +74,6 @@ const productoMother = () => {
     };
   }, [activo]);
 
-  const handleClick = () => {
-    if (window.innerWidth <= 800) {
-      setActivo(!activo);
-    }
-  };
-
-  const toggleCart = () => {
-    setIsCartOpen(!isCartOpen);
-  };
-
   /*
   <img
           src={searchProduct(idBuscado).thumbnail}
@@ -105,75 +86,19 @@ const productoMother = () => {
 
   return (
     <div className={`Placas-Product-Main ${modeClassName}`}>
-      <div className="Placas-Header">
-        <div className="Placas-Navegation">
-          <div className="navegation">
-            <button className="home-button">
-              <Link to="/">Home {">"}</Link>
-            </button>
-            <button className="home-button">
-              <Link to="/motherboard">Motherboard {">"}</Link>
-            </button>
-            <button className="home-button">
-              <Link to={`/motherboard/${searchProduct(idBuscado).id}`}>
-                {searchProduct(idBuscado).name}
-              </Link>
-            </button>
-          </div>
-
-          <div>
-            <a href="/">
-              <img src={Logo} alt="Componentes PC Logo" className="Logo" />
-            </a>
-          </div>
-
-          {showPaymentModal && <PayModal onClose={ChangeModalPay} />}
-
-          {isCartOpen && <ModalCarrito onClose={toggleCart} />}
-
-          <div className={`Buttons ${activo ? "active" : ""}`}>
-            <div
-              className={`Cart-Button ${
-                isCartNotEmpty ? "cart-not-empty" : ""
-              }`}
-              onClick={() => {
-                toggleCart();
-                handleClick();
-              }}
-            >
-              <img
-                src={ShoppingCart}
-                alt="Componentes PC CartIcon"
-                className="Cart"
-              />
-              {activo && <span className="NavBar-Text"> Carrito </span>}
-            </div>
-
-            <div
-              className="Button-Mode-1"
-              onClick={() => {
-                toggleDarkMode();
-              }}
-            >
-              {isDarkMode ? (
-                <>
-                  <SolIcon />
-                  {activo && <span className="NavBar-Text"> Modo Oscuro </span>}
-                </>
-              ) : (
-                <>
-                  <LunaIcon />
-                  {activo && <span className="NavBar-Text"> Modo Claro </span>}
-                </>
-              )}
-            </div>
-          </div>
-
-          <div className="burger">
-            <HamburgerButton activo={activo} handleClick={handleClick} />
-          </div>
-          <div className={`initial ${activo ? "active" : ""}`}></div>
-        </div>
+      <Header />
+      <div className="navegation">
+        <button className="home-button">
+          <Link to="/">Home {">"}</Link>
+        </button>
+        <button className="home-button">
+          <Link to="/motherboard">Motherboard {">"}</Link>
+        </button>
+        <button className="home-button">
+          <Link to={`/motherboard/${searchProduct(idBuscado).id}`}>
+            {searchProduct(idBuscado).name}
+          </Link>
+        </button>
       </div>
 
       <div className="Container-Products-Main">
@@ -347,53 +272,7 @@ const productoMother = () => {
         </div>
       </div>
 
-      <footer className="Web-End">
-        <div className="Web-End-Containers">
-          <section className="Web-End-Categorys">
-            <h4> CATEGORIAS DETACADAS </h4>
-            <nav>
-              <ul>
-                <li>
-                  <a href="/videocards">Placas de Video</a>
-                </li>
-                <li>
-                  <a href="/procesors">Procesadores</a>
-                </li>
-                <li>
-                  <a href="/motherboard">Motherboards</a>
-                </li>
-                <li>
-                  <a href="/peripherals">Perifericos</a>
-                </li>
-              </ul>
-            </nav>
-          </section>
-          <div className="Web-End-SocialMedia">
-            <section className="Mail">
-              <h4>CONTACTAME</h4>
-              <p>nicolas.cuello96@hotmail.com</p>
-              <a href="mailto:nicolas.cuello96@hotmail.com">Enviar correo</a>
-            </section>
-            <section className="Redes">
-              <h4>REDES Y CONTACTO</h4>
-              <div className="Redes-link">
-                <a href="https://www.instagram.com/megabits96/" target="_blank">
-                  <InstagramIcon />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/nicolás-andres-cuello"
-                  target="_blank"
-                >
-                  <LinkedInIcon />
-                </a>
-                <a href="https://www.Github.com/Nico96C" target="_blank">
-                  <GithubIcon />
-                </a>
-              </div>
-            </section>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

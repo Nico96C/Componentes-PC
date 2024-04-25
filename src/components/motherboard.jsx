@@ -5,18 +5,14 @@ import Mothers from "../mocks/Motherboard.json";
 import { useFilters } from "../hooks/useFilters";
 import { useId } from "react";
 import { useDarkMode } from "../context/DarkMode";
-import SolIcon from "../svg/sol.jsx";
-import LunaIcon from "../svg/luna.jsx";
 import { Link } from "react-router-dom";
 import "../index.css";
-import InstagramIcon from "../svg/instagram.jsx";
-import LinkedInIcon from "../svg/linkedin.jsx";
-import GithubIcon from "../svg/github.jsx";
-import Logo from "../svg/logo.svg";
+import { Footer } from "./Footer.jsx";
+import { Header } from "./Header.jsx";
 
 function MotherBoard() {
   const { filters, setFilters, filterProducts } = useFilters();
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const { isDarkMode } = useDarkMode();
 
   const minPriceFilterId = useId();
   const categoryFilterId = useId();
@@ -47,41 +43,16 @@ function MotherBoard() {
 
   return (
     <div className={isDarkMode ? "dark-mode" : "light-mode"}>
-      <div className="Placas-Header">
-        <div className="Placas-Navegation-2">
-          <div className="navegation-2">
-            <button className="home-button">
-              <Link to="/">Home {">"}</Link>
-            </button>
-            <button className="home-button">
-              <Link to="/motherboard"> Motherboard </Link>
-            </button>
-          </div>
-
-          <div>
-            <a href="/">
-              <img src={Logo} alt="Componentes PC Logo" className="Logo" />
-            </a>
-          </div>
-
-          <div
-            className="Button-Mode-1"
-            onClick={() => {
-              toggleDarkMode();
-            }}
-          >
-            {isDarkMode ? (
-              <>
-                <SolIcon />
-              </>
-            ) : (
-              <>
-                <LunaIcon />
-              </>
-            )}
-          </div>
-        </div>
+      <Header />
+      <div className="navegation-2">
+        <button className="home-button">
+          <Link to="/">Home {">"}</Link>
+        </button>
+        <button className="home-button">
+          <Link to="/motherboard"> Motherboard </Link>
+        </button>
       </div>
+
       <div className="Placas-Element-1">
         <div className="Element-1-ImgContainer">
           <img
@@ -93,7 +64,8 @@ function MotherBoard() {
         <div className="Element-1-textContainer">
           <h1> MOTHERBOARD </h1>
           <p>
-            Gamas superiores en el centro de tu PC Gamer, preparados para lo que este por venir.
+            Gamas superiores en el centro de tu PC Gamer, preparados para lo que
+            este por venir.
           </p>
         </div>
       </div>
@@ -183,53 +155,7 @@ function MotherBoard() {
         </div>
       </div>
 
-      <footer className="Web-End">
-        <div className="Web-End-Containers">
-          <section className="Web-End-Categorys">
-            <h4> CATEGORIAS DETACADAS </h4>
-            <nav>
-              <ul>
-                <li>
-                  <a href="/videocards">Placas de Video</a>
-                </li>
-                <li>
-                  <a href="/procesors">Procesadores</a>
-                </li>
-                <li>
-                  <a href="/motherboard">Motherboards</a>
-                </li>
-                <li>
-                  <a href="/peripherals">Perifericos</a>
-                </li>
-              </ul>
-            </nav>
-          </section>
-          <div className="Web-End-SocialMedia">
-            <section className="Mail">
-              <h4>CONTACTAME</h4>
-              <p>nicolas.cuello96@hotmail.com</p>
-              <a href="mailto:nicolas.cuello96@hotmail.com">Enviar correo</a>
-            </section>
-            <section className="Redes">
-              <h4>REDES Y CONTACTO</h4>
-              <div className="Redes-link">
-                <a href="https://www.instagram.com/megabits96/" target="_blank">
-                  <InstagramIcon />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/nicolás-andres-cuello"
-                  target="_blank"
-                >
-                  <LinkedInIcon />
-                </a>
-                <a href="https://www.Github.com/Nico96C" target="_blank">
-                  <GithubIcon />
-                </a>
-              </div>
-            </section>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
