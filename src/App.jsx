@@ -29,7 +29,7 @@ function App() {
   const [perifericos, setPerifericos] = useState([]);
   const [mothers, setMothers] = useState([]);
   const [activo, setActivo] = useState(false);
-  const { addToCart} = useCart();
+  const { addToCart } = useCart();
   const { isDarkMode } = useDarkMode();
 
   useEffect(() => {
@@ -296,7 +296,18 @@ function App() {
                           />
                         </a>
                         <div className="Trends-Product-Info">
-                          <div className="Product-Stock"></div>
+                          <div className="Product-Stock">
+                            <div className="Product-tags">
+                              <div className="Product-cardtag">
+                                <p>
+                                  {" "}
+                                  {`${
+                                    product.stock ? "En Stock" : "Sin Stock"
+                                  }`}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                           <div className="Product-Main-Info">
                             <h3> {product.chipset} </h3>
                             <h5> {product.name} </h5>
@@ -344,7 +355,15 @@ function App() {
                           />
                         </a>
                         <div className="Trends-Product-Info">
-                          <div className="Product-Stock"></div>
+                          <div className="Product-Stock">
+                            <div className="Product-tags">
+                              <div className="Product-cardtag">
+                                <p>
+                                  {`${proce.stock ? "En Stock" : "Sin Stock"}`}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                           <div className="Product-Main-Info">
                             <h3> {proce.name} </h3>
                           </div>
@@ -391,7 +410,15 @@ function App() {
                           />
                         </a>
                         <div className="Trends-Product-Info">
-                          <div className="Product-Stock"></div>
+                          <div className="Product-Stock">
+                            <div className="Product-tags">
+                              <div className="Product-cardtag">
+                                <p>
+                                  {`${mother.stock ? "En Stock" : "Sin Stock"}`}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                           <div className="Product-Main-Info">
                             <h3> {mother.name} </h3>
                           </div>
@@ -444,7 +471,17 @@ function App() {
                           />
                         </a>
                         <div className="Trends-Product-Info">
-                          <div className="Product-Stock"></div>
+                          <div className="Product-Stock">
+                            <div className="Product-tags">
+                              <div className="Product-cardtag">
+                                <p>
+                                  {`${
+                                    periferico.stock ? "En Stock" : "Sin Stock"
+                                  }`}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                           <div className="Product-Main-Info">
                             <h3> {periferico.name} </h3>
                           </div>

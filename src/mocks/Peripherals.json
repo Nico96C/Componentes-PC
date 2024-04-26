@@ -15,6 +15,7 @@
         "microphone": true,
         "wireless": false,
         "enclosure_type": "Closed",
+        "stock": true,
         "color": "Black / Green"
     },
     {
@@ -33,6 +34,7 @@
         "microphone": true,
         "wireless": false,
         "enclosure_type": "Closed",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -51,6 +53,7 @@
         "microphone": true,
         "wireless": false,
         "enclosure_type": "Closed",
+        "stock": true,
         "color": "Pink"
     },
     {
@@ -69,6 +72,7 @@
         "microphone": true,
         "wireless": true,
         "enclosure_type": "Closed",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -87,6 +91,7 @@
         "microphone": true,
         "wireless": false,
         "enclosure_type": "Closed",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -102,6 +107,7 @@
         "backlit": "RGB",
         "tenkeyless": true,
         "connection_type": "Wired",
+        "stock": true,
         "color": "White"
     },
     {
@@ -117,6 +123,7 @@
         "backlit": "RGB",
         "tenkeyless": false,
         "connection_type": "Wired",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -132,6 +139,7 @@
         "backlit": "RGB",
         "tenkeyless": true,
         "connection_type": "Wired",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -147,6 +155,7 @@
         "backlit": "RGB",
         "tenkeyless": false,
         "connection_type": "Wired",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -162,6 +171,7 @@
         "backlit": "RGB",
         "tenkeyless": false,
         "connection_type": "Wired",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -177,6 +187,7 @@
         "backlit": "RGB",
         "tenkeyless": false,
         "connection_type": "Wired",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -191,6 +202,7 @@
         "connection_type": "Wired",
         "max_dpi": 26000,
         "hand_orientation": "Right",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -205,6 +217,7 @@
         "connection_type": "Wired",
         "max_dpi": 6400,
         "hand_orientation": "Right",
+        "stock": true,
         "color": "White"
     },
     {
@@ -219,6 +232,7 @@
         "connection_type": "Wireless",
         "max_dpi": 20000,
         "hand_orientation": "Both",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -233,6 +247,7 @@
         "connection_type": "Wired, Wireless, Bluetooth Wireless",
         "max_dpi": 30000,
         "hand_orientation": "Right",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -247,6 +262,7 @@
         "connection_type": "Wired",
         "max_dpi": 16000,
         "hand_orientation": "Right",
+        "stock": true,
         "color": "Black / Orange"
     },
     {
@@ -261,6 +277,7 @@
         "connection_type": "Wired",
         "max_dpi": 16000,
         "hand_orientation": "Right",
+        "stock": true,
         "color": "Black"
     },
     {
@@ -275,8 +292,8 @@
         "connection_type": "Wireless",
         "max_dpi": 18000,
         "hand_orientation": "Right",
+        "stock": true,
         "color": "White"
     }
 ]
-
 }

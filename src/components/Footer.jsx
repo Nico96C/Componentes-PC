@@ -29,7 +29,6 @@ export function Footer() {
             <section className="Mail">
               <h4>CONTACTAME</h4>
               <p>nicolas.cuello96@hotmail.com</p>
-              <a href="mailto:nicolas.cuello96@hotmail.com">Enviar correo</a>
             </section>
             <section className="Redes">
               <h4>REDES Y REPOSITORIO</h4>

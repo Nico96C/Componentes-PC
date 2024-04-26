@@ -12,6 +12,7 @@
         "thumbnail": "/src/img/Category2/1.png",
         "category": "AMD",
         "graphics": "Radeon",
+        "stock": true,
         "smt": true
     },
     {
@@ -27,6 +28,7 @@
         "thumbnail": "/src/img/Category2/2.webp",
         "category": "AMD",
         "graphics": "Radeon",
+        "stock": true,
         "smt": true
     },
     {
@@ -42,6 +44,7 @@
         "thumbnail": "/src/img/Category2/3.png",
         "category": "INTEL",
         "graphics": "Intel UHD Graphics 770",
+        "stock": true,
         "smt": true
     },
     {
@@ -57,6 +60,7 @@
         "thumbnail": "/src/img/Category2/4.png",
         "category": "INTEL",
         "graphics": "Intel UHD Graphics 770",
+        "stock": true,
         "smt": true
     },
     {
@@ -72,6 +76,7 @@
         "thumbnail": "/src/img/Category2/5.webp",
         "category": "INTEL",
         "graphics": null,
+        "stock": true,
         "smt": true
     },
     {
@@ -87,6 +92,7 @@
         "thumbnail": "/src/img/Category2/6.webp",
         "category": "AMD",
         "graphics": null,
+        "stock": true,
         "smt": true
     },
     {
@@ -102,6 +108,7 @@
         "thumbnail": "/src/img/Category2/7-9.png",
         "category": "INTEL",
         "graphics": "Intel UHD Graphics 770",
+        "stock": true,
         "smt": true
     },
     {
@@ -117,6 +124,7 @@
         "thumbnail": "/src/img/Category2/8.png",
         "category": "INTEL",
         "graphics": "Intel UHD Graphics 770",
+        "stock": true,
         "smt": true
     },
     {
@@ -132,6 +140,7 @@
         "thumbnail": "/src/img/Category2/4.png",
         "category": "INTEL",
         "graphics": null,
+        "stock": true,
         "smt": true
     },
     {
@@ -147,6 +156,7 @@
         "thumbnail": "/src/img/Category2/10.webp",
         "category": "INTEL",
         "graphics": null,
+        "stock": true,
         "smt": true
     },
     {
@@ -162,6 +172,7 @@
         "thumbnail": "/src/img/Category2/11.png",
         "category": "AMD",
         "graphics": null,
+        "stock": true,
         "smt": true
     },
     {
@@ -177,6 +188,7 @@
         "thumbnail": "/src/img/Category2/12.png",
         "category": "AMD",
         "graphics": "Radeon",
+        "stock": true,
         "smt": true
     },
     {
@@ -192,6 +204,7 @@
         "thumbnail": "/src/img/Category2/13.png",
         "category": "AMD",
         "graphics": "Radeon",
+        "stock": true,
         "smt": true
     },
     {
@@ -207,6 +220,7 @@
         "thumbnail": "/src/img/Category2/14.png",
         "category": "AMD",
         "graphics": null,
+        "stock": true,
         "smt": true
     },
     {
@@ -222,6 +236,7 @@
         "thumbnail": "/src/img/Category2/15.png",
         "category": "AMD",
         "graphics": null,
+        "stock": true,
         "smt": true
     }
 ]}
