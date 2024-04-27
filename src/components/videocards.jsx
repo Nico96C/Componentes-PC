@@ -72,11 +72,11 @@ function VideoCards() {
       <div className="Placas-Search-Container">
         <div className="Search-headBar">
           <div className="Search-Order">
-            <div>
+            <div className="Filter-color">
               <span>FILTROS:</span>
             </div>
 
-            <div>
+            <div className="Filter-color">
               <label htmlFor={minPriceFilterId}>
                 {" "}
                 Un precio superior a [${filters.minPrice}]{" "}
@@ -91,7 +91,7 @@ function VideoCards() {
               />
             </div>
 
-            <div>
+            <div className="Filter-color">
               <label htmlFor={categoryFilterId}>Categoria:</label>
               <select id={categoryFilterId} onChange={handleChangeCategory}>
                 <option value="all"> Todas </option>
@@ -100,7 +100,7 @@ function VideoCards() {
               </select>
             </div>
 
-            <div>
+            <div className="Filter-color">
               <label htmlFor={sortFilterId}>Ordenar por precio:</label>
               <select
                 id={sortFilterId}
