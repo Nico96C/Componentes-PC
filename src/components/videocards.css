@@ -270,6 +270,7 @@ input[type="range"]::-webkit-slider-thumb::active {
   .Search-Order {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
   }
 
   .Search-Order > div {
@@ -279,6 +280,14 @@ input[type="range"]::-webkit-slider-thumb::active {
 
   .home-button {
     font-size: 8px;
+  }
+
+  .Filter-color span {
+    margin-bottom: 10px;
+  }
+
+  .Filter-1 {
+    margin-bottom: 10px;
   }
 }
 

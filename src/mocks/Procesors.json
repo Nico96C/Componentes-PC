@@ -76,7 +76,7 @@
         "thumbnail": "/src/img/Category2/5.webp",
         "category": "INTEL",
         "graphics": null,
-        "stock": true,
+        "stock": false,
         "smt": true
     },
     {

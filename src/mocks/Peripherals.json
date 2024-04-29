@@ -91,7 +91,7 @@
         "microphone": true,
         "wireless": false,
         "enclosure_type": "Closed",
-        "stock": true,
+        "stock": false,
         "color": "Black"
     },
     {

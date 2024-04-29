@@ -86,20 +86,20 @@ const productoProce = () => {
 
   return (
     <div className={`Placas-Product-Main ${modeClassName}`}>
-        <Header />
-          <div className="navegation">
-            <button className="home-button">
-              <Link to="/">Home {">"}</Link>
-            </button>
-            <button className="home-button">
-              <Link to="/procesors">Procesadores {">"}</Link>
-            </button>
-            <button className="home-button">
-              <Link to={`/procesors/${searchProduct(idBuscado).id}`}>
-                {searchProduct(idBuscado).name}
-              </Link>
-            </button>
-          </div>
+      <Header />
+      <div className="navegation">
+        <button className="home-button">
+          <Link to="/">Home {">"}</Link>
+        </button>
+        <button className="home-button">
+          <Link to="/procesors">Procesadores {">"}</Link>
+        </button>
+        <button className="home-button">
+          <Link to={`/procesors/${searchProduct(idBuscado).id}`}>
+            {searchProduct(idBuscado).name}
+          </Link>
+        </button>
+      </div>
 
       <div className="Container-Products-Main">
         <div className="Container-Products-Scroll">
@@ -197,24 +197,32 @@ const productoProce = () => {
                           +
                         </div>
                       </div>
-                      <button
-                        className="Buy-Cart-item"
-                        onClick={() => {
-                          ChangeModalPay();
-                          addToCart(searchProduct(idBuscado), quantity);
-                        }}
-                      >
-                        Comprar
-                      </button>
+                      {searchProduct(idBuscado).stock ? (
+                        <button
+                          className="Buy-Cart-item"
+                          onClick={() => {
+                            ChangeModalPay();
+                            addToCart(searchProduct(idBuscado), quantity);
+                          }}
+                        >
+                          Comprar
+                        </button>
+                      ) : (
+                        <div className="Text-NoStock">
+                          <p>No disponible</p>
+                        </div>
+                      )}
                     </div>
-                    <button
-                      className="Add-Cart-item"
-                      onClick={() =>
-                        addToCart(searchProduct(idBuscado), quantity)
-                      }
-                    >
-                      Agregar al Carrito
-                    </button>
+                    {searchProduct(idBuscado).stock && (
+                      <button
+                        className="Add-Cart-item"
+                        onClick={() =>
+                          addToCart(searchProduct(idBuscado), quantity)
+                        }
+                      >
+                        Agregar al Carrito
+                      </button>
+                    )}
                   </div>
                   <div className="Details-Tags"></div>
                 </div>

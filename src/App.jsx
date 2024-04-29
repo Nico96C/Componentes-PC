@@ -100,7 +100,7 @@ function App() {
             <div className="Category-drop">
               <ul className="List">
                 <li>
-                  <a href="#">
+                  <a>
                     VER CATEGORIAS
                     <img
                       src={DropDown}

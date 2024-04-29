@@ -84,7 +84,7 @@
         "memory_slots": 4,
         "text": "Audio para juegos líder en la industria: Cancelación de ruido AI bidireccional, códec SupremeFX S1220A, DTS® Sound Unbound™ y Sonic Studio III para un sonido envolvente.",
         "text-2": "Solución de alimentación robusta: 12 + 2 fases de poder combinadas con conector de alimentación ProCool, chokes de aleación de alta calidad y condensadores duraderos.",
-        "stock": true,
+        "stock": false,
         "thumbnail": "/src/img/Category3/5.png",
         "img-1": "/src/img/Category3/5conect.png",
         "color": "Black / Red"

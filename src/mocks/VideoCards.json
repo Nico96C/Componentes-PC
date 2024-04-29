@@ -100,7 +100,7 @@
         "text": "El sistema de enfriamiento WINDFORCE cuenta con tres ventiladores de aspas únicos de 90 mm, giro alternativo, 7 heatpipes de cobre compuestos, una gran placa de cobre que toca directamente la GPU, ventiladores activos 3D y enfriamiento de pantalla, que en conjunto brindan una disipación de calor de alta eficiencia.",
         "text-2": "AMD Radeon Boost Technology, AMD Radeon Anti Lag Technology, AMD Noise Suppression, Graphene Nano Lubricant.",
         "text-3": "Bobinas metálicas certificadas ultra duraderas de la más alta calidad, capacitores sólidos con ESR más bajo, PCB de cobre de 2 oz y MOSFET con RDS(on) más bajo, además de un diseño contra sobretemperatura para ofrecer un rendimiento superior y una vida útil más larga del sistema.",
-        "stock": true,
+        "stock": false,
         "category": "AMD",
         "length": 302
     },

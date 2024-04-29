@@ -40,7 +40,13 @@ export function ProductsView({ products }) {
                 <div className="Trends-Product-Info">
                   <div className="Product-Stock">
                     <div className="Product-tags">
-                      <div className="Product-cardtag">
+                      <div
+                        className={
+                          product.stock
+                            ? "Product-cardtag"
+                            : "Product-cardtag-none"
+                        }
+                      >
                         <p>{`${product.stock ? "En Stock" : "Sin Stock"}`}</p>
                       </div>
                     </div>
@@ -56,12 +62,20 @@ export function ProductsView({ products }) {
               </div>
             </article>
             <div className="Trends-Product-Buy">
-              <button
-                className="Buy-Button"
-                onClick={() => addToCart(product, 1)}
-              >
-                Añadir al Carrito
-              </button>
+              {product.stock ? (
+                <button
+                  className="Buy-Button"
+                  onClick={() => addToCart(product, 1)}
+                >
+                  Añadir al Carrito
+                </button>
+              ) : (
+                <button
+                  className="Buy-Button"
+                >
+                  No Disponible
+                </button>
+              )}
             </div>
           </div>
         ))}

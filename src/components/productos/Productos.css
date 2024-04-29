@@ -322,6 +322,17 @@
   border-top: 1px solid rgb(214, 213, 218);
 }
 
+.Text-NoStock {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--color-Purple);
+}
+
+.Text-NoStock p {
+  padding: 7px;
+  background-color: var(--color-intermediatePurple);
+}
+
 @media (max-width: 1600px) {
   .Products-General {
     padding: 0 5%;

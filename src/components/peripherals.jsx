@@ -133,7 +133,21 @@ function Peripheral() {
                         />
                       </div>
                       <div className="Trends-Product-Info">
-                        <div className="Product-Stock"></div>
+                        <div className="Product-Stock">
+                          <div className="Product-tags">
+                            <div
+                              className={
+                                product.stock
+                                  ? "Product-cardtag"
+                                  : "Product-cardtag-none"
+                              }
+                            >
+                              <p>{`${
+                                product.stock ? "En Stock" : "Sin Stock"
+                              }`}</p>
+                            </div>
+                          </div>
+                        </div>
                         <div className="Product-Main-Info">
                           <h3> {product.name} </h3>
                           <h5> {product.type} </h5>

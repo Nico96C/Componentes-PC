@@ -9,7 +9,7 @@ export function Footer() {
           <section className="Web-End-Categorys">
             <h4> CATEGORIAS DETACADAS </h4>
             <nav>
-              <ul className="List">
+              <ul className="List-tag">
                 <li>
                   <a href="/videocards">Placas de Video</a>
                 </li>
