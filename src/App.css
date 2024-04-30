@@ -834,6 +834,10 @@ html {
   justify-content: center;
 }
 
+ul li a:hover {
+  color: var(--color-Purple);
+}
+
 @media (min-width: 750px) {
   .Mail {
     margin-top: 0px;
@@ -979,10 +983,6 @@ html {
     background: var(--color-intermediatePurple);
     transform: scaleY(0);
     transform-origin: top;
-  }
-
-  ul li a:hover {
-    color: var(--color-Purple);
   }
 
   ul li:hover ul.dropdown {

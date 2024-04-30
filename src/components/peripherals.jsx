@@ -70,11 +70,11 @@ function Peripheral() {
         <div className="Search-headBar">
           <div className="Search-Order">
             <div className="Filter-color">
-              <span>FILTROS:</span>
+              <span>FILTROS</span>
             </div>
 
             <div className="Filter-color">
-              <label htmlFor={minPriceFilterId}>
+              <label className="Filter-1" htmlFor={minPriceFilterId}>
                 {" "}
                 Un precio superior a [${filters.minPrice}]{" "}
               </label>

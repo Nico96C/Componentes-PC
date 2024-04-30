@@ -198,6 +198,7 @@ export function Header() {
         </div>
         <div className={`initial ${activo ? "active" : ""}`}></div>
       </div>
+
     </header>
   );
 }
