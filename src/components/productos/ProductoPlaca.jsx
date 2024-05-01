@@ -105,9 +105,9 @@ const productoPlaca = () => {
         <div className="Container-Products-Scroll">
           <div>
             <div className="Products-Banner">
-              <a href="/videocards">
+              <Link href="/videocards">
                 <img src={BannerVideo} alt="Banner de placas video" />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="Products-General">
@@ -255,7 +255,7 @@ const productoPlaca = () => {
               <div className="Trends-Item" key={product.id}>
                 <article className="Trends-MainContainer">
                   <div className="Trends-SubContainer">
-                    <a
+                    <Link
                       className="Trends-ImgContainer"
                       href={`/videocards/${product.id}`}
                     >
@@ -264,7 +264,7 @@ const productoPlaca = () => {
                         src={product.thumbnail}
                         alt={product.name}
                       />
-                    </a>
+                    </Link>
                     <div className="Trends-Product-Info">
                       <div className="Product-Stock"></div>
                       <div className="Product-Main-Info">

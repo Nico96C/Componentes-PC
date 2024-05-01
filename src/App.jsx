@@ -70,30 +70,30 @@ function App() {
             <div className="Categories">
               <div className="Category-Element">
                 <span className="Category-tag">
-                  <a className="Category-link" href="./videocards">
+                  <Link className="Category-link" to="/videocards">
                     PLACAS DE VIDEO
-                  </a>
+                  </Link>
                 </span>
               </div>
               <div className="Category-Element">
                 <span className="Category-tag">
-                  <a className="Category-link" href="./procesors">
+                  <Link className="Category-link" to="/procesors">
                     PROCESADORES
-                  </a>
+                  </Link>
                 </span>
               </div>
               <div className="Category-Element">
                 <span className="Cartegory-tag">
-                  <a className="Category-link" href="./motherboard">
+                  <Link className="Category-link" to="/motherboard">
                     MOTHERBOARD
-                  </a>
+                  </Link>
                 </span>
               </div>
               <div className="Category-Element">
                 <span className="Category-tag">
-                  <a className="Category-link" href="./peripherals">
+                  <Link className="Category-link" to="/peripherals">
                     PERIFERICOS
-                  </a>
+                  </Link>
                 </span>
               </div>
             </div>
@@ -111,16 +111,16 @@ function App() {
                   </a>
                   <ul className="dropdown">
                     <li>
-                      <a href="./videocards">PLACAS DE VIDEO</a>
+                      <Link to="/videocards">PLACAS DE VIDEO</Link>
                     </li>
                     <li>
-                      <a href="./procesors">PROCESADORES</a>
+                      <Link to="/procesors">PROCESADORES</Link>
                     </li>
                     <li>
-                      <a href="./motherboard">MOTHERBOARD</a>
+                      <Link to="/motherboard">MOTHERBOARD</Link>
                     </li>
                     <li>
-                      <a href="./peripherals">PERIFERICOS</a>
+                      <Link to="/peripherals">PERIFERICOS</Link>
                     </li>
                   </ul>
                 </li>
@@ -149,9 +149,9 @@ function App() {
                   />
                   <div className="Carrousel-Text">
                     <h1>¡Marcas Lideres y de Calidad! MSI, ASUS y GIGABYTE!</h1>
-                    <a href="/motherboard">
+                    <Link to="/motherboard">
                       <button>Explora</button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="Carrousel-ImageWrapper">
@@ -163,9 +163,9 @@ function App() {
                   />
                   <div className="Carrousel-Text">
                     <h1> Las mejores Placas de Video! AMD y NVIDIA </h1>
-                    <a href="/videocards">
+                    <Link to="/videocards">
                       <button>Ver Precios</button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="Carrousel-ImageWrapper">
@@ -180,9 +180,9 @@ function App() {
                       {" "}
                       Intel y AMD! La potencia de procesado que necesita tu PC.
                     </h1>
-                    <a href="/procesors">
+                    <Link to="/procesors">
                       <button>Ver Más</button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="Carrousel-ImageWrapper">
@@ -194,10 +194,9 @@ function App() {
                   />
                   <div className="Carrousel-Text">
                     <h1>Razer! Todo para Gamers</h1>
-                    <a href="/peripherals">
-                      {" "}
-                      <button>Ver más</button>{" "}
-                    </a>
+                    <Link to="/peripherals">
+                      <button>Ver más</button>
+                    </Link>
                   </div>
                 </div>
               </Slider>
@@ -278,10 +277,10 @@ function App() {
               </h2>
             </div>
 
-            <ProductsView products={placasVideo}/>
+            <ProductsView products={placasVideo} />
 
             <button className="Mas-Button">
-              <a href="/videocards">+ VER MAS</a>
+              <Link to="/videocards">+ VER MÁS</Link>
             </button>
           </div>
 
@@ -290,10 +289,10 @@ function App() {
               <h2 className="Trends-Title"> LAS TENDENCIAS EN PROCESADORES </h2>
             </div>
 
-            <ProductsView products={procesador}/>
+            <ProductsView products={procesador} />
 
             <button className="Mas-Button">
-              <a href="/procesors">+ VER MAS</a>
+              <Link to="/procesors">+ VER MÁS</Link>
             </button>
           </div>
 
@@ -302,10 +301,10 @@ function App() {
               <h2 className="Trends-Title"> LAS TENDENCIAS EN MOTHERS </h2>
             </div>
 
-            <ProductsView products={mothers}/>
+            <ProductsView products={mothers} />
 
             <button className="Mas-Button">
-              <a href="/motherboard">+ VER MAS</a>
+              <Link to="/motherboard">+ VER MÁS</Link>
             </button>
           </div>
 
@@ -320,10 +319,10 @@ function App() {
               <h2 className="Trends-Title"> ¡LOS MEJORES PERIFERICOS! </h2>
             </div>
 
-            <ProductsView products={perifericos}/>
-            
+            <ProductsView products={perifericos} />
+
             <button className="Mas-Button">
-              <a href="/peripherals">+ VER MAS</a>
+              <Link to="/peripherals">+ VER MÁS</Link>
             </button>
             <div
               className="Trends-Header"

@@ -120,10 +120,10 @@ function VideoCards() {
             <div className="Search-Item-Head"></div>
             <div className="Search-Item-Card">
               {filteredProducts.map((product) => (
-                <a
+                <Link
                   className="Trends-Item"
                   key={product.id}
-                  href={`/videocards/${product.id}`}
+                  to={`/videocards/${product.id}`}
                 >
                   <article className="Trends-MainContainer">
                     <div className="Trends-SubContainer">
@@ -161,7 +161,7 @@ function VideoCards() {
                       </div>
                     </div>
                   </article>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

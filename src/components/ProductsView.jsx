@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import { useCart } from "../hooks/useCart";
 
 function getProductLink(product) {
@@ -26,7 +27,7 @@ export function ProductsView({ products }) {
           <div className="Trends-Item" key={product.id}>
             <article className="Trends-MainContainer">
               <div className="Trends-SubContainer">
-                <a
+                <Link
                   className="Trends-ImgContainer"
                   href={getProductLink(product)}
                 >
@@ -36,7 +37,7 @@ export function ProductsView({ products }) {
                     alt={product.name}
                     loading="lazy"
                   />
-                </a>
+                </Link>
                 <div className="Trends-Product-Info">
                   <div className="Product-Stock">
                     <div className="Product-tags">

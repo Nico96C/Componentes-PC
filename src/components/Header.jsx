@@ -18,6 +18,7 @@ import LunaIcon from "../svg/luna";
 import HamburgerButton from "../components/hamburgerButton.jsx";
 import { useLoginModal } from "../context/Login.jsx";
 import { UserLogin } from "./UserLogin.jsx";
+import { Link } from "react-router-dom";
 
 export function Header() {
   const [activo, setActivo] = useState(false);

@@ -121,7 +121,7 @@ function Procesor() {
             <div className="Search-Item-Head"></div>
             <div className="Search-Item-Card">
               {filteredProducts.map((product) => (
-                <a
+                <Link
                   className="Trends-Item"
                   key={product.id}
                   href={`/procesors/${product.id}`}
@@ -162,7 +162,7 @@ function Procesor() {
                       </div>
                     </div>
                   </article>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

@@ -121,7 +121,7 @@ function MotherBoard() {
             <div className="Search-Item-Head"></div>
             <div className="Search-Item-Card">
               {filteredProducts.map((product) => (
-                <a
+                <Link
                   className="Trends-Item"
                   key={product.id}
                   href={`/motherboard/${product.id}`}
@@ -162,7 +162,7 @@ function MotherBoard() {
                       </div>
                     </div>
                   </article>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

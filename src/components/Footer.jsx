@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import GithubIcon from "../svg/github";
 import InstagramIcon from "../svg/instagram";
 import LinkedInIcon from "../svg/linkedin";
@@ -11,16 +12,16 @@ export function Footer() {
             <nav>
               <ul className="List-tag">
                 <li>
-                  <a href="/videocards">Placas de Video</a>
+                  <Link href="/videocards">Placas de Video</Link>
                 </li>
                 <li>
-                  <a href="/procesors">Procesadores</a>
+                  <Link href="/procesors">Procesadores</Link>
                 </li>
                 <li>
-                  <a href="/motherboard">Motherboards</a>
+                  <Link href="/motherboard">Motherboards</Link>
                 </li>
                 <li>
-                  <a href="/peripherals">Perifericos</a>
+                  <Link href="/peripherals">Perifericos</Link>
                 </li>
               </ul>
             </nav>

@@ -105,9 +105,9 @@ const productoPeri = () => {
         <div className="Container-Products-Scroll">
           <div>
             <div className="Products-Banner">
-              <a href="/peripherals">
+              <Link href="/peripherals">
                 <img src={BannerPeri} alt="Banner de perifericos" />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="Products-General">
@@ -281,7 +281,7 @@ const productoPeri = () => {
               <div className="Trends-Item" key={product.id}>
                 <article className="Trends-MainContainer">
                   <div className="Trends-SubContainer">
-                    <a
+                    <Link
                       className="Trends-ImgContainer"
                       href={`/peripherals/${product.id}`}
                     >
@@ -290,7 +290,7 @@ const productoPeri = () => {
                         src={product.thumbnail}
                         alt={product.name}
                       />
-                    </a>
+                    </Link>
                     <div className="Trends-Product-Info">
                       <div className="Product-Stock"></div>
                       <div className="Product-Main-Info">

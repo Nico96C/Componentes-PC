@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import "./modalBusqueda.css";
 import ErrorBusqueda from "../img/ErrorResults.png";
 import { useDarkMode } from "../context/DarkMode";
+import { Link } from "react-router-dom";
 
 function ModalBusqueda({ results, onClose }) {
   const { isDarkMode } = useDarkMode();
@@ -50,7 +51,7 @@ function ModalBusqueda({ results, onClose }) {
                   </div>
 
                   <div className="modal-path">
-                    <a
+                    <Link
                       href={
                         item.type === "Placa de Video"
                           ? `/videocards/${item.id}`
@@ -65,7 +66,7 @@ function ModalBusqueda({ results, onClose }) {
                       className="modal-item-link"
                     >
                       INFO
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}
