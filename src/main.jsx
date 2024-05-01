@@ -16,6 +16,7 @@ import { CartProvider } from "./context/Cart";
 import { FiltersProviders } from "./context/filters";
 import { DarkModeProvider } from "./context/DarkMode";
 import { PayModalProvider } from "./context/Pay";
+import { LoginProvider } from "./context/Login";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -23,19 +24,21 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <FiltersProviders>
         <DarkModeProvider>
           <PayModalProvider>
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="/videocards" element={<VideoCards />} />
-                <Route path="/videocards/:id" element={<ProductoPlaca />} />
-                <Route path="/procesors" element={<Procesors />} />
-                <Route path="/procesors/:id" element={<ProductoProce />} />
-                <Route path="/motherboard" element={<MotherBoard />} />
-                <Route path="/motherboard/:id" element={<ProductoMother />} />
-                <Route path="/peripherals" element={<Peripheral />} />
-                <Route path="/peripherals/:id" element={<ProductoPeri />} />
-              </Routes>
-            </BrowserRouter>
+            <LoginProvider>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<App />} />
+                  <Route path="/videocards" element={<VideoCards />} />
+                  <Route path="/videocards/:id" element={<ProductoPlaca />} />
+                  <Route path="/procesors" element={<Procesors />} />
+                  <Route path="/procesors/:id" element={<ProductoProce />} />
+                  <Route path="/motherboard" element={<MotherBoard />} />
+                  <Route path="/motherboard/:id" element={<ProductoMother />} />
+                  <Route path="/peripherals" element={<Peripheral />} />
+                  <Route path="/peripherals/:id" element={<ProductoPeri />} />
+                </Routes>
+              </BrowserRouter>
+            </LoginProvider>
           </PayModalProvider>
         </DarkModeProvider>
       </FiltersProviders>

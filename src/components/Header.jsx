@@ -16,6 +16,8 @@ import ShoppingCart from "../svg/shopping-cart.svg";
 import SolIcon from "../svg/sol";
 import LunaIcon from "../svg/luna";
 import HamburgerButton from "../components/hamburgerButton.jsx";
+import { useLoginModal } from "../context/Login.jsx";
+import { UserLogin } from "./UserLogin.jsx";
 
 export function Header() {
   const [activo, setActivo] = useState(false);
@@ -26,6 +28,7 @@ export function Header() {
   const { isCartNotEmpty } = useCart();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const { showPaymentModal, setShowPaymentModal } = usePayModal();
+  const { showLoginModal, setShowLoginModal } = useLoginModal();
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,6 +59,10 @@ export function Header() {
 
   const ChangeModalPay = () => {
     setShowPaymentModal(!showPaymentModal);
+  };
+
+  const ChangeModalLogin = () => {
+    setShowLoginModal(!showLoginModal);
   };
 
   const search = (term) => {
@@ -149,10 +156,18 @@ export function Header() {
 
         {showPaymentModal && <PayModal onClose={ChangeModalPay} />}
 
+        {showLoginModal && <UserLogin onClose={ChangeModalLogin} />}
+
         {isCartOpen && <ModalCarrito onClose={toggleCart} />}
 
         <div className={`Buttons ${activo ? "active" : ""}`}>
-          <div className="User-Button" onClick={handleClick}>
+          <div
+            className="User-Button"
+            onClick={() => {
+              ChangeModalLogin();
+              handleClick();
+            }}
+          >
             <UserIcon color="white" className="user-icon" />
             {activo && <span className="NavBar-Text"> Perfil </span>}
           </div>
@@ -198,7 +213,6 @@ export function Header() {
         </div>
         <div className={`initial ${activo ? "active" : ""}`}></div>
       </div>
-
     </header>
   );
 }
