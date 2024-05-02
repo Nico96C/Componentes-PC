@@ -25,9 +25,7 @@ const productoPeri = () => {
   const [activo, setActivo] = useState(false);
   const { isDarkMode } = useDarkMode();
   const { addToCart } = useCart();
-  const [selectedImage, setSelectedImage] = useState(
-    searchProduct(idBuscado).thumbnail
-  );
+  const [selectedImage, setSelectedImage] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [isProducts, setIsProducts] = useState([]);
   const { showPaymentModal, setShowPaymentModal } = usePayModal();
@@ -38,6 +36,10 @@ const productoPeri = () => {
     // Establecer los productos filtrados en el estado
     setIsProducts(AllPeri);
   }, []);
+
+  useEffect(() => {
+    setSelectedImage(searchProduct(idBuscado).thumbnail);
+  }, [idBuscado]);
 
   const incrementQuantity = () => {
     if (quantity < 9) {
