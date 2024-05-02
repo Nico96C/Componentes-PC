@@ -5,7 +5,7 @@ import "./Productos.css";
 import JSON from "../../mocks/VideoCards.json";
 import { useDarkMode } from "../../context/DarkMode";
 import { useCart } from "../../hooks/useCart.jsx";
-import BannerVideo from "/public/img/Category1/PLACASVIDEO.png";
+import BannerVideo from "/img/Category1/PLACASVIDEO.png";
 import { useEffect, useState } from "react";
 import { usePayModal } from "../../context/Pay.jsx";
 import { Footer } from "../Footer.jsx";

@@ -5,7 +5,7 @@ import "../videocards.css";
 import "./Productos.css";
 import { useDarkMode } from "../../context/DarkMode";
 import { useCart } from "../../hooks/useCart.jsx";
-import BannerProce from "/public/img/Category2/Procesadores.png";
+import BannerProce from "/img/Category2/Procesadores.png";
 import { useEffect, useState } from "react";
 import { usePayModal } from "../../context/Pay.jsx";
 import { Footer } from "../Footer.jsx";

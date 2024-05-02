@@ -5,7 +5,7 @@ import "../videocards.css";
 import "./Productos.css";
 import { useDarkMode } from "../../context/DarkMode";
 import { useCart } from "../../hooks/useCart.jsx";
-import BannerPeri from "/public/img/Category4/perifericos.png";
+import BannerPeri from "/img/Category4/perifericos.png";
 import { useEffect, useState } from "react";
 import { usePayModal } from "../../context/Pay.jsx";
 import { Footer } from "../Footer.jsx";

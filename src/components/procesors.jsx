@@ -1,7 +1,7 @@
 import "./videocards.css";
 import "../App.css";
 import "./procesors.css";
-import ProceBanner from "/public/img/Category2/BannerProce.jpg";
+import ProceBanner from "/img/Category2/BannerProce.jpg";
 import Procesors from "../mocks/Procesors.json";
 import { useFilters } from "../hooks/useFilters";
 import { useId } from "react";

@@ -1,6 +1,6 @@
 import "./videocards.css";
 import "../App.css";
-import VideoBanner from "/public/img/Category1/bannerVideo.jpg";
+import VideoBanner from "/img/Category1/bannerVideo.jpg";
 import PlacasVideo from "../mocks/VideoCards.json";
 import { useFilters } from "../hooks/useFilters";
 import { useId } from "react";
