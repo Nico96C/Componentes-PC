@@ -5,7 +5,7 @@ import "../videocards.css";
 import "./Productos.css";
 import { useDarkMode } from "../../context/DarkMode";
 import { useCart } from "../../hooks/useCart.jsx";
-import BannerProce from "../../img/Category2/Procesadores.png";
+import BannerProce from "/public/img/Category2/Procesadores.png";
 import { useEffect, useState } from "react";
 import { usePayModal } from "../../context/Pay.jsx";
 import { Footer } from "../Footer.jsx";
@@ -105,7 +105,7 @@ const productoProce = () => {
         <div className="Container-Products-Scroll">
           <div>
             <div className="Products-Banner">
-              <Link href="/procesors">
+              <Link to="/procesors">
                 <img src={BannerProce} alt="Banner de procesadores" />
               </Link>
             </div>
@@ -246,7 +246,7 @@ const productoProce = () => {
                   <div className="Trends-SubContainer">
                     <Link
                       className="Trends-ImgContainer"
-                      href={`/procesors/${product.id}`}
+                      to={`/procesors/${product.id}`}
                     >
                       <img
                         className="Trends-Product-Img"
@@ -267,7 +267,7 @@ const productoProce = () => {
                 <div className="Trends-Product-Buy">
                   <button
                     className="Buy-Button"
-                    onClick={() => addToCart(product)}
+                    onClick={() => addToCart(product, 1)}
                   >
                     Añadir al Carrito
                   </button>

@@ -29,7 +29,7 @@ export function ProductsView({ products }) {
               <div className="Trends-SubContainer">
                 <Link
                   className="Trends-ImgContainer"
-                  href={getProductLink(product)}
+                  to={getProductLink(product)}
                 >
                   <img
                     className="Trends-Product-Img"

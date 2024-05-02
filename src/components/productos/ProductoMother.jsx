@@ -5,7 +5,7 @@ import "./Productos.css";
 import JSON from "../../mocks/Motherboard.json";
 import { useDarkMode } from "../../context/DarkMode";
 import { useCart } from "../../hooks/useCart.jsx";
-import BannerMother from "../../img/Category3/Motherboard.png";
+import BannerMother from "/img/Category3/Motherboard.png";
 import { useEffect, useState } from "react";
 import { usePayModal } from "../../context/Pay.jsx";
 import { Footer } from "../Footer.jsx";
@@ -105,7 +105,7 @@ const productoMother = () => {
         <div className="Container-Products-Scroll">
           <div>
             <div className="Products-Banner">
-              <Link href="/motherboard">
+              <Link to="/motherboard">
                 <img src={BannerMother} alt="Banner de Mother" />
               </Link>
             </div>
@@ -248,7 +248,7 @@ const productoMother = () => {
                   <div className="Trends-SubContainer">
                     <Link
                       className="Trends-ImgContainer"
-                      href={`/videocards/${product.id}`}
+                      to={`/motherboard/${product.id}`}
                     >
                       <img
                         className="Trends-Product-Img"
@@ -269,7 +269,7 @@ const productoMother = () => {
                 <div className="Trends-Product-Buy">
                   <button
                     className="Buy-Button"
-                    onClick={() => addToCart(product)}
+                    onClick={() => addToCart(product, 1)}
                   >
                     Añadir al Carrito
                   </button>

@@ -1,6 +1,6 @@
 import "./videocards.css";
 import "../App.css";
-import MotherBanner from "../img/Category3/bannerMother.jpg";
+import MotherBanner from "/img/Category3/bannerMother.jpg";
 import Mothers from "../mocks/Motherboard.json";
 import { useFilters } from "../hooks/useFilters";
 import { useId } from "react";
@@ -124,7 +124,7 @@ function MotherBoard() {
                 <Link
                   className="Trends-Item"
                   key={product.id}
-                  href={`/motherboard/${product.id}`}
+                  to={`/motherboard/${product.id}`}
                 >
                   <article className="Trends-MainContainer">
                     <div className="Trends-SubContainer">

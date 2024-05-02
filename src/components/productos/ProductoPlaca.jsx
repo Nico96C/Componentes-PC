@@ -5,7 +5,7 @@ import "./Productos.css";
 import JSON from "../../mocks/VideoCards.json";
 import { useDarkMode } from "../../context/DarkMode";
 import { useCart } from "../../hooks/useCart.jsx";
-import BannerVideo from "../../img/Category1/PLACASVIDEO.png";
+import BannerVideo from "/public/img/Category1/PLACASVIDEO.png";
 import { useEffect, useState } from "react";
 import { usePayModal } from "../../context/Pay.jsx";
 import { Footer } from "../Footer.jsx";
@@ -105,7 +105,7 @@ const productoPlaca = () => {
         <div className="Container-Products-Scroll">
           <div>
             <div className="Products-Banner">
-              <Link href="/videocards">
+              <Link to="/videocards">
                 <img src={BannerVideo} alt="Banner de placas video" />
               </Link>
             </div>
@@ -257,7 +257,7 @@ const productoPlaca = () => {
                   <div className="Trends-SubContainer">
                     <Link
                       className="Trends-ImgContainer"
-                      href={`/videocards/${product.id}`}
+                      to={`/videocards/${product.id}`}
                     >
                       <img
                         className="Trends-Product-Img"
@@ -278,7 +278,7 @@ const productoPlaca = () => {
                 <div className="Trends-Product-Buy">
                   <button
                     className="Buy-Button"
-                    onClick={() => addToCart(product)}
+                    onClick={() => addToCart(product, 1)}
                   >
                     Añadir al Carrito
                   </button>

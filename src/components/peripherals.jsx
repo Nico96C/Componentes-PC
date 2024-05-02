@@ -121,7 +121,7 @@ function Peripheral() {
                 <Link
                   className="Trends-Item"
                   key={product.id}
-                  href={`/peripherals/${product.id}`}
+                  to={`/peripherals/${product.id}`}
                 >
                   <article className="Trends-MainContainer">
                     <div className="Trends-SubContainer">

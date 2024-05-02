@@ -52,7 +52,7 @@ function ModalBusqueda({ results, onClose }) {
 
                   <div className="modal-path">
                     <Link
-                      href={
+                      to={
                         item.type === "Placa de Video"
                           ? `/videocards/${item.id}`
                           : item.type === "Procesador"

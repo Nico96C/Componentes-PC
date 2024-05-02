@@ -10,6 +10,7 @@ import MotherBoard from "./components/motherboard";
 import ProductoMother from "./components/productos/ProductoMother";
 import Peripheral from "./components/peripherals";
 import ProductoPeri from "./components/productos/ProductoPeri";
+import ScrollToTop from "./components/ScrollTop";
 
 import "./index.css";
 import { CartProvider } from "./context/Cart";
@@ -26,6 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <PayModalProvider>
             <LoginProvider>
               <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                   <Route path="/" element={<App />} />
                   <Route path="/videocards" element={<VideoCards />} />
