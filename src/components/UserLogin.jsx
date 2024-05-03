@@ -54,7 +54,7 @@ export function UserLogin({ onClose }) {
         {isLogin ? (
           <>
             <h3>Bienvenido, Admin</h3>
-            <button onClick={handleLogout}>Cerrar Sesión</button>
+            <button className="Button-OFF" onClick={handleLogout}>Cerrar Sesión</button>
           </>
         ) : (
           <>
@@ -80,7 +80,7 @@ export function UserLogin({ onClose }) {
                   required
                 />
               </div>
-              <button type="submit">Iniciar Sesión</button>
+              <button className="Button-ON" type="submit">Iniciar Sesión</button>
             </form>
             {error && <p style={{ color: "red" }}>{error}</p>}
           </>

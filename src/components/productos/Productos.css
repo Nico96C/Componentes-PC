@@ -337,6 +337,7 @@
 .Text-NoStock p {
   padding: 7px;
   background-color: var(--color-intermediatePurple);
+  color: #ffffff;
 }
 
 @media (max-width: 1600px) {

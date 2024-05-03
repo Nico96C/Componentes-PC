@@ -20,6 +20,20 @@
   z-index: 1001;
 }
 
+.Button-ON {
+  border: none;
+  background-color: var(--color-intermediatePurple);
+  padding: 3px;
+  cursor: pointer;
+}
+
+.Button-OFF {
+  border: none;
+  background-color: var(--color-intermediatePurple);
+  padding: 3px;
+  cursor: pointer;
+}
+
 @media (max-width: 1500px) {
   .Login-view {
     left: 85%;
