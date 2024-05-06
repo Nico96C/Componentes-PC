@@ -25,10 +25,26 @@ const productoPeri = () => {
   const [activo, setActivo] = useState(false);
   const { isDarkMode } = useDarkMode();
   const { addToCart } = useCart();
-  const [selectedImage, setSelectedImage] = useState('');
+  const [selectedImage, setSelectedImage] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [isProducts, setIsProducts] = useState([]);
   const { showPaymentModal, setShowPaymentModal } = usePayModal();
+  const [transform, setTransform] = useState("translate(0px, 0px) scale(1)");
+
+  const handleMouseLeave = () => {
+    setTransform("translate(0px, 0px) scale(1)");
+  };
+
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    const { left, top, width, height } = e.target.getBoundingClientRect();
+
+    const scale = 1.2;
+    const translateX = (clientX - left - width / 2) * (scale - 1);
+    const translateY = (clientY - top - height / 2) * (scale - 1);
+
+    setTransform(`translate(${translateX}px, ${translateY}px) scale(${scale})`);
+  };
 
   useEffect(() => {
     // Filtrar los productos con 'oferta: true'
@@ -125,8 +141,19 @@ const productoPeri = () => {
                     decoding="async"
                   />
                 </div>
-                <div className="Products-Image-View">
-                  <img src={selectedImage} loading="lazy" decoding="async" />
+                <div
+                  className="Products-Image-View"
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <img
+                    src={selectedImage}
+                    loading="lazy"
+                    decoding="async"
+                    style={{
+                      transform: transform,
+                    }}
+                  />
                 </div>
                 <div className="Products-Stock-Info"></div>
               </div>
